@@ -1,32 +1,33 @@
-//===== rAthena Script ======================================= 
-//= BattleGround System - Tierra Gorge 2
-//===== By: ================================================== 
+Ôªø//===== LivedBR Script ======================================= 
+//= Batalha Campal - Desfiladeiro de Tierra 2
+//===== Por: =================================================
 //= L0ne_W0lf
-//===== Current Version: ===================================== 
-//= 1.5
-//===== Compatible With: ===================================== 
-//= rAthena Project
-//===== Description: ========================================= 
-//= [Official Conversion]
-//= Second Tierra Gorge Battleground.
-//= - Winning Team: 3 badges (5 if VIP)
-//= - Losing Team: 1 badge (3 if VIP)
-//===== Additional Comments: ================================= 
-//= 1.0 First Version.
-//= 1.1 Updated 'waitingroom' to support required zeny/lvl. [Kisuka]
-//= 1.2 Removed MaxLvl check in waitingrooms.
-//= 1.3 Label standardization. [Euphy]
-//= 1.4 Added GM management function. [Euphy]
-//= 1.5 Added VIP features and created a reward function. [Euphy]
+//===== Vers√£o Atual: ======================================== 
+//= 1.6
+//===== Compat√≠vel com : ===================================== 
+//= rAthena / LivedBR
+//===== Descri√ß√£o : ========================================== 
+//= - [Convers√£o Oficial]
+//= - Segundo Campo de Batalha de Tierra.
+//= - Equipa Vencedora: 3 emblemas (5 se VIP)
+//= - Equipe Perdedora: 1 emblemas (3 se VIP)
+//===== Coment√°rios Adicionais: ============================== 
+//= 1.0 Primeira Vers√£o.
+//= 1.1 Atualizado 'Sala de Espera' para suportar zeny/lvl requerido. [Kisuka]
+//= 1.2 Removido o MaxLvl em checkrooms.
+//= 1.3 Padroniza√ß√£o de r√≥tulos. [Euphy]
+//= 1.4 Adicionada a fun√ß√£o de gerenciamento da GM. [Euphy]
+//= 1.5 Adicionado recursos VIP e criou uma fun√ß√£o de recompensa. [Euphy]
+//= 1.6 Traduzido para pt_br. [Vrods]
 //============================================================
 
-// Waiting Room NPCs
+// Sala de Espera.
 //============================================================
 bat_room,114,227,5	script	Tenente Rundel	418,{
 	end;
 
 OnInit:
-	waitingroom "EstaÁ„o de Batalha",11,"start#bat_a02::OnReadyCheck",1,0,80;
+	waitingroom "Esta√ß√£o de Batalha",11,"start#bat_a02::OnReadyCheck",1,0,80;
 	end;
 
 OnEnterBG:
@@ -38,7 +39,7 @@ bat_room,114,204,1	script	Tenente Guerrit	414,{
 	end;
 
 OnInit:
-	waitingroom "EstaÁ„o de Batalha",11,"start#bat_a02::OnReadyCheck",1,0,80;
+	waitingroom "Esta√ß√£o de Batalha",11,"start#bat_a02::OnReadyCheck",1,0,80;
 	end;
 
 OnEnterBG:
@@ -168,7 +169,7 @@ OnMyMobDead:
 		set $@TierraBG2_Victory, 2;
 		enablenpc "Armada de Guillaume#a02_a";
 		enablenpc "Armada de Croix#a02_b";
-		mapannounce "bat_a02", "Croix Vintenar Swandery: NÛs destruÌmos os Suprimentos dos Guillaumes. NÛs vencemos esta! Wow!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Croix Vintenar Swandery: N√≥s destru√≠mos os Suprimentos dos Guillaumes. N√≥s vencemos esta! Wow!",bc_map,"0xFFCE00";
 		bg_warp $@TierraBG2_id1,"bat_a02",50,374;
 		bg_warp $@TierraBG2_id2,"bat_a02",42,16;
 	}
@@ -191,7 +192,7 @@ OnMyMobDead:
 		set $@TierraBG2_Victory, 1;
 		enablenpc "Armada de Guillaume#a02_a";
 		enablenpc "Armada de Croix#a02_b";
-		mapannounce "bat_a02", "Armada de Guillaume Axl Rose: NÛs destruÌmos os Suprimentos dos Croixs. NÛs vencemos esta! Wow!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Armada de Guillaume Axl Rose: N√≥s destru√≠mos os Suprimentos dos Croixs. N√≥s vencemos esta! Wow!",bc_map,"0xFFCE00";
 		bg_warp $@TierraBG2_id1,"bat_a02",50,374;
 		bg_warp $@TierraBG2_id2,"bat_a02",42,16;
 	}
@@ -216,7 +217,7 @@ OnMyMobDead:
 		killmonster "bat_a02","barricada#bat_a02_a::OnMyMobDead";
 		delwall "bat_a02_c1";
 		enablenpc "Ferreiro Guillaume#a02";
-		mapannounce "bat_a02", "Armada de Guillaume Axl Rose: A Barricada do vale foi destruÌda! Onde est· o nosso Ferreiro Guillaume? NÛs precisamos reconstruir a Barricada!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Armada de Guillaume Axl Rose: A Barricada do vale foi destru√≠da! Onde est√° o nosso Ferreiro Guillaume? N√≥s precisamos reconstruir a Barricada!",bc_map,"0xFFCE00";
 	}
 	end;
 }
@@ -239,7 +240,7 @@ OnMyMobDead:
 		killmonster "bat_a02","barricada#bat_a02_b::OnMyMobDead";
 		delwall "bat_a02_g1";
 		enablenpc "Ferreiro Croix#bat_a02";
-		mapannounce "bat_a02", "Armada de Croix Swandery: A Barricada do vale foi destruÌda! Onde est· o nosso Ferreiro Croix? NÛs precisamos reconstruir a Barricada!",bc_map,"0xFFCE00";
+		mapannounce "bat_a02", "Armada de Croix Swandery: A Barricada do vale foi destru√≠da! Onde est√° o nosso Ferreiro Croix? N√≥s precisamos reconstruir a Barricada!",bc_map,"0xFFCE00";
 	}
 	end;
 }
@@ -258,11 +259,11 @@ OnMyMobDead:
 		bg_team_setxy getcharid(4),56,212;
 		if (getcharid(4) == $@TierraBG2_id1) {
 			donpcevent "NOBJ_mob#bat_a02_a::OnEnable";
-			mapannounce "bat_a02", "O time Guillaume capturou a Bandeira Neutra, ent„o eles est„o em vantagem.",bc_map,"0xFFCE00";
+			mapannounce "bat_a02", "O time Guillaume capturou a Bandeira Neutra, ent√£o eles est√£o em vantagem.",bc_map,"0xFFCE00";
 		}
 		else {
 			donpcevent "NOBJ_mob#bat_a02_b::OnEnable";
-			mapannounce "bat_a02", "O time Croix capturou a Bandeira Neutra, ent„o eles est„o em vantagem.",bc_map,"0xFFCE00";
+			mapannounce "bat_a02", "O time Croix capturou a Bandeira Neutra, ent√£o eles est√£o em vantagem.",bc_map,"0xFFCE00";
 		}
 	}
 	end;
@@ -271,9 +272,9 @@ OnMyMobDead:
 bat_a02,15,21,3	script	NOBJ_mob#bat_a02_a	844,{
 OnEnable:
 	donpcevent "NOBJ_mob#bat_a02_b::OnKill";
-	bg_monster $@TierraBG2_id1,"bat_a02",272,204,"Guardi„o do ExÈrcito Guillaume",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
-	bg_monster $@TierraBG2_id1,"bat_a02",272,213,"Guardi„o do ExÈrcito Guillaume",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
-	bg_monster $@TierraBG2_id1,"bat_a02",273,197,"Guardi„o do ExÈrcito Guillaume",1950,"NOBJ_mob#bat_a02_a::OnMyMobDead";
+	bg_monster $@TierraBG2_id1,"bat_a02",272,204,"Guardi√£o do Ex√©rcito Guillaume",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
+	bg_monster $@TierraBG2_id1,"bat_a02",272,213,"Guardi√£o do Ex√©rcito Guillaume",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
+	bg_monster $@TierraBG2_id1,"bat_a02",273,197,"Guardi√£o do Ex√©rcito Guillaume",1950,"NOBJ_mob#bat_a02_a::OnMyMobDead";
 	end;
 
 OnKill:
@@ -287,9 +288,9 @@ OnMyMobDead:
 bat_a02,15,22,3	script	NOBJ_mob#bat_a02_b	844,{
 OnEnable:
 	donpcevent "NOBJ_mob#bat_a02_a::OnKill";
-	bg_monster $@TierraBG2_id2,"bat_a02",272,204,"Guardi„o do ExÈrcito Croix",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
-	bg_monster $@TierraBG2_id2,"bat_a02",272,213,"Guardi„o do ExÈrcito Croix",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
-	bg_monster $@TierraBG2_id2,"bat_a02",273,197,"Guardi„o do ExÈrcito Croix",1950,"NOBJ_mob#bat_a02_a::OnMyMobDead";
+	bg_monster $@TierraBG2_id2,"bat_a02",272,204,"Guardi√£o do Ex√©rcito Croix",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
+	bg_monster $@TierraBG2_id2,"bat_a02",272,213,"Guardi√£o do Ex√©rcito Croix",1949,"NOBJ_mob#bat_a02_a::OnMyMobDead";
+	bg_monster $@TierraBG2_id2,"bat_a02",273,197,"Guardi√£o do Ex√©rcito Croix",1950,"NOBJ_mob#bat_a02_a::OnMyMobDead";
 	end;
 
 OnKill:
@@ -303,15 +304,15 @@ OnMyMobDead:
 bat_a02,185,270,1	script	Ferreiro Guillaume#a02	851,{
 	if (getcharid(4) == $@TierraBG2_id1) {
 		mes "[Ferreiro Guillaume]";
-		mes "NÛs estamos em uma emergÍncia! A Barricada foi destruÌda!";
-		mes "NÛs podemos reparar a Barricada com ^3131FF50 Pedras, 3 Nervos de Urso, 500 PedaÁos de Metal, 30 MinÈrios de Elunium e 100 Ouro.^000000";
-		mes "E nÛs temos tudo isso, exceto as 50 Pedras!";
+		mes "N√≥s estamos em uma emerg√™ncia! A Barricada foi destru√≠da!";
+		mes "N√≥s podemos reparar a Barricada com ^3131FF50 Pedras, 3 Nervos de Urso, 500 Peda√ßos de Metal, 30 Min√©rios de Elunium e 100 Ouro.^000000";
+		mes "E n√≥s temos tudo isso, exceto as 50 Pedras!";
 		next;
 		switch(select("Reparar.:Deixar assim.")) {
 		case 1:
 			if (countitem(7049) > 49) {
 				mes "[Ferreiro Guillaume]";
-				mes "VocÍ trouxe pedras o suficiente! Vamos ent„o comeÁar a reparar.";
+				mes "Voc√™ trouxe pedras o suficiente! Vamos ent√£o come√ßar a reparar.";
 				next;
 				mes "..";
 				next;
@@ -334,13 +335,13 @@ bat_a02,185,270,1	script	Ferreiro Guillaume#a02	851,{
 				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada.";
 				next;
 				mes "[Ferreiro Guillaume]";
-				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent„o adicionando os MinÈrios de Elunium para deix·-la mais forte.";
+				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent√£o adicionando os Min√©rios de Elunium para deix√°-la mais forte.";
 				next;
 				mes "[Ferreiro Guillaume]";
-				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent„o adicionando os MinÈrios de Elunium para deix·-la mais forte. Agora decorando com os Fragmentos de Metal.";
+				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent√£o adicionando os Min√©rios de Elunium para deix√°-la mais forte. Agora decorando com os Fragmentos de Metal.";
 				next;
 				mes "[Ferreiro Guillaume]";
-				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent„o adicionando os MinÈrios de Elunium para deix·-la mais forte. Agora decorando com os Fragmentos de Metal, e tranÁando as pedras com os Nervos de Urso!";
+				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent√£o adicionando os Min√©rios de Elunium para deix√°-la mais forte. Agora decorando com os Fragmentos de Metal, e tran√ßando as pedras com os Nervos de Urso!";
 				next;
 				mes "..............";
 				mes "..............";
@@ -350,7 +351,7 @@ bat_a02,185,270,1	script	Ferreiro Guillaume#a02	851,{
 				next;
 				specialeffect EF_REPAIRWEAPON;
 				mes "[Ferreiro Guillaume]";
-				mes "Uau! Est· feito.";
+				mes "Uau! Est√° feito.";
 				mes "Estamos mais aliviados agora.";
 				delitem 7049,50; //Stone
 				donpcevent "barricade#bat_a02_a::OnEnable";
@@ -360,22 +361,22 @@ bat_a02,185,270,1	script	Ferreiro Guillaume#a02	851,{
 			}
 			else {
 				mes "[Ferreiro Guillaume]";
-				mes "VocÍ n„o possui pedras o suficiente!";
+				mes "Voc√™ n√£o possui pedras o suficiente!";
 				next;
 				mes "[Ferreiro Guillaume]";
-				mes "^3131FFNÛs precisamos de 50 Pedras.^000000";
-				mes "Estamos ocupados, ent„o v· mais depressa.";
+				mes "^3131FFN√≥s precisamos de 50 Pedras.^000000";
+				mes "Estamos ocupados, ent√£o v√° mais depressa.";
 				close;
 			}
 		case 2:
 			mes "[Ferreiro Guillaume]";
-			mes "Os inimigos est„o chegando! Vamos evacuar e partir daqui!";
+			mes "Os inimigos est√£o chegando! Vamos evacuar e partir daqui!";
 			close;
 		}
 	}
 	else {
 		mes "[Ferreiro Guillaume]";
-		mes "L·, o inimigo est· chegando!";
+		mes "L√°, o inimigo est√° chegando!";
 		close;
 	}
 
@@ -387,15 +388,15 @@ OnInit:
 bat_a02,170,121,5	script	Ferreiro Croix#bat_a02	851,{
 	if (getcharid(4) == $@TierraBG2_id2) {
 		mes "[Ferreiro Croix]";
-		mes "NÛs estamos em uma emergÍncia! A Barricada foi destruÌda!";
-		mes "NÛs podemos reparar a Barricada com ^3131FF50 Pedras, 3 Nervos de Urso, 500 PedaÁos de Metal, 30 MinÈrios de Elunium e 100 Ouro.^000000";
-		mes "E nÛs temos tudo isso, exceto as 50 Pedras!";
+		mes "N√≥s estamos em uma emerg√™ncia! A Barricada foi destru√≠da!";
+		mes "N√≥s podemos reparar a Barricada com ^3131FF50 Pedras, 3 Nervos de Urso, 500 Peda√ßos de Metal, 30 Min√©rios de Elunium e 100 Ouro.^000000";
+		mes "E n√≥s temos tudo isso, exceto as 50 Pedras!";
 		next;
 		switch(select("Reparar.:Deixar assim.")) {
 		case 1:
 			if (countitem(7049) > 49) {
 				mes "[Ferreiro Croix]";
-				mes "VocÍ trouxe pedras o suficiente! Vamos ent„o comeÁar a reparar.";
+				mes "Voc√™ trouxe pedras o suficiente! Vamos ent√£o come√ßar a reparar.";
 				next;
 				mes "..";
 				next;
@@ -418,13 +419,13 @@ bat_a02,170,121,5	script	Ferreiro Croix#bat_a02	851,{
 				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada.";
 				next;
 				mes "[Ferreiro Croix]";
-				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent„o adicionando os MinÈrios de Elunium para deix·-la mais forte.";
+				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent√£o adicionando os Min√©rios de Elunium para deix√°-la mais forte.";
 				next;
 				mes "[Ferreiro Croix]";
-				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent„o adicionando os MinÈrios de Elunium para deix·-la mais forte. Agora decorando com os Fragmentos de Metal.";
+				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent√£o adicionando os Min√©rios de Elunium para deix√°-la mais forte. Agora decorando com os Fragmentos de Metal.";
 				next;
 				mes "[Ferreiro Croix]";
-				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent„o adicionando os MinÈrios de Elunium para deix·-la mais forte. Agora decorando com os Fragmentos de Metal, e tranÁando as pedras com os Nervos de Urso!";
+				mes "Combinando as Pedras e o Ouro na porcentagem adequada e afiando a Barricada, e ent√£o adicionando os Min√©rios de Elunium para deix√°-la mais forte. Agora decorando com os Fragmentos de Metal, e tran√ßando as pedras com os Nervos de Urso!";
 				next;
 				mes "..............";
 				mes "..............";
@@ -434,7 +435,7 @@ bat_a02,170,121,5	script	Ferreiro Croix#bat_a02	851,{
 				next;
 				specialeffect EF_REPAIRWEAPON;
 				mes "[Ferreiro Croix]";
-				mes "Uau! Est· feito.";
+				mes "Uau! Est√° feito.";
 				mes "Estamos mais aliviados agora.";
 				delitem 7049,50; //Stone
 				donpcevent "barricada#bat_a02_b::OnEnable";
@@ -444,22 +445,22 @@ bat_a02,170,121,5	script	Ferreiro Croix#bat_a02	851,{
 			}
 			else {
 				mes "[Ferreiro Croix]";
-				mes "VocÍ n„o possui pedras o suficiente!";
+				mes "Voc√™ n√£o possui pedras o suficiente!";
 				next;
 				mes "[Ferreiro Croix]";
-				mes "^3131FFNÛs precisamos de 50 Pedras.^000000";
-				mes "Estamos ocupados, ent„o v· mais depressa.";
+				mes "^3131FFN√≥s precisamos de 50 Pedras.^000000";
+				mes "Estamos ocupados, ent√£o v√° mais depressa.";
 				close;
 			}
 		case 2:
 			mes "[Ferreiro Croix]";
-			mes "Os inimigos est„o chegando! Vamos evacuar e partir daqui!";
+			mes "Os inimigos est√£o chegando! Vamos evacuar e partir daqui!";
 			close;
 		}
 	}
 	else {
 		mes "[Ferreiro Croix]";
-		mes "L·, o inimigo est· chegando";
+		mes "L√°, o inimigo est√° chegando";
 		close;
 	}
 
@@ -473,7 +474,7 @@ bat_a02,53,377,3	script	Terapeuta de Batalha#a02_a	95,{
 	mes "[Terapeuta de Batalha]";
 	mes "Agora feche o seus olhos";
 	mes "e respire bem fundo.";
-	mes "VocÍ pode se libertar da dor agora.";
+	mes "Voc√™ pode se libertar da dor agora.";
 	close;
 	end;
 
@@ -523,7 +524,7 @@ bat_a02,45,19,3	script	Terapeuta de Batalha#a02_b	95,{
 	mes "[Terapeuta de Batalha]";
 	mes "Agora feche o seus olhos";
 	mes "e respire bem fundo.";
-	mes "VocÍ pode se libertar da dor agora.";
+	mes "Voc√™ pode se libertar da dor agora.";
 	close;
 	end;
 
@@ -734,7 +735,7 @@ OnTimer7000:
 	end;
 
 OnTimer8000:
-	mapannounce "bat_a02", "Armada de Croix Swandery: Mestres de Valhalla! Presenteie-nos com coragem e uma fÈ infalÌvel!",bc_map,"0xFF99CC";
+	mapannounce "bat_a02", "Armada de Croix Swandery: Mestres de Valhalla! Presenteie-nos com coragem e uma f√© infal√≠vel!",bc_map,"0xFF99CC";
 	end;
 
 OnTimer1800000:
@@ -742,19 +743,19 @@ OnTimer1800000:
 	end;
 
 OnTimer1803000:
-	mapannounce "bat_a02", "Marollo VII: Ambos exÈrcitos s„o muito competitivos, ent„o nenhum acampamento dever· ser destruÌdo facilmente. Isto significa que os Reinos de Marollo nunca ser„o derrotados!",bc_map,"0x99CC00";
+	mapannounce "bat_a02", "Marollo VII: Ambos ex√©rcitos s√£o muito competitivos, ent√£o nenhum acampamento dever√° ser destru√≠do facilmente. Isto significa que os Reinos de Marollo nunca ser√£o derrotados!",bc_map,"0x99CC00";
 	end;
 
 OnTimer1808000:
-	mapannounce "bat_a02", "Marollo VII: Acho que seria melhor encerrarmos a batalha, e chamarmos isto de um empate. PorÈm...",bc_map,"0x99CC00";
+	mapannounce "bat_a02", "Marollo VII: Acho que seria melhor encerrarmos a batalha, e chamarmos isto de um empate. Por√©m...",bc_map,"0x99CC00";
 	end;
 
 OnTimer1822000:
-	mapannounce "bat_a02", "Marollo VII: Mantenha a sua lealdade e fÈ por um momento, e vamos resolver a batalha pelo Desfiladeiro de Tierra.",bc_map,"0x99CC00";
+	mapannounce "bat_a02", "Marollo VII: Mantenha a sua lealdade e f√© por um momento, e vamos resolver a batalha pelo Desfiladeiro de Tierra.",bc_map,"0x99CC00";
 	end;
 
 OnTimer1825000:
-	mapannounce "bat_a02", "Axl Rose, Swandery : Sim, senhor.",bc_map,"0x99CC00";
+	mapannounce "bat_a02", "Axl Rose, Swandery: Sim, senhor.",bc_map,"0x99CC00";
 	end;
 
 OnTimer1830000:

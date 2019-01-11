@@ -1,19 +1,20 @@
-﻿//===== rAthena Script ======================================= 
-//= The Airship System Script
-//===== By: ================================================== 
+﻿//===== LivedBR Script ======================================= 
+//= Aeroplano
+//===== Por: ================================================= 
 //= rAthena Dev Team
-//===== Current Version: =====================================
-//= 1.0
-//===== Compatible With: ===================================== 
-//= rAthena Project
-//===== Description: ========================================= 
-//= The Airship System used in the official servers.
+//===== Versão Atual: ========================================
+//= 1.1
+//===== Compatível : ========================================= 
+//= rAthena / LivedBR
+//===== Descrição : ========================================== 
+//= Aeroplano usado em servidores oficiais.
 //===== Additional Comments: ================================= 
-//= 1.0 First version.
+//= 1.0 Primeira Versão.
+//= 1.1 Tradução pt_br. [Vrods]
 //============================================================ 
 
 //============================================================ 
-//= Domestic Airship Route
+//= Rota do Aeroplano
 //= ... -> Juno -> Einbroch -> Lighthalzen -> Einbroch
 //= -> Juno -> Hugel -> ...
 //============================================================ 
@@ -228,7 +229,7 @@ airplane,66,93,3	script	Senhora de Umbala#ein_p	783,{
 airplane,71,91,7	script	Homem de Umbala#ein_p	789,{
 	if (event_umbala >= 3) {
 		mes "[Chrmlim]";
-		mes "Ei você~";
+		mes "Ei você.";
 		mes "Pela sua aparência,";
 		mes "percebo que você";
 		mes "consegue me entender.";
@@ -238,7 +239,7 @@ airplane,71,91,7	script	Homem de Umbala#ein_p	789,{
 		mes "[Chrmlim]";
 		mes "Tenho ajudado a equipe";
 		mes "do Aeroplano, auxiliando";
-		mes "seus tripulantes que têm";
+		mes "os tripulantes que têm";
 		mes "medo de altura os levanto para pular";
 		mes "de bungee jumping em Umbala. Legal, eh?";
 		next;
@@ -246,8 +247,8 @@ airplane,71,91,7	script	Homem de Umbala#ein_p	789,{
 		mes "Mas...";
 		mes "Alguns deles não";
 		mes "superaram seus medos de altura.";
-		mes "E até alguns";
-		mes "acabaram ^333333em Nifflheim^000000.";
+		mes "E alguns até";
+		mes "acabaram em ^333333Nifflheim^000000.";
 	}
 	else {
 		mes "[Chrmlim]";
@@ -831,7 +832,7 @@ airplane_01,50,66,5	script	Vendedor de Maçãs#air01	86,{
 	mes "comprar maçãs ou triturá-las";
 	mes "para fazer suco de maçã.";
 	next;
-	switch (select("Comprar maçãs.:Fazer suco de maçã.:Cancelar.")) {
+	switch (select("Comprar Maçãs.:Fazer suco de Maçã.:Cancelar.")) {
 	case 1:
 		mes "[Meltz]";
 		mes "Por favor digite a quantidade";
@@ -898,7 +899,7 @@ airplane_01,50,66,5	script	Vendedor de Maçãs#air01	86,{
 		}
 		else {
 			set Zeny, Zeny - .@pay;
-			getitem 512,.@input; //Apple
+			getitem 512,.@input; //Maçã
 			mes "[Meltz]";
 			mes "Obrigado por visitar";
 			mes "minha loja. Espero que goste";
@@ -1062,11 +1063,11 @@ airplane_01,71,31,2	script	Espadachim Shimizu#air_01	106,{
 airplane_01,32,61,4	script	Nils#ein	49,1,1,{
 	mes "[Nils]";
 	mes "Bem-vind"+(Sex?"o":"a")+" ao";
-	mes "^ff0000Desafio de Escrita LivedRO^000000.";
+	mes "^ff0000Desafio de Escrita LivedBR^000000.";
 	mes "Você gostaria de jogar";
 	mes "um rápido jogo de escrita?";
 	next;
-	switch (select("Jogar ^ff0000Desafio de Escrita LivedRO^000000:Informações:Ver recordes:Cancelar")) {
+	switch (select("Jogar ^ff0000Desafio de Escrita LivedBR^000000:Informações:Ver recordes:Cancelar")) {
 	case 1:
 		mes "[Nils]";
 		mes "Ok, nós temos";
@@ -1097,7 +1098,7 @@ airplane_01,32,61,4	script	Nils#ein	49,1,1,{
 					"",
 					"";
 		setarray .@word1$[0],	"callipygian salacius lascivious licentious prurient concupiscent",
-					"By the power of p-po-poi-po-poi-poin-poing GOD-POING. I NEVER LOSE!",
+					"By the power of p-po-poi-po-poi-poin-poing GOD-POING. EU NUNCA PERCO!",
 					"thkelfkskeldmsiejdlslehfndkelsheidlskemd",
 					"burrdingdingdingdilidingdingdingphoohudaambandoorabambarambambambambamburanbamding",
 					"Coboman no chikara-yumei na chikara-daiookii na chikara da ze! COBO ON",
@@ -1244,7 +1245,7 @@ airplane_01,33,68,4	script	Clarice	74,{
 
 function	script	applegamble	{
 	.@npc_name$ = getarg(0);
-	switch (select("Jogar:Regras do Jogo:Cancelar")) {
+	switch (select("Jogar.:Regras do Jogo.:Cancelar.")) {
 	case 3:
 		mes "["+ .@npc_name$ +"]";
 		mes "Estou sempre pronta para";

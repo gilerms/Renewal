@@ -1,72 +1,72 @@
-//===== rAthena Script ======================================= 
-//= BattleGround System - Tierra Gorge Entrance NPCs
-//===== By: ================================================== 
+Ôªø//===== LivedBR Script ======================================= 
+//= Batalha Campal - Entrada para o Desfiladeiro de Tierra
+//===== Por: =================================================
 //= L0ne_W0lf
-//===== Current Version: ===================================== 
-//= 1.0
-//===== Compatible With: ===================================== 
-//= rAthena Project
-//===== Description: ========================================= 
-//= [Official Conversion]
-//= Tierra Gorge Battleground Entrance NPCs
-//===== Additional Comments: ================================= 
-//= 1.0 First Version.
-//= 1.1 Fixed silly copy paste errors. (bugreport:4401)
+//===== Vers√£o Atual: ======================================== 
+//= 1.2
+//===== Compat√≠vel com : ===================================== 
+//= rAthena / LivedBR
+//===== Descri√ß√£o : ========================================== 
+//= [Convers√£o oficial]
+//= NPCs de Entrada do Campo de Batalha de Tierra Gorge
+//===== Coment√°rios adicionais : =============================
+//= 1.0 Primeira Vers√£o.
+//= 1.1 Corrigidos erros de c√≥pia. (bugreport:4401)
 //============================================================
 
 // Oficiais do Desfiladeiro de Tierra- Lado Guillaume
 //============================================================
 bat_room,124,178,5	script	Oficial de Tierra#01a	418,{
 	if (checkweight(1201,1) == 0) {
-		mes "- Espere aÌ um minuto! -";
-		mes "- Atualmente vocÍ est· -";
+		mes "- Espere a√≠ um minuto! -";
+		mes "- Atualmente voc√™ est√° -";
 		mes "- carregando itens demais. -";
-		mes "- Por favor tente novamente apÛs -";
-		mes "- vocÍ descarregar um pouco do peso. -";
+		mes "- Por favor tente novamente ap√≥s -";
+		mes "- voc√™ descarregar um pouco do peso. -";
 		close;
 	}
-	mes "[Oficial do ExÈrcito Guillaume]";
-	mes "Vamos mostrar todo o poder do ExÈrcito de Guillaume para aqueles Croixs fedorentos!";
+	mes "[Oficial do Ex√©rcito Guillaume]";
+	mes "Vamos mostrar todo o poder do Ex√©rcito de Guillaume para aqueles Croixs fedorentos!";
 	next;
-	switch(select("Eu quero me juntar ao seu exÈrcito!:Terminar a conversa.")) {
+	switch(select("Eu quero me juntar ao seu ex√©rcito!:Terminar a conversa.")) {
 	case 1:
 		if ((Class == Job_Novice) || (BaseClass == Job_Super_Novice)) {
-			mes "[Oficial do ExÈrcito Guillaume]";
-			mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Croix mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+			mes "[Oficial do Ex√©rcito Guillaume]";
+			mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Croix mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 		}
 		else {
 			if (BaseLevel < 80) {
-				mes "[Oficial do ExÈrcito Guillaume]";
-				mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Croix mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+				mes "[Oficial do Ex√©rcito Guillaume]";
+				mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Croix mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if ((.@chk_urtime == 0)|| (.@chk_urtime == 1)) {
-					mes "[Oficial do ExÈrcito Guillaume]";
-					mes "Me parece que vocÍ acabou de voltar do campo de batalha.";
-					mes "Ent„o È muito cedo pra vocÍ retornar. V· descansar um pouco e deixe os inimigos conosco!";
+					mes "[Oficial do Ex√©rcito Guillaume]";
+					mes "Me parece que voc√™ acabou de voltar do campo de batalha.";
+					mes "Ent√£o √© muito cedo pra voc√™ retornar. V√° descansar um pouco e deixe os inimigos conosco!";
 				}
 				else {
 					if (.@chk_urtime == 2)
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a01");
 					if (.@mapcount > 0) {
-						mes "[Oficial do ExÈrcito Guillaume]";
-						mes "Eu recebi um comunidado informando que uma unidade do batalh„o j· foi despachada para o campo de batalha e est· enfrentando os Croixs no momento.";
-						mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+						mes "[Oficial do Ex√©rcito Guillaume]";
+						mes "Eu recebi um comunidado informando que uma unidade do batalh√£o j√° foi despachada para o campo de batalha e est√° enfrentando os Croixs no momento.";
+						mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 					}
 					else {
 						if ($@TierraBG1) {
-							mes "[Oficial do ExÈrcito Guillaume]";
-							mes "Uma unidade do batalh„o j· est· preparada e esperando ser despachada ao campo de batalha.";
-							mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+							mes "[Oficial do Ex√©rcito Guillaume]";
+							mes "Uma unidade do batalh√£o j√° est√° preparada e esperando ser despachada ao campo de batalha.";
+							mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 			
 						}
 						else {
-						mes "[Oficial do ExÈrcito Guillaume]";
-						mes "Certamente vocÍ j· est· preparado para a batalha!";
-						mes "V· e mostre aos Croixs o significado da palavra medo!";
-						mes "Hoje nosso grito de vitÛria dever· ser entoado por todo campo de batalha!";
+						mes "[Oficial do Ex√©rcito Guillaume]";
+						mes "Certamente voc√™ j√° est√° preparado para a batalha!";
+						mes "V√° e mostre aos Croixs o significado da palavra medo!";
+						mes "Hoje nosso grito de vit√≥ria dever√° ser entoado por todo campo de batalha!";
 							close2;
 							warp "bat_room",57,223;
 							end;
@@ -77,8 +77,8 @@ bat_room,124,178,5	script	Oficial de Tierra#01a	418,{
 		}
 		break;
 	case 2:
-		mes "[Oficial do ExÈrcito Guillaume]";
-		mes "Hoje nÛs sairemos vencedores!";
+		mes "[Oficial do Ex√©rcito Guillaume]";
+		mes "Hoje n√≥s sairemos vencedores!";
 		break;
 	}
 	close;
@@ -86,35 +86,35 @@ bat_room,124,178,5	script	Oficial de Tierra#01a	418,{
 
 bat_room,140,178,5	script	Oficial de Tierrar#02a	418,{
 	if (checkweight(1201,1) == 0) {
-		mes "- Espere aÌ um minuto! -";
-		mes "- Atualmente vocÍ est· -";
+		mes "- Espere a√≠ um minuto! -";
+		mes "- Atualmente voc√™ est√° -";
 		mes "- carregando itens demais. -";
-		mes "- Por favor tente novamente apÛs -";
-		mes "- vocÍ descarregar um pouco do peso. -";
+		mes "- Por favor tente novamente ap√≥s -";
+		mes "- voc√™ descarregar um pouco do peso. -";
 		close;
 	}
-	mes "[Oficial do ExÈrcito Guillaume]";
-	mes "Vamos mostrar todo o poder do ExÈrcito de Guillaume para aqueles Croixs fedorentos!";
+	mes "[Oficial do Ex√©rcito Guillaume]";
+	mes "Vamos mostrar todo o poder do Ex√©rcito de Guillaume para aqueles Croixs fedorentos!";
 	next;
-	switch(select("Eu quero me juntar ao seu exÈrcito!:Terminar a conversa.")) {
+	switch(select("Eu quero me juntar ao seu ex√©rcito!:Terminar a conversa.")) {
 	case 1:
 		if ((Class == Job_Novice) || (BaseClass == Job_Super_Novice)) {
-			mes "[Oficial do ExÈrcito Guillaume]";
-			mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Croix mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+			mes "[Oficial do Ex√©rcito Guillaume]";
+			mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Croix mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 
 		}
 		else {
 			if (BaseLevel < 80) {
-				mes "[Oficial do ExÈrcito Guillaume]";
-				mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Croix mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+				mes "[Oficial do Ex√©rcito Guillaume]";
+				mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Croix mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if (.@chk_urtime == 1) {
-					mes "[Oficial do ExÈrcito Guillaume]";
-					mes "Me parece que vocÍ acabou de voltar do campo de batalha.";
-					mes "Ent„o È muito cedo pra vocÍ retornar. V· descansar um pouco e deixe os inimigos conosco!";
+					mes "[Oficial do Ex√©rcito Guillaume]";
+					mes "Me parece que voc√™ acabou de voltar do campo de batalha.";
+					mes "Ent√£o √© muito cedo pra voc√™ retornar. V√° descansar um pouco e deixe os inimigos conosco!";
 			
 				}
 				else {
@@ -122,21 +122,21 @@ bat_room,140,178,5	script	Oficial de Tierrar#02a	418,{
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a02");
 					if (.@mapcount > 0) {
-						mes "[Oficial do ExÈrcito Guillaume]";
-						mes "Eu recebi um comunidado informando que uma unidade do batalh„o j· foi despachada para o campo de batalha e est· enfrentando os Croixs no momento.";
-						mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+						mes "[Oficial do Ex√©rcito Guillaume]";
+						mes "Eu recebi um comunidado informando que uma unidade do batalh√£o j√° foi despachada para o campo de batalha e est√° enfrentando os Croixs no momento.";
+						mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 					}
 					else {
 						if ($@TierraBG2) {
-							mes "[Oficial do ExÈrcito Guillaume]";
-							mes "Uma unidade do batalh„o j· est· preparada e esperando ser despachada ao campo de batalha.";
-							mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+							mes "[Oficial do Ex√©rcito Guillaume]";
+							mes "Uma unidade do batalh√£o j√° est√° preparada e esperando ser despachada ao campo de batalha.";
+							mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 						}
 						else {
-							mes "[Oficial do ExÈrcito Guillaume]";
-							mes "Certamente vocÍ j· est· preparado para a batalha!";
-							mes "V· e mostre aos Croixs o significado da palavra medo!";
-							mes "Hoje nosso grito de vitÛria dever· ser entoado por todo campo de batalha!";
+							mes "[Oficial do Ex√©rcito Guillaume]";
+							mes "Certamente voc√™ j√° est√° preparado para a batalha!";
+							mes "V√° e mostre aos Croixs o significado da palavra medo!";
+							mes "Hoje nosso grito de vit√≥ria dever√° ser entoado por todo campo de batalha!";
 							close2;
 							warp "bat_room",114,223;
 							end;
@@ -147,8 +147,8 @@ bat_room,140,178,5	script	Oficial de Tierrar#02a	418,{
 		}
 		break;
 	case 2:
-		mes "[Oficial do ExÈrcito Guillaume]";
-		mes "Hoje nÛs sairemos vencedores!";
+		mes "[Oficial do Ex√©rcito Guillaume]";
+		mes "Hoje n√≥s sairemos vencedores!";
 		break;
 	}
 	close;
@@ -158,97 +158,97 @@ bat_room,140,178,5	script	Oficial de Tierrar#02a	418,{
 //===============================================================
 bat_room,127,178,5	script	Cavaleiro Guillaume#1	417,{
 	mes "[Cavaleiro Guillaume]";
-	mes "O Desfiladeiro de Tierra consiste em uma divis„o de dois Ìngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h· um depÛsito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas direÁıes Noroeste e Sudoeste respectivamente.";
+	mes "O Desfiladeiro de Tierra consiste em uma divis√£o de dois √≠ngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h√° um dep√≥sito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas dire√ß√µes Noroeste e Sudoeste respectivamente.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "A batalha comeÁa dentro do navio de seu exÈrcito e, o objetivo È avanÁar e destruir todos os suprimentos do depÛsito inimigo antes que ele destrua o seu.";
+	mes "A batalha come√ßa dentro do navio de seu ex√©rcito e, o objetivo √© avan√ßar e destruir todos os suprimentos do dep√≥sito inimigo antes que ele destrua o seu.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "O curandeiro do campo de batalha ir· ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
-	mes "O exÈrcito que capturar a bandeira neutra no centro do Desfiladeiro ser· recompensado com pontos de regeneraÁ„p extras, significando que seus soldados ir„o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
+	mes "O curandeiro do campo de batalha ir√° ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
+	mes "O ex√©rcito que capturar a bandeira neutra no centro do Desfiladeiro ser√° recompensado com pontos de regenera√ß√£p extras, significando que seus soldados ir√£o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "Estes dois depÛsitos de suprimentos est„o conectados um ao outro por pequenos e estreitos caminhos mas, os portıes est„o bloqueados com barricadas.";
-	mes "Pense e se mova o mais r·pido que pode. A vitÛria do exÈrcito aliado depende muito de sua contribuiÁ„o.";
+	mes "Estes dois dep√≥sitos de suprimentos est√£o conectados um ao outro por pequenos e estreitos caminhos mas, os port√µes est√£o bloqueados com barricadas.";
+	mes "Pense e se mova o mais r√°pido que pode. A vit√≥ria do ex√©rcito aliado depende muito de sua contribui√ß√£o.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "Por favor, lembre-se: quando vocÍ entra em uma batalha vocÍ receber· um sinal que indica o perÌodo de duraÁ„o pelo qual vocÍ n„o poder· participar de um mesmo tipo de batalha.";
-	mes "VocÍ poder· checar esta duraÁ„o pressionando os botıes Alt+U.";
+	mes "Por favor, lembre-se: quando voc√™ entra em uma batalha voc√™ receber√° um sinal que indica o per√≠odo de dura√ß√£o pelo qual voc√™ n√£o poder√° participar de um mesmo tipo de batalha.";
+	mes "Voc√™ poder√° checar esta dura√ß√£o pressionando os bot√µes Alt+U.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "VocÍ est· pronto pra batalha? Ent„o se apresente ao recrutador prÛximo ‡ mim!";
+	mes "Voc√™ est√° pronto pra batalha? Ent√£o se apresente ao recrutador pr√≥ximo √† mim!";
 	close;
 }
 
 bat_room,143,178,5	script	Cavaleiro Guillaume#2	417,{
 	mes "[Cavaleiro Guillaume]";
-	mes "O Desfiladeiro de Tierra consiste em uma divis„o de dois Ìngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h· um depÛsito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas direÁıes Noroeste e Sudoeste respectivamente.";
+	mes "O Desfiladeiro de Tierra consiste em uma divis√£o de dois √≠ngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h√° um dep√≥sito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas dire√ß√µes Noroeste e Sudoeste respectivamente.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "A batalha comeÁa dentro do navio de seu exÈrcito e, o objetivo È avanÁar e destruir todos os suprimentos do depÛsito inimigo antes que ele destrua o seu.";
+	mes "A batalha come√ßa dentro do navio de seu ex√©rcito e, o objetivo √© avan√ßar e destruir todos os suprimentos do dep√≥sito inimigo antes que ele destrua o seu.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "O curandeiro do campo de batalha ir· ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
-	mes "O exÈrcito que capturar a bandeira neutra no centro do Desfiladeiro ser· recompensado com pontos de regeneraÁ„p extras, significando que seus soldados ir„o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
+	mes "O curandeiro do campo de batalha ir√° ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
+	mes "O ex√©rcito que capturar a bandeira neutra no centro do Desfiladeiro ser√° recompensado com pontos de regenera√ß√£p extras, significando que seus soldados ir√£o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "Estes dois depÛsitos de suprimentos est„o conectados um ao outro por pequenos e estreitos caminhos mas, os portıes est„o bloqueados com barricadas.";
-	mes "Pense e se mova o mais r·pido que pode. A vitÛria do exÈrcito aliado depende muito de sua contribuiÁ„o.";
+	mes "Estes dois dep√≥sitos de suprimentos est√£o conectados um ao outro por pequenos e estreitos caminhos mas, os port√µes est√£o bloqueados com barricadas.";
+	mes "Pense e se mova o mais r√°pido que pode. A vit√≥ria do ex√©rcito aliado depende muito de sua contribui√ß√£o.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "Por favor, lembre-se: quando vocÍ entra em uma batalha vocÍ receber· um sinal que indica o perÌodo de duraÁ„o pelo qual vocÍ n„o poder· participar de um mesmo tipo de batalha.";
-	mes "VocÍ poder· checar esta duraÁ„o pressionando os botıes Alt+U.";
+	mes "Por favor, lembre-se: quando voc√™ entra em uma batalha voc√™ receber√° um sinal que indica o per√≠odo de dura√ß√£o pelo qual voc√™ n√£o poder√° participar de um mesmo tipo de batalha.";
+	mes "Voc√™ poder√° checar esta dura√ß√£o pressionando os bot√µes Alt+U.";
 	next;
 	mes "[Cavaleiro Guillaume]";
-	mes "VocÍ est· pronto pra batalha? Ent„o se apresente ao recrutador prÛximo ‡ mim!";
+	mes "Voc√™ est√° pronto pra batalha? Ent√£o se apresente ao recrutador pr√≥ximo √† mim!";
 	close;
 }
 
 bat_room,127,121,1	script	Cavaleiro Croix#1	413,{
 	mes "[Cavaleiro Croix]";
-	mes "O Desfiladeiro de Tierra consiste em uma divis„o de dois Ìngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h· um depÛsito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas direÁıes Noroeste e Sudoeste respectivamente.";
+	mes "O Desfiladeiro de Tierra consiste em uma divis√£o de dois √≠ngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h√° um dep√≥sito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas dire√ß√µes Noroeste e Sudoeste respectivamente.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "A batalha comeÁa dentro do navio de seu exÈrcito e, o objetivo È avanÁar e destruir todos os suprimentos do depÛsito inimigo antes que ele destrua o seu.";
+	mes "A batalha come√ßa dentro do navio de seu ex√©rcito e, o objetivo √© avan√ßar e destruir todos os suprimentos do dep√≥sito inimigo antes que ele destrua o seu.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "O curandeiro do campo de batalha ir· ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
-	mes "O exÈrcito que capturar a bandeira neutra no centro do Desfiladeiro ser· recompensado com pontos de regeneraÁ„p extras, significando que seus soldados ir„o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
+	mes "O curandeiro do campo de batalha ir√° ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
+	mes "O ex√©rcito que capturar a bandeira neutra no centro do Desfiladeiro ser√° recompensado com pontos de regenera√ß√£p extras, significando que seus soldados ir√£o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "Estes dois depÛsitos de suprimentos est„o conectados um ao outro por pequenos e estreitos caminhos mas, os portıes est„o bloqueados com barricadas.";
-	mes "Pense e se mova o mais r·pido que pode. A vitÛria do exÈrcito aliado depende muito de sua contribuiÁ„o.";
+	mes "Estes dois dep√≥sitos de suprimentos est√£o conectados um ao outro por pequenos e estreitos caminhos mas, os port√µes est√£o bloqueados com barricadas.";
+	mes "Pense e se mova o mais r√°pido que pode. A vit√≥ria do ex√©rcito aliado depende muito de sua contribui√ß√£o.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "Por favor, lembre-se: quando vocÍ entra em uma batalha vocÍ receber· um sinal que indica o perÌodo de duraÁ„o pelo qual vocÍ n„o poder· participar de um mesmo tipo de batalha.";
-	mes "VocÍ poder· checar esta duraÁ„o pressionando os botıes Alt+U.";
+	mes "Por favor, lembre-se: quando voc√™ entra em uma batalha voc√™ receber√° um sinal que indica o per√≠odo de dura√ß√£o pelo qual voc√™ n√£o poder√° participar de um mesmo tipo de batalha.";
+	mes "Voc√™ poder√° checar esta dura√ß√£o pressionando os bot√µes Alt+U.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "VocÍ est· pronto pra batalha? Ent„o se apresente ao recrutador prÛximo ‡ mim!";
+	mes "Voc√™ est√° pronto pra batalha? Ent√£o se apresente ao recrutador pr√≥ximo √† mim!";
 	close;
 }
 
 bat_room,143,121,1	script	Cavaleiro Croix#2	413,{
 	mes "[Cavaleiro Croix]";
-	mes "O Desfiladeiro de Tierra consiste em uma divis„o de dois Ìngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h· um depÛsito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas direÁıes Noroeste e Sudoeste respectivamente.";
+	mes "O Desfiladeiro de Tierra consiste em uma divis√£o de dois √≠ngremes lados dispostos verticalmente e divididos horizontalmente e, em cada um dos lados h√° um dep√≥sito de suprimentos, tanto para os Guillaumes quanto para os Croixs nas dire√ß√µes Noroeste e Sudoeste respectivamente.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "A batalha comeÁa dentro do navio de seu exÈrcito e, o objetivo È avanÁar e destruir todos os suprimentos do depÛsito inimigo antes que ele destrua o seu.";
+	mes "A batalha come√ßa dentro do navio de seu ex√©rcito e, o objetivo √© avan√ßar e destruir todos os suprimentos do dep√≥sito inimigo antes que ele destrua o seu.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "O curandeiro do campo de batalha ir· ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
-	mes "O exÈrcito que capturar a bandeira neutra no centro do Desfiladeiro ser· recompensado com pontos de regeneraÁ„p extras, significando que seus soldados ir„o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
+	mes "O curandeiro do campo de batalha ir√° ressuscitar os soldados a cada 25 segundos para que eles possam voltar a batalhar.";
+	mes "O ex√©rcito que capturar a bandeira neutra no centro do Desfiladeiro ser√° recompensado com pontos de regenera√ß√£p extras, significando que seus soldados ir√£o ser ressuscitados mais que os do outro lado, dando assim alguma vantagem.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "Estes dois depÛsitos de suprimentos est„o conectados um ao outro por pequenos e estreitos caminhos mas, os portıes est„o bloqueados com barricadas.";
-	mes "Pense e se mova o mais r·pido que pode. A vitÛria do exÈrcito aliado depende muito de sua contribuiÁ„o.";
+	mes "Estes dois dep√≥sitos de suprimentos est√£o conectados um ao outro por pequenos e estreitos caminhos mas, os port√µes est√£o bloqueados com barricadas.";
+	mes "Pense e se mova o mais r√°pido que pode. A vit√≥ria do ex√©rcito aliado depende muito de sua contribui√ß√£o.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "Por favor, lembre-se: quando vocÍ entra em uma batalha vocÍ receber· um sinal que indica o perÌodo de duraÁ„o pelo qual vocÍ n„o poder· participar de um mesmo tipo de batalha.";
-	mes "VocÍ poder· checar esta duraÁ„o pressionando os botıes Alt+U.";
+	mes "Por favor, lembre-se: quando voc√™ entra em uma batalha voc√™ receber√° um sinal que indica o per√≠odo de dura√ß√£o pelo qual voc√™ n√£o poder√° participar de um mesmo tipo de batalha.";
+	mes "Voc√™ poder√° checar esta dura√ß√£o pressionando os bot√µes Alt+U.";
 	next;
 	mes "[Cavaleiro Croix]";
-	mes "VocÍ est· pronto pra batalha? Ent„o se apresente ao recrutador prÛximo ‡ mim!";
+	mes "Voc√™ est√° pronto pra batalha? Ent√£o se apresente ao recrutador pr√≥ximo √† mim!";
 	close;
 }
 
@@ -256,54 +256,54 @@ bat_room,143,121,1	script	Cavaleiro Croix#2	413,{
 //============================================================
 bat_room,125,121,1	script	Tierra Gorge Officer#01b	414,{
 	if (checkweight(1201,1) == 0) {
-		mes "- Espere aÌ um minuto! -";
-		mes "- Atualmente vocÍ est· -";
+		mes "- Espere a√≠ um minuto! -";
+		mes "- Atualmente voc√™ est√° -";
 		mes "- carregando itens demais. -";
-		mes "- Por favor tente novamente apÛs -";
-		mes "- vocÍ descarregar um pouco do peso. -";
+		mes "- Por favor tente novamente ap√≥s -";
+		mes "- voc√™ descarregar um pouco do peso. -";
 		close;
 	}
-	mes "[Oficial do ExÈrcito Croix]";
-	mes "Vamos mostrar aos fedorentos Guillaumes todo o poder do querido ExÈrcito Croix!";
+	mes "[Oficial do Ex√©rcito Croix]";
+	mes "Vamos mostrar aos fedorentos Guillaumes todo o poder do querido Ex√©rcito Croix!";
 	next;
-	switch(select("Eu quero me juntar ao seu exÈrcito!:Terminar a conversa.")) {
+	switch(select("Eu quero me juntar ao seu ex√©rcito!:Terminar a conversa.")) {
 	case 1:
 		if ((Class == Job_Novice) || (BaseClass == Job_Super_Novice)) {
-			mes "[Oficial do ExÈrcito Croix]";
-			mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Guillaume mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+			mes "[Oficial do Ex√©rcito Croix]";
+			mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Guillaume mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 		}
 		else {
 			if (BaseLevel < 80) {
-				mes "[Oficial do ExÈrcito Croix]";
-				mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Guillaume mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+				mes "[Oficial do Ex√©rcito Croix]";
+				mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Guillaume mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if ((.@chk_urtime == 0)|| (.@chk_urtime == 1)) {
-					mes "[Oficial do ExÈrcito Croix]";
-					mes "Me parece que vocÍ acabou de voltar do campo de batalha.";
-					mes "Ent„o È muito cedo pra vocÍ retornar. V· descansar um pouco e deixe os inimigos conosco!";
+					mes "[Oficial do Ex√©rcito Croix]";
+					mes "Me parece que voc√™ acabou de voltar do campo de batalha.";
+					mes "Ent√£o √© muito cedo pra voc√™ retornar. V√° descansar um pouco e deixe os inimigos conosco!";
 				}
 				else {
 					if (.@chk_urtime == 2)
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a02");
 					if (.@mapcount > 0) {
-						mes "[Oficial do ExÈrcito Croix]";
-						mes "Eu recebi um comunidado informando que uma unidade do batalh„o j· foi despachada para o campo de batalha e est· enfrentando os Guillaumes no momento.";
-						mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+						mes "[Oficial do Ex√©rcito Croix]";
+						mes "Eu recebi um comunidado informando que uma unidade do batalh√£o j√° foi despachada para o campo de batalha e est√° enfrentando os Guillaumes no momento.";
+						mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 					}
 					else {
 						if ($@TierraBG1) {
-							mes "[Oficial do ExÈrcito Croix]";
-							mes "Uma unidade do batalh„o j· est· preparada e esperando ser despachada ao campo de batalha.";
-							mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+							mes "[Oficial do Ex√©rcito Croix]";
+							mes "Uma unidade do batalh√£o j√° est√° preparada e esperando ser despachada ao campo de batalha.";
+							mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 						}
 						else {
-							mes "[Oficial do ExÈrcito Croix]";
-							mes "Certamente vocÍ j· est· preparado para a batalha!";
-							mes "V· e mostre aos Guillaumes o significado da palavra medo!";
-							mes "Hoje nosso grito de vitÛria dever· ser entoado por todo campo de batalha!";
+							mes "[Oficial do Ex√©rcito Croix]";
+							mes "Certamente voc√™ j√° est√° preparado para a batalha!";
+							mes "V√° e mostre aos Guillaumes o significado da palavra medo!";
+							mes "Hoje nosso grito de vit√≥ria dever√° ser entoado por todo campo de batalha!";
 							close2;
 							warp "bat_room",57,207;
 							end;
@@ -314,8 +314,8 @@ bat_room,125,121,1	script	Tierra Gorge Officer#01b	414,{
 		}
 		break;
 	case 2:
-		mes "[Oficial do ExÈrcito Croix]";
-		mes "Hoje nÛs sairemos vencedores!";
+		mes "[Oficial do Ex√©rcito Croix]";
+		mes "Hoje n√≥s sairemos vencedores!";
 		break;
 	}
 	close;
@@ -323,56 +323,56 @@ bat_room,125,121,1	script	Tierra Gorge Officer#01b	414,{
 
 bat_room,140,121,1	script	Oficial de Tierra#02b	414,{
 	if (checkweight(1201,1) == 0) {
-		mes "- Espere aÌ um minuto! -";
-		mes "- Atualmente vocÍ est· -";
+		mes "- Espere a√≠ um minuto! -";
+		mes "- Atualmente voc√™ est√° -";
 		mes "- carregando itens demais. -";
-		mes "- Por favor tente novamente apÛs -";
-		mes "- vocÍ descarregar um pouco do peso. -";
+		mes "- Por favor tente novamente ap√≥s -";
+		mes "- voc√™ descarregar um pouco do peso. -";
 		close;
 	}
-	mes "[Oficial do ExÈrcito Croix]";
-	mes "Vamos mostrar aos fedorentos Guillaumes todo o poder do querido ExÈrcito Croix!";
+	mes "[Oficial do Ex√©rcito Croix]";
+	mes "Vamos mostrar aos fedorentos Guillaumes todo o poder do querido Ex√©rcito Croix!";
 	next;
-	switch(select("Eu quero me juntar ao seu exÈrcito!:Terminar a conversa.")) {
+	switch(select("Eu quero me juntar ao seu ex√©rcito!:Terminar a conversa.")) {
 	case 1:
 		if ((Class == Job_Novice) || (BaseClass == Job_Super_Novice)) {
-			mes "[Oficial do ExÈrcito Croix]";
-			mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Guillaume mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+			mes "[Oficial do Ex√©rcito Croix]";
+			mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Guillaume mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 			break;
 		}
 		else {
 			if (BaseLevel < 80) {
-			mes "[Oficial do ExÈrcito Croix]";
-			mes "Eu estou muito honrado que vocÍ queira se juntar para lutar contra o exÈrcito Guillaume mas, eu sinto muito! Eu n„o posso mandar um novato como vocÍ para morrer cruelmente no campo de batalha.";
+			mes "[Oficial do Ex√©rcito Croix]";
+			mes "Eu estou muito honrado que voc√™ queira se juntar para lutar contra o ex√©rcito Guillaume mas, eu sinto muito! Eu n√£o posso mandar um novato como voc√™ para morrer cruelmente no campo de batalha.";
 			break;
 			}
 			else {
 				set .@chk_urtime,checkquest(2069,PLAYTIME);
 				if (.@chk_urtime == 1) {
-					mes "[Oficial do ExÈrcito Croix]";
-					mes "Me parece que vocÍ acabou de voltar do campo de batalha.";
-					mes "Ent„o È muito cedo pra vocÍ retornar. V· descansar um pouco e deixe os inimigos conosco!";
+					mes "[Oficial do Ex√©rcito Croix]";
+					mes "Me parece que voc√™ acabou de voltar do campo de batalha.";
+					mes "Ent√£o √© muito cedo pra voc√™ retornar. V√° descansar um pouco e deixe os inimigos conosco!";
 				}
 				else {
 					if (.@chk_urtime == 2)
 						erasequest 2069;
 					set .@mapcount,getmapusers("bat_a02");
 					if (.@mapcount > 0) {
-						mes "[Oficial do ExÈrcito Croix]";
-						mes "Eu recebi um comunidado informando que uma unidade do batalh„o j· foi despachada para o campo de batalha e est· enfrentando os Guillaumes no momento.";
-						mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+						mes "[Oficial do Ex√©rcito Croix]";
+						mes "Eu recebi um comunidado informando que uma unidade do batalh√£o j√° foi despachada para o campo de batalha e est√° enfrentando os Guillaumes no momento.";
+						mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 					}
 					else {
 						if ($@TierraBG2) {
-							mes "[Oficial do ExÈrcito Croix]";
-							mes "Uma unidade do batalh„o j· est· preparada e esperando ser despachada ao campo de batalha.";
-							mes "Por que vocÍ n„o espera um instante? Eu aconselho vocÍ a afiar suas armas e preparar seus suprimentos atÈ a hora da batalha.";
+							mes "[Oficial do Ex√©rcito Croix]";
+							mes "Uma unidade do batalh√£o j√° est√° preparada e esperando ser despachada ao campo de batalha.";
+							mes "Por que voc√™ n√£o espera um instante? Eu aconselho voc√™ a afiar suas armas e preparar seus suprimentos at√© a hora da batalha.";
 						}
 						else {
-							mes "[Oficial do ExÈrcito Croix]";
-							mes "Certamente vocÍ j· est· preparado para a batalha!";
-							mes "V· e mostre aos Guillaumes o significado da palavra medo!";
-							mes "Hoje nosso grito de vitÛria dever· ser entoado por todo campo de batalha!";
+							mes "[Oficial do Ex√©rcito Croix]";
+							mes "Certamente voc√™ j√° est√° preparado para a batalha!";
+							mes "V√° e mostre aos Guillaumes o significado da palavra medo!";
+							mes "Hoje nosso grito de vit√≥ria dever√° ser entoado por todo campo de batalha!";
 							close2;
 							warp "bat_room",114,207;
 							end;
@@ -383,8 +383,8 @@ bat_room,140,121,1	script	Oficial de Tierra#02b	414,{
 		}
 		break;
 	case 2:
-		mes "[Oficial do ExÈrcito Croix]";
-		mes "Hoje nÛs sairemos vencedores!";
+		mes "[Oficial do Ex√©rcito Croix]";
+		mes "Hoje n√≥s sairemos vencedores!";
 		break;
 	}
 	close;

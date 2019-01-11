@@ -1,0 +1,40 @@
+﻿//===== rAthena Script ======================================= 
+//= Hugel Airport NPCs
+//===== By: ================================================== 
+//= rAthena Dev Team
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= Hugel Airport NPCs
+//===== Additional Comments: ================================= 
+//= 1.0 First version.
+//============================================================ 
+
+hugel,178,142,0	script	toairplane#hugel	45,1,1,{
+	end;
+OnTouch:
+	mes "Para usar o aeroplano, você precisa pagar uma taxa de 1,200 Zenys";
+    mes "ou possuir um Bilhete para Aeroplano.";
+	mes "Gostaria de utilizar nossos serviços?";
+	next;
+	if (select("Sim:Não") == 1) {
+		if (countitem(7311) > 0) {
+			delitem 7311,1; //Bilhete para Aeroplano
+			warp "airplane",244,58;
+			end;
+		}
+		if (Zeny >= 1200) {
+			set Zeny, Zeny - 1200;
+			warp "airplane",244,58;
+			end;
+		}
+		mes "Desculpe, mas você não possui zeny suficiente.";
+		mes "Lembre-se, você precisa possuir o Bilhete para Aeroplano,";
+		mes "ou ter a taxa de embarque equivalente a 1,200 zenys.";
+		close;
+	}
+	mes "Obrigado, volte sempre.";
+	close;
+}

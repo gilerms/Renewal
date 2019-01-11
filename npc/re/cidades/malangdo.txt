@@ -1,0 +1,435 @@
+//===== rAthena Script ======================================= 
+//= Malangdo Town
+//===== By: ================================================== 
+//= Muad_Dib
+//===== Current Version: ===================================== 
+//= 1.5
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= [Official Conversion]
+//= Malangdo Town Script
+//===== Additional Comments: ================================= 
+//= 1.0 First version. [Euphy]
+//= 1.1 Added entrance scripts.
+//= 1.2 Moved "Odgnalam" coordinates.
+//= 1.3 Fixed dialogues.
+//= 1.4 Dialogue edits, source iRO.
+//= 1.5 Added Izlude duplicates.
+//============================================================
+
+// Malangdo Transportation :: malangdo_go
+//============================================================
+-	script	Dolangmal	-1,{
+	if (checkquest(5091) == -1) {
+		mes "[Dolangmal]";
+		mes "Ei~! Oi humano~ Eu sou o Sr. Dolangmal. kakaka~";
+		next;
+		mes "[Dolangmal]";
+		mes "Nós somos enviados para cá para levá-lo ao paraíso dos gatos, ^A2314BMalangdo^000000.";
+		next;
+		mes "[Dolangmal]";
+		set.@s$, "Por que você não vai para ^A2314BMalangdo^000000?";
+		switch (atoi(strnpcinfo (2))) {
+			case 1: mes "Como é isso? A cidade apinhada de Prontera é boa, mas por que você não vai para o céu dos gatos, ^A2314BMalangdo^000000?"; break;
+			case 2: mes "Por que você não vai para ^A2314BMalangdo ^000000? Esse lugar é melhor que Geffen, onde há apenas multidões de magos honestos e simples."; break;
+			case 3: mes "O ar fresco de Payon não é ruim, mas por que você não vai melhor como o paraíso dos gatos, ^A2314BMalangdo^000000?"; break;
+			case 4: mes .@s$+"O lugar bonito e tranquilo é melhor que Aldebaran, onde é tão barulhento com o som do relógio."; break;
+			case 5: mes .@s$+"O lugar bonito e tranquilo é melhor que o Morroc, com seu calor e tempestades de areia."; break;
+			case 6: mes .@s$+"O lugar bonito é melhor que Juno, cheio de livros e dores de cabeça."; break;
+			case 7: mes .@s$+"O lugar complexo é melhor que Rachel, onde é horrivelmente silencioso."; break;
+			case 8: mes .@s$+"O lugar seguro é melhor que Lighthanlzen, que é muito perigoso."; break;
+			case 9: mes .@s$+"O cheiro deste lugar no mar é melhor que Mora, que é cheio de um cheiro de erva."; break;
+		}
+		next;
+		if (select("Não:Ir para ^A2314BMalangdo^000000") == 1) {
+			mes "[Dolangmal]";
+			mes "O quê? Você não quer ir a ^A2314BMalangdo^000000? certo!";
+			next;
+			mes "[Dolangmal]";
+			mes "Você é um cara tão chato. Se você não quer ir, por que você falou comigo... mas...";
+			next;
+			mes "[Dolangmal]";
+			mes "^9E1837Admiral Tomas^000000 disse para sequestrar seres humanos... Não... Traga-os educadamente?";
+			next;
+			mes "[Dolangmal]";
+			mes "De qualquer forma, eu tenho você. Sempre que você quiser ir, apenas me diga.";
+			close;
+		}
+		mes "[Dolangmal]";
+		mes "Ok! Eu gosto da sua atitude. Cheia de paixão.";
+		next;
+		mes "[Dolangmal]";
+		mes "Agora, antes de você ir para ^A2314BMalangdo^000000, deixe-me dar alguns avisos.";
+		next;
+		mes "[Dolangmal]";
+		mes "Primeiro!! É natural que quando você chegar ^A2314BMalangdo^000000, você deve notificar ao ^9E1837Admiral Tomas^000000 que você está aqui.";
+		next;
+		mes "[Dolangmal]";
+		mes "Se você não fizer isso, você pode ser atacado por gatos assustadores e selvagens quando você anda por ruas escuras.";
+		next;
+		mes "[Dolangmal]";
+		mes "Em segundo lugar!! A cidade de  ^A2314BMalangdo^000000 é absolutamente nossa ilha de gatos, apesar que abrirmos para humanos.";
+		next;
+		mes "[Dolangmal]";
+		mes "Nós temos uma personalidade... não... não... nos respeite como uma catalidade porque somos gatos.";
+		next;
+		mes "[Dolangmal]";
+		mes "E o próximo é...";
+		next;
+		mes "Dolangmal prossegue e dá centenas de avisos.";
+		next;
+		mes "[Dolangmal]";
+		mes "Ok! Esses são todos os avisos! Eles são fáceis e simples... certo? Você consegue se lembrar deles?";
+		next;
+		switch(select("Lembre-se de seus avisos.:Não lembra")) {
+		case 1:
+			mes "[Dolangmal]";
+			mes "Ok! Não morda dois ratos com uma só boca. ^9E1837Admiral Tomas^000000 está localizado no ^A2314Bcentro do navio em Malangdo^000000.";
+			next;
+			mes "[Dolangmal]";
+			mes "Não esqueça de lhe dar aviso de sua chegada.";
+			next;
+			mes "[Dolangmal]";
+			mes "Tudo bem. Vamos para o céu dos gatos, ^A2314BMalangdo^000000~";
+			setquest 5091;
+			completequest 5091;
+			warp "malangdo",217,85;
+			close;
+		case 2:
+			mes "[Dolangmal]";
+			mes "O quê!? Você não pode manter essas regras fáceis? Droga!";
+			next;
+			mes "[Dolangmal]";
+			mes "Você é um cara tão chato. Se você não pode ficar com eles, por que você não me contou durante a nossa conversa? Eu contei tudo... mas...";
+			next;
+			mes "[Dolangmal]";
+			mes "^9E1837Admiral Tomas^000000 disse para sequestrar seres humanos... Não... Traga-os educadamente?";
+			next;
+			mes "[Dolangmal]";
+			mes "De qualquer forma, eu tenho você. Apenas me diga quando você quiser ir.";
+			close;
+		}
+	}
+	mes "[Dolangmal]";
+	mes "Uh? Você deve ser o da última vez...? Tudo bem. Você visitou ^A2314BMalangdo^000000?";
+	next;
+	switch (select ("Leve-me para ^A2314BMalangdo^000000 novamente: eu visitei")) {
+	case 1:
+		mes "[Dolangmal]";
+		mes "Eu realmente quero mandar você para lá, mas não posso por causa da política. É difícil enviar pessoas que já visitaram ^A2314BMalangdo^000000.";
+		next;
+		mes "[Dolangmal]";
+		mes "E isso foi mais ou menos... É a regra 53...";
+		next;
+		mes "[Dolangmal]";
+		mes "Na verdade, deixe-me dizer a regra 53. Eu sou um gato indulgente.";
+		next;
+		mes "[Dolangmal]";
+		mes "Se você quiser voltar para ^A2314BMalangdo^000000, pegue o navio em Izlude ou Alberta.";
+		next;
+		mes "[Dolangmal]";
+		mes "Se você aproveitar aquela agradável viagem de mar, você chegará ao paraíso dos gatos, ^A2314BMalangdo^000000.";
+		next;
+		mes "[Dolangmal]";
+		mes "Tão fácil! Não é? Bem, adeus~";
+		close;
+	case 2:
+		mes "[Dolangmal]";
+		mes "Como foi? Você gostou? Eu sabia disso. Kakaka~";
+		next;
+		mes "[Dolangmal]";
+		mes "Ah! Eu só quero ter certeza ...";
+		next;
+		mes "[Dolangmal]";
+		mes "Novamente, se você quiser voltar para ^A2314BMalangdo^000000, você sabe onde pegar um navio em Izlude ou Alberta?";
+		next;
+		mes "[Dolangmal]";
+		mes "Hm~ Você pode saber porque você é uma pessoa inteligente. Bem, te vejo de novo~";
+		close;
+	}
+}
+prontera,114,77,6	duplicate(Dolangmal)	Dolangmal#1	553
+geffen,109,61,6	duplicate(Dolangmal)	Dolangmal#2	553
+payon,200,106,4	duplicate(Dolangmal)	Dolangmal#3	553
+aldebaran,170,104,4	duplicate(Dolangmal)	Dolangmal#4	553
+morocc,168,275,4	duplicate(Dolangmal)	Dolangmal#5	553
+yuno,165,122,4	duplicate(Dolangmal)	Dolangmal#6	553
+rachel,121,126,4	duplicate(Dolangmal)	Dolangmal#7	553
+lighthalzen,254,83,5	duplicate(Dolangmal)	Dolangmal#8	553
+mora,57,150,4	duplicate(Dolangmal)	Dolangmal#9	553
+
+-	script	::Odgnalam	-1,{
+	mes "Esse gato está dormindo no calor" +((strnpcinfo (2) == "albe")?"Alberta":"Izlude")+"  do sol.";
+	next;
+	if (select ("Deixe-o dormir: Fale com ele") == 1) close;
+		mes "[Odgnalam]";
+		mes "Meow? Huh?";
+		next;
+	if (ep13_yong1 == 0) {
+		set .@price,1000;
+		set .@s1$,"Huh! Você é tão chato. Deixe-me mandar para ^A2314BMalangdo^000000 por ^0000FF1000 Zeny's^000000.";
+		set .@s2$,"Dinheiro? Onde está o dinheiro? Você não pode ir a lugar algum sem o dinheiro. Que vergonha para você.";
+	} else if (ep13_yong1 < 60) {
+		set .@price,999;
+		set .@s1$,"Você tem um pouco de relacionamento com a frota de gatos. Eu lhe darei um de desconto especial de ^0000FF999Zeny^000000 a ^A2314BMalangdo^000000, porque você tem relação com a frota.";
+		set .@s2$,"Onde está o dinheiro? Você não tem senso de honra.";
+	} else if (ep13_yong1 > 59 && ep13_yong1 < 80) {
+		set .@price,500;
+		set .@s1$,"Você deu várias ajudas para a frota do nossos gatos, então deixe-me dar-lhe um desconto especial de 50% no preço ^0000FF500Zeny^000000. Vou mandar você para ^A2314BMalangdo^000000.";
+		set .@s2$,"Você não tem dinheiro para pagar 50% de desconto? Eu não acredito.";
+	} else {
+		mes "[Odgnalam]";
+		mes "Você é um herói da frota de gatos. Sua atividade é a lenda entre nós.";
+		next;
+		mes "[Odgnalam]";
+		mes "Como você é um herói da frota de gatos, deixe-me mandar você para ^ A2314BMalangdo ^ 000000 de graça.";
+		next;
+		if(select("Envie-me para Malangdo!:Agora não.") == 1) {
+			mes "[Odgnalam]";
+			mes "Tudo bem vamos... Tenha uma boa viagem.";
+			warp "malangdo",217,85;
+		}
+		close;
+	}
+	mes "[Odgnalam]";
+	mes .@s1$;
+	next;
+	if(select("Envie-me para Malangdo!:Agora não.") == 2) close;
+	if (Zeny < .@price) {
+		mes "[Odgnalam]";
+		mes "Dinheiro? Onde está o dinheiro? Você não pode ir a lugar algum sem o dinheiro. Que vergonha para você.";
+		close;
+	}
+	set Zeny, Zeny - .@price;
+	mes "[Odgnalam]";
+	mes "Deixe-me mandar você imediatamente. Let's go~";
+	warp "malangdo",217,85;
+	close;
+}
+alberta,200,151,4	duplicate(Odgnalam)	Odgnalam#albe	554
+izlude,182,218,4	duplicate(Odgnalam)	Odgnalam#iz	554	// Old coordinates: (182,192)
+izlude_a,182,218,4	duplicate(Odgnalam)	Odgnalam#iz_a	554
+izlude_b,182,218,4	duplicate(Odgnalam)	Odgnalam#iz_b	554
+izlude_c,182,218,4	duplicate(Odgnalam)	Odgnalam#iz_c	554
+izlude_d,182,218,4	duplicate(Odgnalam)	Odgnalam#iz_d	554
+
+malangdo,219,86,4	script	Kong#malang	545,{
+	mes "[Kong]";
+	mes "Você se divertiu em Malangdo?";
+	mes "A frota tem um serviço para Izlude e Alberta.";
+	next;
+	if (ep13_yong1 == 0) {
+		set .@price,1000;
+		set .@s1$,"1000 zeny";
+		set .@s2$,"Tenha um bom dia em Malangdo.";
+		set .@no_money$,"É difícil de graça.";
+		set .@yes_money$,"Tenha uma boa viagem.";
+		mes "[Kong]";
+		mes "A taxa do navio é de apenas 1000 zenys, para onde você quer ir?";
+		next;
+	} else if (ep13_yong1 < 60) {
+		set .@price,999;
+		set .@s1$,"999 zeny";
+		set .@s2$,"Tenha um dia cheio de fortunas em Malangdo ...";
+		set .@no_money$,"É difícil mesmo que você tenha um relacionamento com a frota.";
+		set .@yes_money$,"Obrigado, tenha uma viagem maravilhosa.";
+		mes "[Kong]";
+		mes "Você tem uma conexão com nossa frota. Aplique um preço especial 999 zeny. Onde você quer ir?";
+		next;
+	} else if (ep13_yong1 > 59 && ep13_yong1 < 80) {
+		set .@price,500;
+		set .@s1$,"500 zeny";
+		set .@s2$, "Há cheio de fortuna e jackpot em Malangdo.";
+		set .@no_money$, "Oh meu deus. Você não tem 500 zeny? É difícil de graça.";
+		set .@yes_money$, "Tenha uma boa viagem e venha novamente.";
+		mes "[Kong]";
+		mes "Uau ~ Você contribuiu muito para a nossa frota. Tudo bem !! Preço com desconto especial 500 zeny. Onde você quer ir?";
+		next;
+	} else {
+		set .@price,0;
+		set .@s1$,"Livre para o herói da nossa frota !!";
+		set .@s2$, "Ninguém se opõe ao herói de nossa frota que fica em Malangdo ...";
+		mes "[Kong]";
+		mes "Ah... Você é o lendário herói da frota do nossos gatos.";
+		next;
+		mes "[Kong]";
+		mes "Não podemos cobrar o herói de nossa frota. Qual é o seu destino?";
+		next;
+	}
+	set .@i, select("- Izlude --- "+.@s1$+":- Alberta --- "+.@s1$+":- Ficar em Malangdo");
+	mes "[Kong]";
+	if (.@i == 3) {
+		mes .@s2$;
+		close;
+	}
+	if (ep13_yong1 > 80) {
+		mes "Tenha uma viagem confortável.";
+		if (.@i == 1)
+			warp "izlude",195,212; // Old coordinates: (194,180)
+		else
+			warp "alberta",192,150;
+		close;
+	}
+	if (Zeny < .@price) {
+		mes .@no_money$;
+		close;
+	}
+	set Zeny, Zeny - .@price;
+	mes .@yes_money$;
+	if (.@i == 1)
+		warp "izlude",195,212;
+	else
+		warp "alberta",192,150;
+	close;
+}
+
+// Generic Malangdo NPCs :: malang_tre
+//============================================================
+malangdo,147,117,3	script	Innkeeper#malang	554,{
+	mes "Você vê um gato preguiçoso de pé em uma cadeira.";
+	mes "Você adivinha que este é o Innkeeper.";
+	next;
+	switch(select("Umm... Posso descansar aqui?:Psst... Posso salvar aqui?:Sair.")) {
+	case 1:
+		mes "[Innkeeper]";
+		mes "Eh?";
+		mes "Uh, claro que você pode usar esta rede se você me der ^FF00005 Malangdo Cans^000000.";
+		next;
+		switch(select("Aqui vai.:Não importa.")) {
+		case 1:
+			if (countitem(12636) > 4) {
+				delitem 12636,5; //Malang_Sp_Can
+				percentheal 100,100;
+				specialeffect2 EF_HEALSP;
+				mes "[Innkeeper]";
+				mes "Now relax.";
+				emotion ET_CHUP;
+				next;
+				warp "malangdo",140,121;
+				close;
+			}
+			mes "[Innkeeper]";
+			mes "Isso não é caridade.";
+			close;
+		case 2:
+			mes "[Innkeeper]";
+			mes "Deixe-me saber se você quer relaxar.";
+			close;
+		}
+	case 2:
+		mes "[Innkeeper]";
+		mes "Local salvo. Devemos fazer companhia, haha ~";
+		savepoint "malangdo",142,118,1,1;
+		close;
+	case 3:
+		mes "[Innkeeper]";
+		mes "Às vezes você só precisa relaxar.";
+		next;
+		mes "- Uau, esse é o gato mais preguiçoso de todos os tempos. -";
+		close;
+	}
+	close;
+}
+
+malangdo,151,120,3	script	Minstrel#mal	479,{
+	mes "[Minstrel]";
+	mes "Rapaz, esse gato preguiçoso me faz querer cochilar o dia todo.";
+	next;
+	mes "[menestrel]";
+	mes "Ele faz a vida parecer tão simples.";
+	close;
+}
+
+malangdo,149,120,5	script	Wanderer#mal	485,5,1,{
+	mes "[Andarilho]";
+	mes "Os gatos que vivem aqui são tão energéticos.";
+	mes "É estranho que eles me façam querer dançar o dia todo?";
+	mes "La di dah di dah ~!";
+	close;
+OnTouch:
+	switch(rand(5)) {
+	case 0:
+		soundeffect "ring_of_nibelungen.wav",0;
+		break;
+	case 1:
+		soundeffect "dont_forget_me_not.wav",0;
+		break;
+	case 2:
+		soundeffect "humming.wav",0;
+		break;
+	case 3:
+		soundeffect "assassin_of_sunset.wav",0;
+		break;
+	case 4: 
+		emotion ET_DELIGHT;
+		emotion ET_DELIGHT, getnpcid(0, "Wandering Minstrel#mal");
+		break;
+	}
+	end;
+}
+
+malangdo,216,168,3	script	Treinador de gatos#mal1	558,0,8,{
+	emotion ET_COOL;
+	mes "[Treinador de gatos]";
+	mes "Ooo ~ suas caudas inchadas macias e pele macia";
+	mes "Eu não aguento, isso é o paraíso!!";
+	next;
+	emotion ET_KIK;
+	mes "[Treinador de gatos]";
+	mes "Meu cartão oculto, ^ FF0000Fruto Silvestre ^ 000000, pode fazer todos os gatos em Malangdo meus escravos ~ haha!";
+	next;
+	select("^FF0000Silvervine Fruit^000000?");
+	mes "[Treinador de gatos]";
+	mes "É um item tão raro!";
+	mes "Eu mal consigo entender.";
+	mes "Mas esses gatos fofinhos não conseguem resistir";
+	next;
+	select("Onde posso obter ^FF0000Silvervine Fruit^000000?");
+	mes "[Treinador de gatos]";
+	mes "Por que eu te contaria quando mal conseguisse?";
+	mes "Eu nem te contaria por todo o zeny do mundo~!";
+	next;
+	emotion ET_KIK;
+	mes "[Treinador de gatos]";
+	mes "Todos os gatos Malangdo são meus~!";
+	mes "Muahahahaha ~";
+	mes "Com o suficiente ^FF0000Fruto de Lilivine^000000 Eu posso ser uma rainha em Malangdo~ ohhhh !!!";
+	close;
+OnTouch:
+	emotion ET_SPARK;
+	end;
+}
+
+malangdo,164,203,3	script	Treinador de gatos#mal2	853,{
+	emotion ET_COOL;
+	mes "[Treinador de gatos]";
+	mes "Ooo ~ suas caudas inchadas macias e pele macia ~";
+	mes "Eu não aguento, isso é o paraíso!!";
+	next;
+	emotion ET_KIK;
+	mes "[Treinador de gatos]";
+	mes "Esse é o meu pequeno segredo chamado";
+	mes "^FF0000Fruitilvervine Fruit^000000. Eu posso usar";
+	mes "fazer os gatos Malangdo meu";
+	mes "escravos~ muahahahaha ~!";
+	next;
+	select("^FF0000Silvervine Fruit^000000?");
+	mes "[Treinador de gatos]";
+	mes "Hmm, eu acho que não é de admirar que você não saiba.";
+	mes "Esses gatos Malangdo não conseguem resistir.";
+	mes "Mas é muito raro um item para você não se incomodar em tentar encontrá-lo.";
+	next;
+	select("Onde posso obter ^FF0000Silvervine Fruit^000000?");
+	mes "[Treinador de gatos]";
+	mes "Na verdade, é simples. Você só ...";
+	next;
+	mes "[Treinador de gatos]";
+	mes "Ei, você quase me fez contar meu segredo.";
+	next;
+	emotion ET_KIK;
+	mes "[Treinador de gatos]";
+	mes "Um dia esses gatos serão meus.";
+	mes "Eu posso ser um rei em Malangdo ~ ohhh ~!";
+	close;
+}

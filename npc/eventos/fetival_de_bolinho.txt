@@ -1,0 +1,106 @@
+//===== rAthena Script =======================================
+//= Imitation of Dumpling Festival
+//===== By ===================================================
+//= Massdriller
+//===== Version ==============================================
+//= 1.01
+//===== Compatible With ======================================
+//= rAthena Project; 0.52+
+//===== Description ==========================================
+//= A complete redering of the Dumpling Festival.
+//===== Comments =============================================
+//= Ver 1.0- Duplicate of MRO's Dumpling Event
+//= 1.01 fixed bugs [Lupus]
+//============================================================
+  
+payon,93,81,4	script	Exorcista Mestre	834,{
+
+	mes "[Fahae]";
+	mes "Saudações, jovem guerreiro, eu sou o Exorcista Mestre Fahae.";
+	mes "Eu tenho acompanhado o esquivo Bacsojin por algum tempo.";
+	next;
+	mes "[Fahae]";
+	mes "Eu sinto que é hora de deixar outro guerreiro tentar completar";
+	mes "minha missão. Eu tenho alguns itens para ajudá-lo na minha busca.";
+	next;
+	menu "Deseja comprar",-, "Não, obrigado",M_FIN;
+  
+	mes "[Fahae]";
+	mes "Eu tenho 2 itens que podem ser úteis para você.";
+	next;
+	menu "Vinho Realgar",-, "Erva de Exorcismo",M_HERB;
+ 
+	mes "[Fahae]";
+	mes "Quantos você precisa?";
+	mes "Você só pode comprar 5 itens de cada vez,";
+	mes "cada iten custa 20.000z.";
+	mes "(digite 0 para cancelar)";
+	next;
+	input @input;
+	if(@input==0) close;
+	if(@input>5) goto L_SORRY;
+	if(Zeny< @input*20000) goto L_NOZENY;
+	set Zeny,Zeny-20000*@input;
+	getitem 682,@input;
+	mes "[Fahae]";
+	mes "Aqui está, espero que você tenha sucesso em minha busca.";
+	close;
+  
+L_SORRY:
+	mes "[Fahae]";
+	mes "Você não deve ser mesquinho, é o caminho de Deus para ser honesto.";
+	close;
+  
+M_FIN:
+	mes "[Fahae]";
+	mes "O caminho de vencer totalmente o mal é longe, ajude-me no caminho de Deus.";
+	close;
+  
+M_HERB:
+	mes "[Fahae]";
+	mes "Quantos você precisa?";
+	mes "Você só pode comprar 5 itens de cada vez,";
+	mes "cada iten custa 10.000z.";
+	mes "(digite 0 para cancelar)";
+	next;
+	input @input;
+	if(@input==0) close;
+	if(@input>5) goto L_SORRY;
+	if(Zeny< @input*10000) goto L_NOZENY;
+	set Zeny,Zeny-10000*@input;
+	getitem 683,@input;
+	mes "[Fahae]";
+	mes "Aqui está, espero que você tenha sucesso em minha busca.";
+	close;
+
+L_NOZENY:
+	mes "[Fahae]";
+	mes "O dinheiro não traz alegria para todos, mas nós precisamos disso para apoiar o templo e a mim mesmo. Por favor, tente derrotar alguns monstros e pegue os itens.";
+	close;
+}
+  
+// Monsters
+//============================================================
+gef_fild00,0,0	monster	Dumpling	1520,20,60000,66000
+gef_fild07,0,0	monster	Dumpling	1520,20,60000,66000
+gef_fild04,0,0	monster	Dumpling	1520,20,60000,66000
+gef_fild00,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild06,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild01,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild05,0,0	monster	Dumpling	1520,20,60000,66000
+prt_fild08,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild04,0,0	monster	Dumpling	1520,20,60000,66000
+moc_fild02,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild01,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild07,0,0	monster	Dumpling	1520,20,60000,66000
+moc_fild03,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild06,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild05,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild02,0,0	monster	Dumpling	1520,20,60000,66000
+pay_fild09,0,0	monster	Dumpling	1520,20,60000,66000
+
+moc_fild03,0,0	monster	Bacsojin	1518,1,60000,66000
+
+moc_fild03,0,0	monster	Chung E	1519,1,60000,66000
+moc_fild13,0,0	monster	Chung E	1519,1,60000,66000
+pay_fild01,0,0	monster	Chung E	1519,1,60000,66000

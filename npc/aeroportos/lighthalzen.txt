@@ -1,0 +1,85 @@
+﻿//===== rAthena Script ======================================= 
+//= Lighthalzen Airport Staff
+//===== By: ================================================== 
+//= L0ne_W0lf, Muad_Dib
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: ===================================== 
+//= rAthena Project
+//===== Description: ========================================= 
+//= Lighthalzen Airport Staff
+//===== Additional Comments: ================================= 
+//= 1.0 First version.
+//============================================================ 
+
+lhz_airport,143,43,5	script	Equipe do Aeroporto#lhz_air1a::lhz_airport1	90,{
+	mes "[Equipe do Aeroporto]";
+	mes "Olá! É um prazer ver você aqui no";
+	mes "Aeroporto de Lighthalzen.";
+	mes "Aqui oferemos voos frequentes";
+	mes "para Einbroch, Juno e Hugel.";
+	mes "Deseja ir para algum desses lugares?";
+	next;
+	if (select("Embarcar.:Cancelar.") == 1) {
+		mes "[Equipe do Aeroporto]";
+		mes "A taxa de embarque é de";
+		mes "1,200 zeny, mas caso você";
+		mes "possua o Bilhete Grátis para o Aeroplano,";
+		mes "essa taxa não é cobrada.";
+		next;
+		if (select("Sim:Não") == 1) {
+			if (countitem(7311) > 0) {
+				delitem 7311,1; //Bilhete para o Aeroplano
+				warp "lhz_airport",148,51;
+				end;
+			}
+			if (Zeny >= 1200) {
+				set Zeny, Zeny - 1200;
+				warp "lhz_airport",148,51;
+				end;
+			}
+			mes "[Equipe do Aeroporto]";
+			mes "Desculpe, mas você não possui";
+			mes "os 1,200 zenys para pagar";
+			mes "a taxa de vôo.";
+			close;
+		}
+	}
+	mes "[Equipe do Aeroporto]";
+	mes "Obrigado e";
+	mes "volte novamente.";
+	mes "Tenha um bom dia.";
+	close;
+}
+
+lhz_airport,158,43,5	duplicate(lhz_airport1)	Equipe do Aeroportof#lhz_air1b	90
+lhz_airport,126,43,5	duplicate(lhz_airport1)	Equipe do Aeroporto#lhz_air1c	90
+
+lhz_airport,143,49,3	script	Equipe de Embarque#lhz_air2a::lhz_airport2	90,{
+	mes "[Equipe de Recepção]";
+	mes "Bem-vind"+(Sex?"o":"a")+" ao Aeroporto de Lighthalzen.";
+	mes "Se você acabou de chegar, deixe-me guiá-lo ao terminal principal";
+	mes "Caso contrário, embarque no dirigível em busca de outro destino.";
+	next;
+	if (select("Deixar o terminal.:Cancelar.") == 1) {
+		mes "[Equipe de Recepção]";
+		mes "Uma vez no terminal principal, você precisará pagar outra";
+		mes "taxa para embarcar no dirigível. Você só deverá";
+		mes "sair caso a cidade de Lighthalzen for seu último destino.";
+		mes "Gostaria de prosseguir ao terminal principal?";
+		next;
+		if (select("Sim:Não") == 1) {
+			warp "lhz_airport",142,40;
+			end;
+		}
+	}
+	mes "[Equipe de Recepção]";
+	mes "Certo, obrigado";
+	mes "pelo seu apoio e";
+	mes "espero que você tenha";
+	mes "uma viagem agradável.";
+	close;
+}
+
+lhz_airport,126,51,3	duplicate(lhz_airport2)	Equipe de Embarque#lhz_air2b	90
+lhz_airport,158,50,3	duplicate(lhz_airport2)	Equipe de Embarque#lhz_air2c	90

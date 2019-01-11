@@ -1,16 +1,17 @@
-﻿//===== rAthena Script ======================================= 
-//= Sistema de Batalha campal - Flavius Entrance NPCs
-//===== By: ================================================== 
-//= L0ne_W0lf
-//===== Current Version: ===================================== 
-//= 1.0
-//===== Compatible With: ===================================== 
-//= rAthena Project
-//===== Description: ========================================= 
-//= [Official Conversion]
-//= Flavius Battleground Entrance NPCs
-//===== Additional Comments: ================================= 
-//= 1.0 First Version.
+﻿// ===== Script LivedBR =======================================
+// = Entrada de Flavius
+// ===== Por: =================================================
+// = L0ne_W0lf
+// ===== Versão atual: ========================================
+// = 1.1
+// ===== Compatível com: ======================================
+// = Projeto rAthena/LivedBR
+// ===== Descrição: ===========================================
+//= [Conversão Oficial]
+//= NPCs de Entrada do Campo de Batalha de Flavius
+//===== Comentários adicionais: =================================
+//= 1.0 Primeira Versão.
+//= 1.1 Traduzido para o pt_br. [Vrods]
 //============================================================
 
 // Oficial de Flavius - Guillaume
@@ -28,7 +29,7 @@ bat_room,133,178,5	script	Oficial de Flavius#01a	418,{
 	mes "[Oficial de Guillaume]";
 	mes "Vamos mostrar o poder do Exército de Guillaume àqueles malditos Croix!";
 	next;
-	switch(select("Eu quero entrar no seu exército!:Encerrar.")) {
+	switch(select("Eu quero entrar no seu exército!:Cancelar.")) {
 	case 1:
 		if ((Class == Job_Novice) || (BaseClass == Job_Super_Novice)) {
 			mes "[Oficial de Guillaume]";
@@ -97,7 +98,7 @@ bat_room,133,121,1	script	Oficial de Flavius#01b	414,{
 	mes "[Oficial de Croix]";
 	mes "Vamos mostrar aos Guillaumes o poder do Exército de Croix!";
 	next;
-	switch(select("Quero entrar em seu exército!:Encerrar")) {
+	switch(select("Quero entrar em seu exército!:Cancelar")) {
 	case 1:
 		if ((Class == Job_Novice) || (BaseClass == Job_Super_Novice)) {
 			mes "[Oficial de Croix]";
@@ -256,7 +257,7 @@ bat_room,148,178,5	script	Oficial de Flavius#02a	418,{
 	mes "[Oficial do Exército de Guillaume]";
 	mes "Vamos mostrar o poder do Exército de Guillaume àqueles malditos Croix!";
 	next;
-	switch(select("Eu quero entrar no seu exército!:Encerrar")) {
+	switch(select("Eu quero entrar no seu exército!:Cancelar")) {
 	case 1:
 		if ((Class == Job_Novice) || (BaseClass == Job_Super_Novice)) {
 			mes "[Oficial de Guillaume]";

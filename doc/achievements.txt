@@ -1,102 +1,102 @@
-//===== rAthena Documentation ================================
-//= Achievement Database Structure
-//===== By: ==================================================
-//= rAthena Dev Team
-//===== Last Updated: ========================================
-//= 20170531
-//===== Description: =========================================
-//= Explanation of the achievements_db.yml file and structure.
-//============================================================
+// ===== Documentação LivedBR ===============================
+// = Estrutura do banco de dados de conquistas
+// ===== Por: ===============================================
+// = equipe de desenvolvimento do rAthena
+// ===== Última atualização: ================================
+// = 20170531
+// ===== Descrição: =========================================
+// = Explicação do arquivo achievements_db.yml e estrutura.
+// ==========================================================
 
 ---------------------------------------
 
-ID: Unique achievement ID.
+ID: ID de conquista exclusiva.
 
 ---------------------------------------
 
-Group: Achievement group type. Each achievement type calls a specific objective check.
-Valid groups:
-	AG_ADD_FRIEND - Triggered when a player adds a friend.
-	AG_ADVENTURE - Does not trigger automatically. These are triggered by the achievementcomplete script command.
-	AG_BABY - Triggered when a player becomes a baby job.
-	AG_BATTLE - Triggered when a player kills a monster.
-	AG_CHATTING - Unknown.
-	AG_CHATTING_COUNT - Triggered when a player has a chatroom open and others join.
-	AG_CHATTING_CREATE - Triggered when a player creates a chatroom.
-	AG_CHATTING_DYING - Triggered when a player creates a chatroom and dies with it open.
-	AG_EAT - Unknown.
-	AG_GET_ITEM - Triggered when a player gets an item that has a specific sell value.
-	AG_GET_ZENY - Triggered when a player gets a specific amount of zeny at once.
-	AG_GOAL_ACHIEVE - Triggered when a player's achievement rank levels up.
-	AG_GOAL_LEVEL - Triggered when a player's base level or job level changes.
-	AG_GOAL_STATUS - Triggered when a player's base stats changes.
-	AG_HEAR - Unknown.
-	AG_JOB_CHANGE - Triggered when a player's job changes.
-	AG_MARRY - Triggered when two players get married.
-	AG_PARTY - Triggered when a player creates a party.
-	AG_ENCHANT_FAIL - Triggered when a player fails to refine an equipment.
-	AG_ENCHANT_SUCCESS - Triggered when a player successfully refines an equipment.
-	AG_SEE - Unknown.
-	AG_SPEND_ZENY - Triggered when a player spends any amount of zeny on vendors.
-	AG_TAMING - Triggered when a player tames a monster.
+	Grupo: tipo de grupo de conquistas. Cada tipo de conquista chama uma verificação de objetivo específica.
+	Grupos válidos:
+	AG_ADD_FRIEND - Disparado quando um jogador adiciona um amigo.
+	AG_ADVENTURE - não dispara automaticamente. Estes são acionados pelo comando de conclusão do script completo.
+	AG_BABY - Desencadeado quando um jogador se torna um emprego de bebê.
+	AG_BATTLE - Disparado quando um jogador mata um monstro.
+	AG_CHATTING - Desconhecido.
+	AG_CHATTING_COUNT - acionado quando um jogador tem uma sala de bate-papo aberta e outros ingressam.
+	AG_CHATTING_CREATE - Disparado quando um jogador cria uma sala de chat.
+	AG_CHATTING_DYING - Disparado quando um jogador cria uma sala de bate-papo e morre com ela aberta.
+	AG_EAT - Desconhecido.
+	AG_GET_ITEM - Disparado quando um jogador recebe um item com um valor de venda específico.
+	AG_GET_ZENY - Disparado quando um jogador recebe uma quantidade específica de zeny de uma só vez.
+	AG_GOAL_ACHIEVE - Acionado quando a classificação de conquista de um jogador aumenta de nível.
+	AG_GOAL_LEVEL - Disparado quando o nível base ou o nível de trabalho de um jogador é alterado.
+	AG_GOAL_STATUS - Disparado quando as estatísticas da base de um jogador são alteradas.
+	AG_HEAR - Desconhecido.
+	AG_JOB_CHANGE - Disparado quando a classe de um jogador muda.
+	AG_MARRY - desencadeada quando dois jogadores se casam.
+	AG_PARTY - Disparado quando um jogador cria um grupo.
+	AG_ENCHANT_FAIL - Disparado quando um jogador não consegue refinar um equipamento.
+	AG_ENCHANT_SUCCESS - Disparado quando um jogador refina um equipamento com sucesso.
+	AG_SEE - Desconhecido.
+	AG_SPEND_ZENY - acionado quando um jogador gasta qualquer quantidade de zeny em fornecedores.
+	AG_TAMING - Disparado quando um jogador doma um monstro.
 
 ---------------------------------------
 
-Name: Achievement name. Not read into source but used for quick look ups.
+Nome: nome da conquista. Não é lido na fonte, mas usado para consultas rápidas.
 
 ---------------------------------------
 
-Target: A list of monster ID and count values that the achievement requires.
-		The target count can also be used for achievements that keep a counter while not being related to monster kills.
-		Capped at MAX_ACHIEVEMENT_OBJECTIVES.
+Alvo: Uma lista de ID de monstro e valores de contagem que a conquista requer.
+A contagem de alvos também pode ser usada para conquistas que mantêm um contador enquanto não estão relacionadas a mortes de monstros.
+Limitado a MAX_ACHIEVEMENT_OBJECTIVES.
 
-Example:
-  // Player must kill 5 Scorpions and 10 Poring.
-  Target:
-    - MobID: 1001
-      Count: 5
-    - MobID: 1002
-      Count: 10
+Exemplo:
+  // O jogador deve matar 5 Scorpions e 10 Poring.
+  Alvo:
+    - MobID: 1001
+      Contagem: 5
+    - MobID: 1002
+      Contagem: 10
 
-Example 2:
-  // Player must have 100 or more of ARG0 value. Using the count target value is useful for achievements that are increased in increments
-  // and not checked for a total (UI_Type = 1).
-  // IE: In the achievement_list.lub file, UI_Type 0 is displayed as non-incremental while 1 shows a progress bar of completion for the achievement.
-  Condition: " ARG0 >= 100 "
-  Target:
-    - Count: 100
-
----------------------------------------
-
-Condition: A conditional statement that must be met for the achievement to be considered complete. Accepts script constants, player variables, and
-		   ARGX (where X is the argument vector value). The ARGX values are sent from the server to the achievement script engine on special events.
-		   Below are two examples of how the ARGX feature works.
-
-Example:
-	// This function will send 1 argument (ARG0) with a value of i + 1 when a friend is added.
-	achievement_update_objective(f_sd, AG_ADD_FRIEND, 1, i + 1);
-
-Example 2:
-	// This function will send 2 arguments (ARG0 and ARG1) with values of weapon level and refine level, respectively, when an equipment is
-	// successfully refined.
-	achievement_update_objective(sd, AG_REFINE_SUCCESS, 2, sd->inventory_data[i]->wlv, sd->inventory.u.items_inventory[i].refine);
+Exemplo 2:
+  // O jogador deve ter 100 ou mais de valor ARG0. A utilização do valor de contagem desejado é útil para conquistas que são aumentadas em incrementos
+  // e não verificado para um total (UI_Type = 1).
+  // IE: no arquivo achievement_list.lub, UI_Type 0 é exibido como não incremental enquanto 1 mostra uma barra de progresso para a realização.
+  Condição: "ARG0> = 100"
+  Alvo:
+    - Contagem: 100
 
 ---------------------------------------
 
-Map: A map name that is used for the AG_CHATTING type which increments the counter based on the player's map.
+Condição: Uma declaração condicional que deve ser cumprida para que a conquista seja considerada completa. Aceita constantes de script, variáveis ​​de jogador e
+ARGX (onde X é o valor do vetor de argumento). Os valores ARGX são enviados do servidor para o mecanismo de script de conquista em eventos especiais.
+Abaixo estão dois exemplos de como o recurso ARGX funciona.
+
+Exemplo:
+// Esta função irá enviar 1 argumento (ARG0) com um valor de i + 1 quando um amigo for adicionado.
+achievement_update_objective (f_sd, AG_ADD_FRIEND, 1, i + 1);
+
+Exemplo 2:
+// Esta função irá enviar 2 argumentos (ARG0 e ARG1) com valores de nível de arma e nível de refinamento, respectivamente, quando um equipamento é
+// refinado com sucesso.
+achievement_update_objective (sd, AG_REFINE_SUCCESS, 2, sd-> dados_do_inventário [i] -> wlv, sd-> inventory.u.items_inventory [i] .refine);
 
 ---------------------------------------
 
-Dependent: A list of achievement IDs that need to be completed before this achievement is considered complete.
+Mapa: um nome de mapa que é usado para o tipo AG_CHATTING que incrementa o contador com base no mapa do jogador.
 
 ---------------------------------------
 
-Reward: A list of rewards that are given on completion. All fields are optional.
-  ItemID: Item ID
-  Amount:	Amount of Item ID (default 1)
-  Script: Bonus Script
-  TitleID: Title ID
+Dependente: uma lista de IDs de conquistas que precisam ser concluídas antes que essa conquista seja considerada completa.
 
 ---------------------------------------
 
-Score: Achievement points that are given on completion.
+Recompensa: uma lista de recompensas que são dadas na conclusão. Todos os campos são opcionais.
+  ItemID: ID do item
+  Valor: quantidade de ID do item (padrão 1)
+  Script: Script de bônus
+  TitleID: ID do título
+
+---------------------------------------
+
+Pontuação: pontos de conquista que são entregues após a conclusão.

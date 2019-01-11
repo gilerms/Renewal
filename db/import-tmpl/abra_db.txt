@@ -1,17 +1,17 @@
-// Hocus-Pocus (Abracadabra) Castable Skills Database
+﻿// Hocus-Pocus (Abracadabra) Banco de Dados de Habilidades Castáveis.
 //
-// Structure of Database:
-// SkillID,DummyName,ProbabilityPerLvl
+//Estrutura do banco de dados:
+//SkillID, DummyName, ProbabilityPerLvl
 //
-// 01. SkillID                  Skill ID to be casted by hocus pocus.
-// 02. DummyName                Name of the skill (informative, not used by server).
-// 03. ProbabilityPerLvl        Not a rate! Chance at which the skill is selected compared
-//                              with other entries probabilties
+//01. SkillID Skill ID a ser lançado pelo hocus pocus.
+//02. DummyName Nome da habilidade (informativa, não usada pelo servidor).
+//03. ProbabilityPerLvl Não é uma taxa! Chance em que a habilidade é selecionada em comparação
+//com outras entradas prováveis.
 //
-// NOTE:
-// - The skill is picked at random from the entire database and then tested for rate. If it
-//   does not succeed at that rate, another skill is picked and tested. This continues
-//   until a skill succeeds. Abracadabra-specific skills have a different chance to occur
-//   depending on skill level used. All other skills have an equal chance and appear from
-//   level 1 onward.
-// - To remove entry by importing, put "clear" (without quotes) in DummyName
+// NOTA:
+//- A habilidade é escolhida aleatoriamente de todo o banco de dados e testada para taxa. Se isso
+//não tem sucesso nessa taxa, outra habilidade é escolhida e testada. Isso continua
+//até que uma habilidade seja bem sucedida. Habilidades específicas para abracadabra têm uma chance diferente de ocorrer
+//dependendo do nível de habilidade usado. Todas as outras habilidades têm uma chance igual e aparecem.
+//nível 1 em diante.
+//- Para remover a entrada importando, coloque "clear" (sem aspas) em DummyName

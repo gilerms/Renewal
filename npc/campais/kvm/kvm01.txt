@@ -1,35 +1,36 @@
-//===== rAthena Script =======================================
-//= BattleGround System - KvM 80-99
-//===== Description: =========================================
-//= [Official Conversion]
-//= Kreiger Von Midgard Battleground for levels 80 to 99
-//= - Winning Team: 5 points
-//= - Losing Team: 1 point
-//===== Changelogs: ==========================================
-//= 1.0 First Version. [L0ne_W0lf]
-//= 1.1 Updated using official Aegis files. [L0ne_W0lf]
-//= 1.2 Upated some announces and dialogs from iRO.
-//=     Changed how the scoreboard works slightly.
-//=     Removed the areapercentheals, and minor things.
-//============================================================s
+Ôªø//===== LivedBR Script =======================================
+//= Sistem de Batalha Campal - KvM 80-99
+//===== Descri√ß√£o : ==========================================
+//= [Convers√£o Oficial]
+//= Kreiger Von Midgard Campo de batalha para os n√≠veis 80 a 99
+//= - Equipa Vencedora: 2 pontos
+//= - Equipe Perdedora: 1 ponto 
+//===== Changelogs: ===========================================
+//= 1.0 Primeira Vers√£o. [L0ne_W0lf]
+//= 1.1 Atualizado usando arquivos Aegis oficiais. [L0ne_W0lf]
+//= 1.2 Atualizou alguns an√∫ncios e di√°logos do iRO.
+//= Mudou como o placar funciona um pouco.
+//= Removeu as √°reas de descanso e coisas menores.
+//= Traduzido para o pt_br. [Vrods]
+// =============================================================
 
-// Waiting Room NPCs
-//============================================================
+// NPCs da Sala de Espera
+//==============================================================
 bat_room,169,226,5	script	Sala de espera KVM#a::KvM01R_Guillaume	418,{
 	end;
 OnInit:
-	waitingroom "EstaÁ„o de Batalha 5 Jogadores",6,"KvM01_BG_Out::OnGuillaumeJoin",1;
+	waitingroom "Esta√ß√£o de Batalha 5 Jogadores",6,"KvM01_BG_Out::OnGuillaumeJoin",1;
 	end;
 OnEnterBG:
 	set $@KvM01BG_id1, waitingroom2bg("bat_c01",52,129,"KvM01_BG::OnGuillaumeQuit","KvM01_BG::OnGuillaumeDie");
 	end;
 }
 
-bat_room,169,205,3	script	Sala de Espera KVM#b::KvM01R_Croix	414,{
+bat_room,169,205,3	script	Sala de Espera do KVM#b::KvM01R_Croix	414,{
 	end;
 
 OnInit:
-	waitingroom "EstaÁ„o de Batalha 5 Jogadores",6,"KvM01_BG_Out::OnCroixJoin",1;
+	waitingroom "Esta√ß√£o de Batalha 5 Jogadores",6,"KvM01_BG_Out::OnCroixJoin",1;
 	end;
 
 OnEnterBG:
@@ -112,8 +113,8 @@ OnInit:
 	setwall "bat_c01",55,122,5,7,0,"batc01wall_b";
 	setwall "bat_c01",140,56,6,7,0,"batc01wall_c";
 	setwall "bat_c01",140,57,5,7,0,"batc01wall_d";
-	disablenpc "Oficial KVM#KVM01A";
-	disablenpc "Oficial KVM#KVM01B";
+	disablenpc "Oficial do KVM#KVM01A";
+	disablenpc "Oficial do KVM#KVM01B";
 	end;
 
 OnGuillaumeQuit:
@@ -125,8 +126,8 @@ OnGuillaumeDie:
 		bg_updatescore "bat_c01",.Guillaume_Count,.Croix_Count;
 		if( .Guillaume_Count < 1 ) donpcevent "KvM01_BG::OnCroixWin";
 		else {
-			mapannounce "bat_c01", "O n˙mero de membros Guillaume È "+.Guillaume_Count+".",bc_map,"0x00ff00";
-			mapannounce "bat_c01", "O n˙mero de membros Croix È "+.Croix_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c01", "O n√∫mero de membros Guillaume √© "+.Guillaume_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c01", "O n√∫mero de membros Croix √© "+.Croix_Count+".",bc_map,"0x00ff00";
 		}
 	}
 	end;
@@ -140,15 +141,15 @@ OnCroixDie:
 		bg_updatescore "bat_c01",.Guillaume_Count,.Croix_Count;
 		if( .Croix_Count < 1 ) donpcevent "KvM01_BG::OnGuillaumeWin";
 		else {
-			mapannounce "bat_c01", "O n˙mero de membros Guillaume È "+.Guillaume_Count+".",bc_map,"0x00ff00";
-			mapannounce "bat_c01", "O n˙mero de membros Croix È "+.Croix_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c01", "O n√∫mero de membros Guillaume √© "+.Guillaume_Count+".",bc_map,"0x00ff00";
+			mapannounce "bat_c01", "O n√∫mero de membros Croix √© "+.Croix_Count+".",bc_map,"0x00ff00";
 		}
 	}
 	end;
 
 OnStart:
-	disablenpc "Oficial KVM#KVM01A";
-	disablenpc "Oficial KVM#KVM01B";
+	disablenpc "Oficial do KVM#KVM01A";
+	disablenpc "Oficial do KVM#KVM01B";
 	set $@KvM01BG_Victory, 0;
 	// Warp Teams
 	bg_warp $@KvM01BG_id1,"bat_c01",53,128;
@@ -157,16 +158,16 @@ OnStart:
 	end;
 
 OnTimer1000:
-	mapannounce "bat_c01", "Em 1 minuto, o KVM ir· comeÁar.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Em 1 minuto, o KVM ir√° come√ßar.",bc_map,"0x00ff00";
 	end;
 
 OnTimer3000:
-	mapannounce "bat_c01", "O tempo m·ximo de uma batalha KVM s„o de 5 minutos.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "O tempo m√°ximo de uma batalha KVM s√£o de 5 minutos.",bc_map,"0x00ff00";
 	end;
 
 OnTimer6000:
 	mapannounce "bat_c01", "Se preparem para a batalha KVM.",bc_map,"0x00ff00";
-	mapannounce "bat_c01", "VocÍs podem usar buffs em seus times.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Voc√™s podem usar buffs em seus times.",bc_map,"0x00ff00";
 	donpcevent "#A_camp_start01::OnEnable";
 	donpcevent "#B_camp_start01::OnEnable";
 	end;
@@ -196,7 +197,7 @@ OnTimer55000:
 	end;
 
 OnTimer59000:
-	mapannounce "bat_c01", "KVM est· comeÁando agora.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "KVM est√° come√ßando agora.",bc_map,"0x00ff00";
 	donpcevent "::OnKvM01Two";
 	end;
 
@@ -208,7 +209,7 @@ OnTimer61000:
 	{
 		set $@KvM01BG_Victory, 3;
 		set $@KvM01BG, 3;
-		mapannounce "bat_c01","N„o h· jogadores suficientes para comeÁar a batalha.",1,0x696969;
+		mapannounce "bat_c01","N√£o h√° jogadores suficientes para come√ßar a batalha.",1,0x696969;
 		stopnpctimer;
 		donpcevent "KvM01_BG::OnStop";
 		end;
@@ -248,8 +249,8 @@ OnTimer360000:
 	{ // Draw Game
 		set $@KvM01BG, 3;
 		set $@KvM01BG_Victory, 3;
-		mapannounce "bat_c01", "O n˙mero de membros Guillaume È "+.Guillaume_Count+".",bc_map,"0x00ff00";
-		mapannounce "bat_c01", "O n˙mero de membros Croix È "+.Croix_Count+".",bc_map,"0x00ff00";
+		mapannounce "bat_c01", "O n√∫mero de membros Guillaume √© "+.Guillaume_Count+".",bc_map,"0x00ff00";
+		mapannounce "bat_c01", "O n√∫mero de membros Croix √© "+.Croix_Count+".",bc_map,"0x00ff00";
 		mapannounce "bat_c01", "A batalha terminou em empate.",bc_map,"0x00ff00";
 		donpcevent "KvM01_BG::OnStop";
 	}
@@ -259,8 +260,8 @@ OnGuillaumeWin:
 	set $@KvM01BG, 3;
 	set $@KvM01BG_Victory, 1;
 	mapannounce "bat_c01", "Guillaume venceu!",bc_map,"0x00ff00";
-	mapannounce "bat_c01", "ParabÈns aos membros Guillaume.",bc_map,"0x00ff00";
-	mapannounce "bat_c01", "Todos ser„o enviados ao ponto inicial.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Parab√©ns aos membros Guillaume.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Todos ser√£o enviados ao ponto inicial.",bc_map,"0x00ff00";
 	donpcevent "KvM01_BG::OnStop";
 	end;
 
@@ -268,15 +269,15 @@ OnCroixWin:
 	set $@KvM01BG, 3;
 	set $@KvM01BG_Victory, 2;
 	mapannounce "bat_c01", "Croix venceu!",bc_map,"0x00ff00";
-	mapannounce "bat_c01", "ParabÈns aos membros Croix.",bc_map,"0x00ff00";
-	mapannounce "bat_c01", "Todos ser„o enviados ao ponto inicial.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Parab√©ns aos membros Croix.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Todos ser√£o enviados ao ponto inicial.",bc_map,"0x00ff00";
 	donpcevent "KvM01_BG::OnStop";
 	end;
 
 OnStop:
 	stopnpctimer;
-	enablenpc "Oficial KVM#KVM01A";
-	enablenpc "Oficial KVM#KVM01B";
+	enablenpc "Oficial do KVM#KVM01A";
+	enablenpc "Oficial do KVM#KVM01B";
 	// Warp Teams
 	bg_warp $@KvM01BG_id1,"bat_c01",53,128;
 	bg_warp $@KvM01BG_id2,"bat_c01",146,55;
@@ -296,17 +297,17 @@ OnTimer1000:
 	end;
 
 OnTimer3000:
-	mapannounce "bat_c01", "O Oficial dar· a vocÍ os pontos por 30 segundos.",bc_map,"0x00ff00";
-	mapannounce "bat_c01", "Em 30 segundos, o Oficial deixar· o local.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "O Oficial dar√° a voc√™ os pontos por 30 segundos.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Em 30 segundos, o Oficial deixar√° o local.",bc_map,"0x00ff00";
 	end;
 
 OnTimer5000:
-	mapannounce "bat_c01", "Se vocÍ n„o falar com o Oficial, vocÍ n„o ir· receber os pontos.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Se voc√™ n√£o falar com o Oficial, voc√™ n√£o ir√° receber os pontos.",bc_map,"0x00ff00";
 	mapannounce "bat_c01", "Por favor tenha cuidado.",bc_map,"0x00ff00";
 	end;
 
 OnTimer55000:
-	mapannounce "bat_c01", "VocÍ ser· enviado de volta.",bc_map,"0x00ff00";
+	mapannounce "bat_c01", "Voc√™ ser√° enviado de volta.",bc_map,"0x00ff00";
 	end;
 
 OnTimer60000:
@@ -316,8 +317,8 @@ OnTimer60000:
 	set $@KvM01BG_Victory, 0;
 	if( $@KvM01BG_id1 ) { bg_destroy $@KvM01BG_id1; set $@KvM01BG_id1, 0; }
 	if( $@KvM01BG_id2 ) { bg_destroy $@KvM01BG_id2; set $@KvM01BG_id2, 0; }
-	disablenpc "Oficial KVM#KVM01A";
-	disablenpc "Oficial KVM#KVM01B";
+	disablenpc "Oficial do KVM#KVM01A";
+	disablenpc "Oficial do KVM#KVM01B";
 	mapwarp "bat_c01","bat_room",154,150;
 	maprespawnguildid "bat_c01",0,3; // Just in case someone else
 	bg_updatescore "bat_c01",5,5;
@@ -340,23 +341,23 @@ OnCroixJoin:
 	end;
 }
 
-// Battleground rewards
+// Reconpensas
 //============================================================
-bat_c01,51,130,5	script	Oficial KVM#KVM01A	419,{
+bat_c01,51,130,5	script	Oficial do KVM#KVM01A	419,{
 	if( $@KvM01BG_Victory ) {
-		mes "[Oficial KVM]";
+		mes "[Oficial do KVM]";
 		if( $@KvM01BG_Victory == Bat_Team ) {
 			mes "Bom jogo.";
-			mes "Que a glÛria do KVM esteja com vocÍ.";
-			mes "VocÍ recebe os pontos de vencedor: 5";
+			mes "Que a gl√≥ria do KVM esteja com voc√™.";
+			mes "Voc√™ recebe os pontos de vencedor: 5";
 			close2;
 			set kvm_point,kvm_point + 5;
 		}
 		else {
-			mes "[Oficial KVM]";
+			mes "[Oficial do KVM]";
 			mes "Sinto muito.";
-			mes "Espero que tenha boa sorte na prÛxima vez.";
-			mes "VocÍ recebe os pontos de derrota: 1";
+			mes "Espero que tenha boa sorte na pr√≥xima vez.";
+			mes "Voc√™ recebe os pontos de derrota: 1";
 			close2;
 			set kvm_point,kvm_point + 1;
 		}
@@ -366,4 +367,4 @@ bat_c01,51,130,5	script	Oficial KVM#KVM01A	419,{
 	}
 	end;
 }
-bat_c01,148,53,1	duplicate(Oficial KVM#KVM01A)	Oficial KVM#KVM01B	415
+bat_c01,148,53,1	duplicate(Oficial do KVM#KVM01A)	Oficial do KVM#KVM01B	415

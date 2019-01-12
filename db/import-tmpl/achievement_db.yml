@@ -1,80 +1,80 @@
-# Este arquivo é uma parte do LivedBR.
-# Copyright (C) 2017 equipe de desenvolvimento
-# https://livedbr.net - https://github.com/livedbr
+# This file is a part of rAthena.
+#   Copyright(C) 2017 rAthena Development Team
+#   https://rathena.org - https://github.com/rathena
 #
-# Este programa é software livre: você pode redistribuí-lo e/ou modificar
-# sob os termos da Licença Pública Geral GNU publicada por
-# a Free Software Foundation, versão 3 da Licença, ou
-# (a seu critério) qualquer versão posterior.
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
 #
-# Este programa é distribuído na esperança de que seja útil,
-# mas SEM QUALQUER GARANTIA; sem mesmo a garantia implícita de
-# COMERCIABILIDADE ou ADEQUAÇÃO A UM DETERMINADO FIM. Veja o
-# GNU General Public License para mais detalhes.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
 #
-# Você deveria ter recebido uma cópia da Licença Pública Geral GNU
-# junto com este programa. Se não, veja <http://www.gnu.org/licenses/>.
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <http://www.gnu.org/licenses/>.
 #
-################################################## #########################
-# Banco de dados de realizações personalizadas
-################################################## #########################
+###########################################################################
+# Custom Achievement Database
+###########################################################################
 #
-# Configurações de conquista
+# Achievement Settings
 #
-################################################## #########################
-# ID - ID de conquista exclusiva.
-################################################## #########################
-# Group - tipo de grupo de conquistas. Cada tipo de conquista chama um específico
-# check objetivo.
-# Grupos válidos:
-# AG_ADD_FRIEND
-# AG_ADVENTURE
-# AG_BABY
-# AG_BATTLE
-# AG_CHATTING
-# AG_CHATTING_COUNT
-# AG_CHATTING_CREATE
-# AG_CHATTING_DYING
-# AG_EAT
-# AG_GET_ITEM
-# AG_GET_ZENY
-# AG_GOAL_ACHIEVE
-# AG_GOAL_LEVEL
-# AG_GOAL_STATUS
-# AG_HEAR
-# AG_JOB_CHANGE
-# AG_MARRY
-# AG_PARTY
-# AG_ENCHANT_FAIL
-# AG_ENCHANT_SUCCESS
-# AG_SEE
-# AG_SPEND_ZENY
-# AG_TAMING
-################################################## #########################
-# Name - nome da conquista. Usado para enviar recompensas através do RODEX.
-################################################## #########################
-# Target - Uma lista de ID de monstro e valores de contagem que a conquista
-# requer. A contagem de alvos também pode ser usada para conquistas que mantêm
-# Um contador enquanto não está relacionado a mortes de monstros.
-# Limitado em MAX_ACHIEVEMENT_OBJECTIVES.
-################################################## #########################
-# Condition - Uma declaração condicional que deve ser cumprida para a conquista
-# para ser considerado completo.
-################################################## #########################
-# Map - um nome de mapa usado para o tipo AG_CHATTING que aumenta
-# o contador baseado no mapa do jogador.
-################################################## #########################
-# Dependente: - Uma lista de IDs de conquistas que precisam ser concluídas antes
-# essa conquista é considerada completa.
-################################################## #########################
-# Recompensa - Uma lista de recompensas que são dadas na conclusão. Todos os campos são
-# opcional.
-# ItemID: ID do item
-# Valor: quantidade de ID do item (padrão 1)
-# Script: Script de bônus
-# TitleID: ID do título
-################################################## #########################
-# Pontuação - Pontos de conquista que são entregues após a conclusão.
-################################################## #########################
+###########################################################################
+# ID - Unique achievement ID.
+###########################################################################
+# Group - Achievement group type. Each achievement type calls a specific
+# objective check.
+# Valid groups:
+#  AG_ADD_FRIEND
+#  AG_ADVENTURE
+#  AG_BABY
+#  AG_BATTLE
+#  AG_CHATTING
+#  AG_CHATTING_COUNT
+#  AG_CHATTING_CREATE
+#  AG_CHATTING_DYING
+#  AG_EAT
+#  AG_GET_ITEM
+#  AG_GET_ZENY
+#  AG_GOAL_ACHIEVE
+#  AG_GOAL_LEVEL
+#  AG_GOAL_STATUS
+#  AG_HEAR
+#  AG_JOB_CHANGE
+#  AG_MARRY
+#  AG_PARTY
+#  AG_ENCHANT_FAIL
+#  AG_ENCHANT_SUCCESS
+#  AG_SEE
+#  AG_SPEND_ZENY
+#  AG_TAMING
+###########################################################################
+# Name - Achievement name. Used when sending rewards through RODEX.
+###########################################################################
+# Target - A list of monster ID and count values that the achievement
+# requires. The target count can also be used for achievements that keep
+# a counter while not being related to monster kills.
+# Capped at MAX_ACHIEVEMENT_OBJECTIVES.
+###########################################################################
+# Condition - A conditional statement that must be met for the achievement
+# to be considered complete.
+###########################################################################
+# Map - A map name that is used for the AG_CHATTING type which increments
+# the counter based on the player's map.
+###########################################################################
+# Dependent: - A list of achievement IDs that need to be completed before
+# this achievement is considered complete.
+###########################################################################
+# Reward - A list of rewards that are given on completion. All fields are
+# optional.
+#   ItemID: Item ID
+#   Amount:  Amount of Item ID (default 1)
+#   Script: Bonus Script
+#   TitleID: Title ID
+###########################################################################
+# Score - Achievement points that are given on completion.
+###########################################################################
 
 Achievements:

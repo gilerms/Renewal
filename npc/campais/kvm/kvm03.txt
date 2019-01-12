@@ -1,4 +1,4 @@
-﻿//===== LivedBR Script =======================================
+//===== LivedBR Script =======================================
 //= Sistema Batalha Campal - KvM 60-80
 //===== Descrição : =========================================
 //= [Conversão Oficial]
@@ -113,8 +113,8 @@ OnInit:
 	setwall "bat_c03",55,122,5,7,0,"batc03wall_b";
 	setwall "bat_c03",140,56,6,7,0,"batc03wall_c";
 	setwall "bat_c03",140,57,5,7,0,"batc03wall_d";
-	disablenpc "Oficial KVM#KVM03A";
-	disablenpc "Oficial KVM#KVM03B";
+	disablenpc "Oficial do KVM#KVM03A";
+	disablenpc "Oficial do KVM#KVM03B";
 	end;
 
 OnGuillaumeQuit:
@@ -148,8 +148,8 @@ OnCroixDie:
 	end;
 
 OnStart:
-	disablenpc "Oficial KVM#KVM03A";
-	disablenpc "Oficial KVM#KVM03B";
+	disablenpc "Oficial do KVM#KVM03A";
+	disablenpc "Oficial do KVM#KVM03B";
 	set $@KvM03BG_Victory, 0;
 	// Warp Teams
 	bg_warp $@KvM03BG_id1,"bat_c03",53,128;
@@ -276,8 +276,8 @@ OnCroixWin:
 
 OnStop:
 	stopnpctimer;
-	enablenpc "Oficial KVM#KVM03A";
-	enablenpc "Oficial KVM#KVM03B";
+	enablenpc "Oficial do KVM#KVM03A";
+	enablenpc "Oficial do KVM#KVM03B";
 	// Warp Teams
 	bg_warp $@KvM03BG_id1,"bat_c03",53,128;
 	bg_warp $@KvM03BG_id2,"bat_c03",146,55;

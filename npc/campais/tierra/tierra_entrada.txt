@@ -1,4 +1,4 @@
-﻿//===== LivedBR Script ======================================= 
+//===== LivedBR Script ======================================= 
 //= Batalha Campal - Entrada para o Desfiladeiro de Tierra
 //===== Por: =================================================
 //= L0ne_W0lf

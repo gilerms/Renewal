@@ -1,4 +1,4 @@
-﻿//===== Script LivedBR =======================================
+//===== Script LivedBR =======================================
 //= Cidade de Al De Baran
 //===== Por: ========================================= =========
 //= equipe de desenvolvimento de rAthena; L0ne_W0lf

@@ -80,27 +80,27 @@
 Achievements:
   - ID: 110000
     Group: "AG_EAT"
-    Name: "Neste momento eu vivo para comer"
+    Name: "At this time I live to eat"
     Score: 10
   - ID: 110001
     Group: "AG_SEE"
-    Name: "Um fã dessa polaridade"
+    Name: "A fan of this polarity"
     Score: 10
   - ID: 120001
     Group: "AG_ADVENTURE"
-    Name: "Exploração do Campo de Prontera do Norte(1)"
+    Name: "North Prontera Field Exploration(1)"
     Reward:
       ItemID: 22876
     Score: 10
   - ID: 120002
     Group: "AG_ADVENTURE"
-    Name: "Exploração do Campo de Prontera do Norte(2)"
+    Name: "North Prontera Field Exploration(2)"
     Reward:
       ItemID: 22876
     Score: 10
   - ID: 120003
     Group: "AG_ADVENTURE"
-    Name: "Exploração do Campo de Prontera do Norte(3)"
+    Name: "North Prontera Field Exploration(3)"
     Reward:
       ItemID: 22876
     Score: 10

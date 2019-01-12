@@ -1,4 +1,4 @@
-﻿//===== Script LivedBR =======================================
+//===== Script LivedBR =======================================
 //= Cidade de Einbroch
 //===== Por: =================================================
 //= Todo mundo mencionado nos comentários

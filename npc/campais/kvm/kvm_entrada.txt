@@ -1,4 +1,4 @@
-﻿//===== Script LivedBR ======================================
+//===== Script LivedBR ======================================
 //= Sistema BattleGround - NPCs de Entrada KvM
 //===== Por: ================================================
 //= L0ne_W0lf
@@ -41,7 +41,7 @@ bat_room,164,178,5	script	Oficial do KVM#1	418,{
 	next;
 	switch(select("Eu vou lutar com você.:Cancelar.")) {
 	case 1:
-		mes "[Oficial KVM de Guillaume]";
+		mes "[Oficial do KVM de Guillaume]";
 		mes "Mostre a eles o quanto somos fortes.";
 		mes "Hoje, todo mundo vai ouvir o grito de triunfo de Guillaume!";
 		close2;
@@ -117,7 +117,7 @@ bat_room,167,178,5	script	Cavaleiro de Guillaume#kvm	417,{
 	}
 }
 
-// Oficial KvM - Croix
+// Oficial do KvM - Croix
 //============================================================
 bat_room,164,121,1	script	Oficial do KVM#2	414,{
 	/*
@@ -131,7 +131,7 @@ bat_room,164,121,1	script	Oficial do KVM#2	414,{
 	*/
 	set .@permit,checkquest(6025,PLAYTIME);
 	if ((.@permit == 0) || (.@permit == 1)) {
-		mes "[Oficial KVM de Croix]";
+		mes "[Oficial do KVM de Croix]";
 		mes "Parece que você recentemente participou de uma batalha KVM. Você deve esperar 5 minutos antes de se inscrever novamente.";
 		close;
 	}

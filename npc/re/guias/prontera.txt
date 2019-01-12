@@ -15,7 +15,7 @@
 //=     Optimized.
 //============================================================ 
 
-prontera,154,187,4	script	Guia#01prontera::GuideProntera	105,{
+prontera,154,187,4	script	Guia#01prontera::Guia de Prontera	105,{
 	cutin "prt_soldier",2;
 	mes "[Guia de Prontera]";
 	mes "Bem vindo a ^8B4513Prontera^000000,";
@@ -26,11 +26,11 @@ prontera,154,187,4	script	Guia#01prontera::GuideProntera	105,{
 	next;
 	set .@str$,"Gostaria de verificar outros locais??";
 	while (1) {
-		switch(select("[ Principais instalações ].:[ Comerciantes e auxiliares ].:Remover marcas do minimapa.:Cancelar.")) {
+		switch(select("[Principais instalações].:[Comerciantes e auxiliares].:Remover marcas do minimapa.:Cancelar.")) {
 		case 1:
 			set .@loop,1;
 			while (.@loop) {
-				switch(select("[ Loja de ferramentas ]:[ Loja de Armas e Armaduras ]:[ Forja ]:[ Santuário ]:[ Gabinete de Cavalaria ]:[ Pousada ]:[ Taberna ]:[ Biblioteca ]:[ Castelos de Prontera ]:[ Mudança de Classe ]:[ Prefeitura ]:Menu anterior.")) {
+				switch(select("[Loja de ferramentas]:[Loja de Armas e Armaduras]:[Forja]:[Santuário]:[Gabinete de Cavalaria]:[Pousada]:[Taberna]:[Biblioteca]:[Castelo de Prontera]:[Mudança de Classe]:[Prefeitura]:Menu anterior.")) {
 				case 1:
 					callsub L_Mark, F_Navi("Loja de ferramentas","prontera,134,221","^B9062F");
 					mes .@str$;
@@ -76,8 +76,8 @@ prontera,154,187,4	script	Guia#01prontera::GuideProntera	105,{
 					break;
 				case 7:
 					callsub L_Mark, "^B9062FTaberna^000000";
-					mes "No momento ao "+F_Navi("norte","prontera,208,154","^B9062F")+" a taberna";
-					mes "está aberto por enquanto.";
+					mes "Ao "+F_Navi("norte","prontera,208,154","^B9062F")+" de Prontera";
+					mes "você encontrará a taberna, ela está aberto por enquanto.";
 					mes .@str$;
 					viewpoint 1,208,154,6,0xFF0000;
 					viewpoint 1,46,67,7,0xFF0000;
@@ -86,7 +86,7 @@ prontera,154,187,4	script	Guia#01prontera::GuideProntera	105,{
 				case 8:
 					mes "[Guia de Prontera]";
 					mes "A ^0000FFBiblioteca^000000 é";
-					mes "onde você pode encontrar informações úteis, como a Enciclopédia Monstro.";
+					mes "onde você pode encontrar informações úteis, como a Enciclopédia de monstros.";
 					mes "Existem atualmente duas bibliotecas disponíveis,";
 					mes "Uma para o "+F_Navi("nordeste","prontera,120,264")+" e o outra para o "+F_Navi("noroeste","prontera,192,264")+".";
 					mes .@str$;
@@ -105,14 +105,14 @@ prontera,154,187,4	script	Guia#01prontera::GuideProntera	105,{
 					next;
 					break;
 				case 10:
-					callsub L_Mark, F_Navi("Agéncia de Classes","prontera,133,183","^006400");
+					callsub L_Mark, F_Navi("Mudança de Classe","prontera,133,183","^006400");
 					mes .@str$;
 					viewpoint 1,133,183,11,0xAAFF00;
 					next;
 					break;
 				case 11:
 					mes "[Guia de Prontera]";
-					mes "Let me mark the location of "+F_Navi("City Hall","prontera,75,91","^7F3300");
+					mes "Let me mark the location of "+F_Navi("Prefeitura","prontera,75,91","^7F3300");
 					mes "on your mini-map.";
 					mes "There's a hairstylist";
 					mes "there that can change your hair color.";

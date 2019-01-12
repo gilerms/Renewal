@@ -352,7 +352,7 @@ aldebaran,86,228,4	script	Pequena Criança#alde	62,{
 	}
 }
 
-aldebaran,159,242,4	script	Garoto dos Insetos#alde	119,{
+aldebaran,159,242,4	script	Entomólogo#alde	119,{
 	mes "[Stromme]";
 	mes "Até para um forte Espadachim, os insetos no Mt. Mjolnir podem ser considerados ameaças. Você deve conhecer seu inimigo antes de começar uma batalha!";
 	next;
@@ -1024,7 +1024,7 @@ aldeba_in,142,238,4	script	Serviços da Kafra#3alde	114,{
 	end;
 }
 
-aldeba_in,91,244,4	script	Serviços da Kafra#4alde	112,{
+aldeba_in,91,244,4	script	Serviços Kafra#4alde	112,{
 	cutin "kafra_06",2;
 	mes "[Kafra Curly Sue]";
 	mes "Olá, Olá!!";
@@ -1282,22 +1282,18 @@ aldeba_in,79,161,7	script	Funcionária da Kafra#reserve1	4_F_KAFRA3,{
 }
 
 aldeba_in,88,161,3	script	Funcionária da Kafra#reserve2	4_F_KAFRA3,{
-	mes "[Funcionária da Kafra]";
-	mes "Bem vindo~ "+ strcharinfo(0) +".";
-	mes "Atualmente, nós, o Kafra Center, estamos tendo um evento especial para nossos clientes.";
+		cutin "kafra_03",2;
+	mes "[Kafra]";
+	mes "Bem-vindo ^5577FF"+strcharinfo(0)+"^000000.  Atualmente estamos oferecendo um evento especial para nossos clientes.";
+	mes "Você pode ganhar prêmios usando seus ^FF5533Pontos de Reserva Especial^000000 no ^3355FFEvento Prêmio Especial Kafra^000000!!";
 	next;
-	mes "[Funcionária da Kafra]";
-	mes "Você pode obter brindes usando pontos de reserva especiais com ^FF0000Especial Kafra ^529DFFPresente de Evento!^000000";
-	mes "A Corporação Kafra adicionou novos presentes neste evento.";
+	mes "[Kafra]";
+	mes "Você gostaria de usar seus pontos?";
 	next;
-	mes "[Funcionária da Kafra]";
-	mes "Você quer usar seus pontos?";
-	next;
-	if (select( "Sim, eu quero","Talvez na próxima" ) == 1) {
-		mes "[Funcionária da Kafra]";
-		if ((MaxWeight - Weight) < 11000) {
-			mes ".... Oh querida ...você está carregando mitas coisas ...?";
-			mes "Eu não acho que você pode manter os itens recebidos ~";
+	if (select("Sim, eu gostaria.","Talvez na próxima.") == 1) {
+		mes "[Kafra]";
+		mes "Você tem essa quantidade de pontos: ^5544FF"+RESRVPTS+"^000000.";
+		mes "Faça uma escolha e teste sua sorte!";
 			next;
 			mes "[Funcionária da Kafra]";
 			mes "Sinto muito ~mas~";

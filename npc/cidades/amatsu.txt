@@ -1,40 +1,41 @@
-//===== rAthena Script =======================================
-//= Amatsu Town
-//===== By: ==================================================
-//= rAthena Dev Team
-//===== Current Version: =====================================
-//= 1.4
-//===== Compatible With: =====================================
-//= rAthena Project
-//===== Description: =========================================
-//= [Official Conversion]
-//= Amatsu Town Script
-//===== Additional Comments: =================================
-//= 1.3 Rescripted to Aegis 10.3 Standards. [L0ne_W0lf]
-//=     Moved elemental stone trader to 'elemental_trader.txt'
-//= 1.4 Moved Alberta NPC to pre-re/re paths. [Euphy]
-//============================================================
+Ôªø// ===== Script LivedBR =======================================
+// = Cidade de Amatsu
+// ===== Por: =================================================
+// = equipe de desenvolvimento do rAthena
+// ===== Vers√£o atual: ========================================
+// = 1.5
+// ===== Compat√≠vel com: ======================================
+// = Projeto rAthena
+// ===== Descri√ß√£o: ===========================================
+// = [Convers√£o oficial]
+// = Script da cidade de Amatsu
+// ===== Coment√°rios adicionais: ==============================
+// = 1.3 Rescrito para Aegis 10.3 Padr√µes. [L0ne_W0lf]
+// = Moveu o trader de pedra elementar para 'elemental_trader.txt'
+// = 1.4 Movido NPC de Alberta para pr√©-re / re caminhos. [Euphy]
+// = 1.5 Traduzido para Portugu√™s Br. [Vrods]
+// ============================================================
 
 // Transporte de Amatsu
-//============================================================
+//=============================================================
 -	script	::Sea_Captain_amatsu	-1,{
 	mes "[Walter Moers]";
 	mes "Ei, ai.";
-	mes "VocÍ j· ouviu isso aÌ";
-	mes "que h· paÌses totalmente diferentes";
+	mes "Voc√™ j√° ouviu isso a√≠";
+	mes "que h√° pa√≠ses totalmente diferentes";
 	mes "que o reino de Rune-Midgard?";
 	next;
-	switch(select("Sobre Amatsu...:Ir para Amatsu:Cancelar")) {
+	switch(select("Sobre Amatsu...:Ir para Amatsu.:Cancelar.")) {
 	case 1:
 		mes "[Walter Moers]";
-		mes "Eu ouvi dizer que um navio ‡ deriva";
+		mes "Eu ouvi dizer que um navio √† deriva";
 		mes "acidentalmente descobriu a cidade de Amatsu...";
-		mes "O navio foi totalmente destruÌdo";
+		mes "O navio foi totalmente destru√≠do";
 		mes "por uma tempestade violenta em forte nevoeiro.";
 		mes "";
 		next;
 		mes "[Walter Moers]";
-		mes "De qualquer forma, o navio foi destruÌdo";
+		mes "De qualquer forma, o navio foi destru√≠do";
 		mes "na praia.";
 		mes "Ele chegou em uma cidade chamada Amatsu.";
 		mes "Mas havia um triplante no navio,";
@@ -43,7 +44,7 @@
 		mes "[Walter Moers]";
 		mes "Os moradores tiveram pena dele";
 		mes "e cuidaram de suas feridas.";
-		mes "Ele viveu l· atÈ terminar de fazer um mapa.";
+		mes "Ele viveu l√° at√© terminar de fazer um mapa.";
 		next;
 		mes "[Walter Moers]";
 		mes "Ele faleceu quando ele retornou";
@@ -51,51 +52,51 @@
 		mes "o mapa foi dado ao nosso rei, Tristan III.";
 		next;
 		mes "[Walter Moers]";
-		mes "Rei Trist„o III anunciou";
+		mes "Rei Trist√£o III anunciou";
 		mes "que ele recompensaria qualquer";
-		mes "pessoa corajosa o suficiente para se aventurar em Amatsu, e espalhar cÛpias deste mapa.";
+		mes "pessoa corajosa o suficiente para se aventurar em Amatsu, e espalhar c√≥pias deste mapa.";
 		next;
 		mes "[Walter Moers]";
 		mes "Muitos corajosos e aventureiros";
 		mes "do mar aceitaram o";
 		mes "desafio. Grande fortuna poderia";
-		mes "ser adiquirida no comÈrcio com o mapa de Amatsu, assim como as recompensas do Rei Trist„o III...";
+		mes "ser adiquirida no com√©rcio com o mapa de Amatsu, assim como as recompensas do Rei Trist√£o III...";
 		next;
 		mes "[Walter Moers]";
 		mes "No entanto, todos eles falharam!";
-		mes "E para superar v·rias dificuldades";
+		mes "E para superar v√°rias dificuldades";
 		mes "e o mau tempo, era preciso muita";
-		mes "experiÍncia. Mas eles estavam todos cegos por sua gan‚ncia...";
+		mes "experi√™ncia. Mas eles estavam todos cegos por sua gan√¢ncia...";
 		next;
 		mes "[Walter Moers]";
 		mes "Finalmente, um grande homem descobriu";
 		mes "o perfeito sealane para Amatsu...";
 		mes "Certo! Esse sou eu. Senhor Walter";
-		mes "Moers. Eu comecei o negÛcio em Amatsu! Hahaha! Bem, isso È tudo sobre o Amatsu.";
+		mes "Moers. Eu comecei o neg√≥cio em Amatsu! Hahaha! Bem, isso √© tudo sobre o Amatsu.";
 		next;
 		mes "[Walter Moers]";
-		mes "Eu fiz um bom dinheiro com negÛcios";
+		mes "Eu fiz um bom dinheiro com neg√≥cios";
 		mes "por anos, e agora estou interessado";
-		mes "no turismo. Se vocÍ quiser ir a Amatsu, me avise~!";
+		mes "no turismo. Se voc√™ quiser ir a Amatsu, me avise~!";
 		close;
 	case 2:
 		mes "[Walter Moers]";
-		mes "Oh sim? … um longo caminho para";
-		mes "Amatsu. … por isso que nÛs";
-		mes "cobramos uma tarifa. VocÍ n„o acha que cruzar oceanos È f·cil, n„o È?";
+		mes "Oh sim? √â um longo caminho para";
+		mes "Amatsu. √â por isso que n√≥s";
+		mes "cobramos uma tarifa. Voc√™ n√£o acha que cruzar oceanos √© f√°cil, n√£o √©?";
 		next;
 		mes "[Walter Moers]";
 		mes "10.000 zeny para uma viagem de ida e volta!";
 		mes "Eu tenho um quarto imponente e um robusto";
-		mes "navio de comÈrcio seguro para vocÍ. … uma";
-		mes "tarifa razo·vel, quando vocÍ considera";
-		mes "que esta n„o È uma viagem sÛ de ida.";
+		mes "navio de com√©rcio seguro para voc√™. √â uma";
+		mes "tarifa razo√°vel, quando voc√™ considera";
+		mes "que esta n√£o √© uma viagem s√≥ de ida.";
 		next;
 		mes "[Walter Moers]";
-		mes "Vamos agora? VocÍ n„o esqueceu";
+		mes "Vamos agora? Voc√™ n√£o esqueceu";
 		mes "a tarifa, certo? Vamos.";
 		next;
-		if (select("Todos a bordo!:Cancelar") == 1) {
+		if (select("Todos a bordo!:Cancelar.") == 1) {
 			if (Zeny > 9999) {
 				mes "[Walter Moers]";
 				mes "Tudo bem, eu vou ligar o motor!";
@@ -105,37 +106,37 @@
 				end;
 			}
 			mes "[Walter Moers]";
-			mes "VocÍ estava me ouvindo?";
-			mes "10.000 zeny. Se vocÍ n„o tem";
+			mes "Voc√™ estava me ouvindo?";
+			mes "10.000 zeny. Se voc√™ n√£o tem";
 			mes "nada, encontre algum tesouro";
 			mes "em algum lugar, como em um navio naufragado... Mostre-me o dinheiro!";
 			close;
 		}
 		mes "[Walter Moers]";
-		mes "Se vocÍ È um aventureiro,";
-		mes "esta È uma grande chance para";
-		mes "experimentar uma cultura diferente... Bem, depende de vocÍ.";
+		mes "Se voc√™ √© um aventureiro,";
+		mes "esta √© uma grande chance para";
+		mes "experimentar uma cultura diferente... Bem, depende de voc√™.";
 		close;
 	case 3:
 		mes "[Walter Moers]";
-		mes "Se vocÍ est· cansado do seu dia";
-		mes "faÁa uma viagem a um distante";
-		mes "paÌs do outro lado do oceano.";
-		mes "Em algum lugar como, oh, eu n„o sei, Amatsu~";
+		mes "Se voc√™ est√° cansado do seu dia";
+		mes "fa√ßa uma viagem a um distante";
+		mes "pa√≠s do outro lado do oceano.";
+		mes "Em algum lugar como, oh, eu n√£o sei, Amatsu~";
 		close;
 	}
 }
 
-amatsu,194,79,5	script	Capit„o dos Mares#ama2	709,{
+amatsu,194,79,5	script	Capit√£o dos Mares#ama2	709,{
 	mes "[Walter Moers]";
-	mes "VocÍ veio... VocÍ gostou";
+	mes "Voc√™ veio... Voc√™ gostou";
 	mes "de sua viagem para Amatsu...?";
 	mes "Tudo bem, eu vou te levar";
 	mes "de volta a Alberta.";
 	next;
 	if (select("Voltar para Alberta:Cancelar") == 1) {
 		mes "[Walter Moers]";
-		mes "Vamos ent„o. VocÍ deve ter";
+		mes "Vamos ent√£o. Voc√™ deve ter";
 		mes "tantas coisas para falar,";
 		mes "certo? Todos a bordo agora.";
 		close2;
@@ -157,59 +158,59 @@ amatsu,194,79,5	script	Capit„o dos Mares#ama2	709,{
 amatsu,230,160,3	script	Donzela#ama	757,{
 	mes "[Yuuko]";
 	mes "Eu costumo vir a aqui para";
-	mes "tirar ·gua, mas nunca quando est·";
-	mes "nebuloso ou chuvoso. Por alguma raz„o";
-	mes "sempre que o tempo est·";
+	mes "tirar √°gua, mas nunca quando est√°";
+	mes "nebuloso ou chuvoso. Por alguma raz√£o";
+	mes "sempre que o tempo est√°";
 	mes "diferente, eu sinto que...";
 	next;
 	mes "[Yuuko]";
-	mes "...alguÈm ...ou alguma coisa";
+	mes "...algu√©m ...ou alguma coisa";
 	mes "esta tentando sair do";
-	mes "fundo deste poÁo...";
-	mes "Isso realmente me d· arrepios.";
+	mes "fundo deste po√ßo...";
+	mes "Isso realmente me d√° arrepios.";
 	close;
 }
 
 amatsu,179,107,4	script	John#ama	86,{
 	mes "[John]";
 	mes "Yo ~";
-	mes "VocÍ n„o È daqui.";
+	mes "Voc√™ n√£o √© daqui.";
 	mes "Heh, outro estranho.";
 	mes "Assim como eu...";
 	next;
 	mes "[John]";
 	mes "Foram cinco longos anos";
 	mes "desde que comecei a fazer";
-	mes "negÛcios aqui...";
+	mes "neg√≥cios aqui...";
 	next;
 	mes "[John]";
-	mes "No comeÁo, eu pensei em uma";
-	mes "uma grande chance! ComeÁar um";
-	mes "comÈrcio entre o";
+	mes "No come√ßo, eu pensei em uma";
+	mes "uma grande chance! Come√ßar um";
+	mes "com√©rcio entre o";
 	mes "Reino de Rune-Midgard e Amatsu.";
 	next;
 	mes "[John]";
 	mes "Eu queria fazer algo grande";
-	mes "e aproveitar ao m·ximo isso";
+	mes "e aproveitar ao m√°ximo isso";
 	mes "uma nova oportunidade.";
 	next;
 	mes "[John]";
-	mes "E ent„o, eu decidi ir para";
+	mes "E ent√£o, eu decidi ir para";
 	mes "Amatsu para aprender a";
-	mes "culin·ria de Amatsu. Ent„o, eu poderia";
+	mes "culin√°ria de Amatsu. Ent√£o, eu poderia";
 	mes "voltar para minha cidade natal e fazer";
-	mes "esta comida exÛtica para todos.";
+	mes "esta comida ex√≥tica para todos.";
 	next;
 	mes "[John]";
 	mes "Mas, eu me apaixonei por Amatsu";
 	mes "e acabei por ficar";
-	mes "aqui nos ˙ltimos cinco anos.";
+	mes "aqui nos √∫ltimos cinco anos.";
 	mes "Durante todo esse tempo, eu venho";
-	mes "aprendendo a culin·ria de Amatsu";
+	mes "aprendendo a culin√°ria de Amatsu";
 	next;
 	mes "[John]";
 	mes "e cozinhar esses pratos para";
-	mes "os moradores È divertido";
+	mes "os moradores √© divertido";
 	mes "e conversar com os moradores locais";
 	mes "me fixo ainda mais neste local.";
 	next;
@@ -217,7 +218,7 @@ amatsu,179,107,4	script	John#ama	86,{
 	mes "Mas recentemente, do outro lado da rua,";
 	mes "o Mestre do Sushi abriu sua loja.";
 	mes "...";
-	mes "Agora, meus ˙nicos clientes s„o moscas.";
+	mes "Agora, meus √∫nicos clientes s√£o moscas.";
 	next;
 	mes "[John]";
 	mes "Eu estava esperando cumprir meu";
@@ -230,8 +231,8 @@ amatsu,179,107,4	script	John#ama	86,{
 amatsu,205,163,3	script	Mimi#ama	759,{
 	mes "[Mimi]";
 	mes "Puhuhu ~!";
-	mes "VocÍ viu a senhorita Amatsu perto";
-	mes "do porto? Ela n„o È";
+	mes "Voc√™ viu a senhorita Amatsu perto";
+	mes "do porto? Ela n√£o √©";
 	mes "Boniiittaa?";
 	next;
 	mes "[Mimi]";
@@ -245,22 +246,22 @@ amatsu,205,163,3	script	Mimi#ama	759,{
 	close;
 }
 
-amatsu,185,115,3	script	Homem BÍbado#ama	765,{
+amatsu,185,115,3	script	Homem B√™bado#ama	765,{
 	mes "[Kosake]";
-	mes "*Hiccup*... Minha esposa È como";
+	mes "*Hiccup*... Minha esposa √© como";
 	mes "...como um homem...*Hiccup*...";
-	mes "Eu realmente...*Hiccup*...n„o vou para casa dessa vez...Hiccup";
+	mes "Eu realmente...*Hiccup*...n√£o vou para casa dessa vez...Hiccup";
 	next;
-	if (select("Pare de beber e v· para casa:vamos beber juntos") == 1) {
+	if (select("Pare de beber e v√° para casa:vamos beber juntos") == 1) {
 		mes "[Kosake]";
-		mes "O quÍ?! VocÍ quer que eu seja";
+		mes "O qu√™?! Voc√™ quer que eu seja";
 		mes "atingido pelo grande punho da minha esposa?";
 		mes "Isso mesmo! Eu disse 'grande punho!'";
 		next;
 		mes "[Kosake]";
-		mes "… triste dizer que eu casei com uma mulher";
-		mes "com m„os de homem...";
-		mes "M„os grandes e fortes que podem matar um tigre.";
+		mes "√â triste dizer que eu casei com uma mulher";
+		mes "com m√£os de homem...";
+		mes "M√£os grandes e fortes que podem matar um tigre.";
 		next;
 		mes "[Druken Man]";
 		mes "Foi em Ko ... Koko-alguma";
@@ -268,8 +269,8 @@ amatsu,185,115,3	script	Homem BÍbado#ama	765,{
 		mes "perdi algum dinheiro...*Hiccup*";
 		next;
 		mes "[Druken Man]";
-		mes "A vida~~ È~~ nada~~~";
-		mes "O que È zeny~~~~";
+		mes "A vida~~ √©~~ nada~~~";
+		mes "O que √© zeny~~~~";
 		mes "*Hiccup*......*Hiccup*.......";
 		mes ".......................";
 		mes "........Z.z..z...zzz...";
@@ -277,40 +278,40 @@ amatsu,185,115,3	script	Homem BÍbado#ama	765,{
 	}
 	mes "[Kosake]";
 	mes "Heh heh... bom rapaz...";
-	mes "Mas vocÍ sabe *Hiccup*";
-	mes "Eu n„o posso te dar nenhum dos meus! Heheheh...";
+	mes "Mas voc√™ sabe *Hiccup*";
+	mes "Eu n√£o posso te dar nenhum dos meus! Heheheh...";
 	next;
 	mes "[Kosake]";
-	mes "Se vocÍ me der uma bebida, eu vou pensar nisso... Hehehe... *SoluÁo*..";
+	mes "Se voc√™ me der uma bebida, eu vou pensar nisso... Hehehe... *Solu√ßo*..";
 	close;
 }
 
-amatsu,217,179,1	script	AvÛ#ama	760,{
+amatsu,217,179,1	script	Av√≥#ama	760,{
 	mes "[Hatsue]";
 	mes "Estou preocupado com meu marido.";
 	mes "Ele perdeu muito dinheiro em alguma cidade distante hoje.";
 	next;
 	mes "[Hatsue]";
-	mes "Eu fiquei t„o brava com ele que ele fugiu";
+	mes "Eu fiquei t√£o brava com ele que ele fugiu";
 	mes "com medo! Estou preocupada... e se ele";
-	mes "foi para o bar e comeÁou a beber de novo? O homem simplesmente n„o tem nenhuma espinha dorsal.*Ufa*";
+	mes "foi para o bar e come√ßou a beber de novo? O homem simplesmente n√£o tem nenhuma espinha dorsal.*Ufa*";
 	close;
 }
 
 amatsu,287,266,3	script	Jyaburo#ama	766,{
 	mes "[Jyaburo]";
-	mes "Este lugar È especial para mim.";
-	mes "Est· cheio de lembranÁas da minha esposa.";
+	mes "Este lugar √© especial para mim.";
+	mes "Est√° cheio de lembran√ßas da minha esposa.";
 	next;
 	mes "[Jyaburo]";
-	mes "Foi debaixo daquela grande ·rvore onde";
+	mes "Foi debaixo daquela grande √°rvore onde";
 	mes "Eu disse a ela que a amava.";
-	mes "eu realmente n„o sabia que ela tambÈm tinha sentimentos por mim.";
+	mes "eu realmente n√£o sabia que ela tamb√©m tinha sentimentos por mim.";
 	next;
 	mes "[Jyaburo]";
-	mes "Depois daquele dia, nÛs tivemos muitas";
+	mes "Depois daquele dia, n√≥s tivemos muitas";
 	mes "conversas aqui. Quieto";
-	mes "e pacÌfico, este foi o nosso";
+	mes "e pac√≠fico, este foi o nosso";
 	mes "lugar favorito para ficar juntos.";
 	next;
 	mes "[Jyaburo]";
@@ -321,18 +322,18 @@ amatsu,287,266,3	script	Jyaburo#ama	766,{
 	next;
 	mes "[Jyaburo]";
 	mes "Minha esposa faleceu ...";
-	mes "Ent„o agora eu sÛ venho aqui por";
+	mes "Ent√£o agora eu s√≥ venho aqui por";
 	mes "eu mesmo... Mas eu sinto que estou com ela sempre que estou aqui.";
 	next;
 	mes "[Jyaburo]";
-	mes "VocÍ tem alguÈm que vocÍ";
-	mes "goste, se vocÍ tem";
-	mes "alguÈm especial, n„o hesite";
+	mes "Voc√™ tem algu√©m que voc√™";
+	mes "goste, se voc√™ tem";
+	mes "algu√©m especial, n√£o hesite";
 	mes "ou segure-se. Certifique-se de tratar";
 	mes "essa pessoa com muito carinho.";
 	next;
 	mes "[Jyaburo]";
-	mes "Os seres humanos vivem t„o pouco";
+	mes "Os seres humanos vivem t√£o pouco";
 	mes "tempo. Mas somos capazes de rir";
 	mes "ao longo da vida e esquecer a";
 	mes "tristeza.";
@@ -345,79 +346,79 @@ amatsu,287,266,3	script	Jyaburo#ama	766,{
 amatsu,269,221,1	script	Garota#ama	758,{
 	set jap_tree,1;
 	mes "[Hutari Shioko]";
-	mes "… um prazer conhecÍ-lo.";
-	mes "Meu nome È Hutari Shioko.";
-	mes "Meu hobby È ouvir m˙sica.";
-	mes "Sou uma ·vido f„ de m˙sica cl·ssica.";
+	mes "√â um prazer conhec√™-lo.";
+	mes "Meu nome √© Hutari Shioko.";
+	mes "Meu hobby √© ouvir m√∫sica.";
+	mes "Sou uma √°vido f√£ de m√∫sica cl√°ssica.";
 	next;
 	mes "[Hutari Shioko]";
-	mes "H· uma velha histÛria sobre";
+	mes "H√° uma velha hist√≥ria sobre";
 	mes "a colina em nossa cidade.";
-	mes "VocÍ j· ouviu essa histÛria antes?";
+	mes "Voc√™ j√° ouviu essa hist√≥ria antes?";
 	next;
 	mes "[Hutari Shioko]";
-	mes "Dizem que se vocÍ deitar";
-	mes "debaixo daquela ·rvore, vocÍ e a";
-	mes "a pessoa que ama, viver· uma vida feliz por toda a eternidade.";
+	mes "Dizem que se voc√™ deitar";
+	mes "debaixo daquela √°rvore, voc√™ e a";
+	mes "a pessoa que ama, viver√° uma vida feliz por toda a eternidade.";
 	next;
 	mes "[Hutari Shioko]";
-	mes "No entanto, a proposta n„o pode ser";
-	mes "feito a qualquer momento. A lenda diz que isso sÛ pode ser feito nas noites de s·bado.";
+	mes "No entanto, a proposta n√£o pode ser";
+	mes "feito a qualquer momento. A lenda diz que isso s√≥ pode ser feito nas noites de s√°bado.";
 	next;
 	mes "[Hutari Shioko]";
-	mes "ApÛs a proposta, a resposta deve";
-	mes "ser respondida antes do domingo ‡ noite. Esta È a parte mais crucial.";
+	mes "Ap√≥s a proposta, a resposta deve";
+	mes "ser respondida antes do domingo √† noite. Esta √© a parte mais crucial.";
 	next;
 	emotion ET_BIGTHROB;
 	mes "[Hutari Shioko]";
-	mes "Se vocÍ gosta de alguÈm ...";
-	mes "VocÍ deveria tentar propor";
-	mes "debaixo daquela ·rvore. Tenho certeza";
-	mes "coisas felizes acontecer„o, se vocÍ fizer isso.";
+	mes "Se voc√™ gosta de algu√©m ...";
+	mes "Voc√™ deveria tentar propor";
+	mes "debaixo daquela √°rvore. Tenho certeza";
+	mes "coisas felizes acontecer√£o, se voc√™ fizer isso.";
 	close;
 }
 
 amatsu,243,202,3	script	Professora de Artes#ama	760,{
 	set jap_tree,2;
 	mes "[Garakame sensei]";
-	mes "Este È um lugar bonito";
+	mes "Este √© um lugar bonito";
 	mes "com flores de cerejeira eternas.";
-	mes "AlÈm disso, esta cidade È a origem da";
-	mes "peÁa lend·ria, 'White Dryad'. ";
+	mes "Al√©m disso, esta cidade √© a origem da";
+	mes "pe√ßa lend√°ria, 'White Dryad'. ";
 	next;
 	if (Sex == SEX_MALE) {
 		mes "[Garakame sensei]";
-		mes "Se vocÍ conhece uma garota que È";
+		mes "Se voc√™ conhece uma garota que √©";
 		mes "talentosa, por favor";
 		mes "traga para mim. Eu tenho";
 		mes "procurado por uma garota que pudesse";
-		mes "desempenhar o papel de 'DrÌade Branca'";
+		mes "desempenhar o papel de 'Dr√≠ade Branca'";
 		next;
 		mes "[Garakame sensei]";
-		mes "O 'White Dryad' È uma ninfa da";
-		mes "cerejeira... Tem sido difÌcil";
+		mes "O 'White Dryad' √© uma ninfa da";
+		mes "cerejeira... Tem sido dif√≠cil";
 		mes "encontrar uma garota que possa se apresentar";
 		mes "como 'White Drayd...'";
 		close;
 	}
 	emotion ET_SURPRISE;
 	mes "[Garakame sensei]";
-	mes "VocÍ est· interessado em atuar?";
-	mes "Eu preciso de alguÈm que veja";
-	mes "a paix„o em atuar e";
-	mes "entender minha vis„o.";
+	mes "Voc√™ est√° interessado em atuar?";
+	mes "Eu preciso de algu√©m que veja";
+	mes "a paix√£o em atuar e";
+	mes "entender minha vis√£o.";
 	next;
 	mes "[Garakame sensei]";
-	mes "Quando vocÍ est· no palco,";
-	mes "vocÍ precisa se tornar o";
-	mes "personagem. Sua atuaÁ„o precisa";
-	mes "tocar os coraÁıes do";
-	mes "p˙blico e suas almas.";
+	mes "Quando voc√™ est√° no palco,";
+	mes "voc√™ precisa se tornar o";
+	mes "personagem. Sua atua√ß√£o precisa";
+	mes "tocar os cora√ß√µes do";
+	mes "p√∫blico e suas almas.";
 	next;
 	mes "[Garakame sensei]";
-	mes "A vida de todos È como";
+	mes "A vida de todos √© como";
 	mes "drama, certo? Aproveite a sua vida";
-	mes "como vocÍ È e me encontre";
+	mes "como voc√™ √© e me encontre";
 	mes "algum dia quando estiver pronto.";
 	close;
 }
@@ -430,57 +431,57 @@ amatsu,283,203,1	script	Bonubonu#ama2	111,{
 	set jap_tree,3;
 	emotion ET_PROFUSELY_SWEAT;
 	mes "[Bonubonu]";
-	mes "Aquela ·rvore na colina È";
-	mes "uma ·rvore muito velha. … um grande";
+	mes "Aquela √°rvore na colina √©";
+	mes "uma √°rvore muito velha. √â um grande";
 	mes "cerejeira com flores eternas.";
 	next;
 	emotion ET_PROFUSELY_SWEAT;
 	mes "[Bonubonu]";
-	mes "H· algo sobre isso";
-	mes "·rvore que me faz esquecer";
+	mes "H√° algo sobre isso";
+	mes "√°rvore que me faz esquecer";
 	mes "todos os problemas da minha vida quando eu me sentar sob ele.";
 	next;
 	emotion ET_PROFUSELY_SWEAT;
 	mes "[Bonubonu]";
-	mes "Tudo sobre esta ·rvore È";
+	mes "Tudo sobre esta √°rvore √©";
 	mes "simplesmente maravilhoso...";
-	mes "Eu n„o posso descrever como";
+	mes "Eu n√£o posso descrever como";
 	mes "Eu sinto quando olho para isso...";
-	mes "Apenas me deixa sem fÙlego...";
+	mes "Apenas me deixa sem f√¥lego...";
 	next;
 	emotion ET_PROFUSELY_SWEAT;
 	mes "[Bonubonu]";
-	mes "VocÍ deveria visitar a ·rvore e";
-	mes "passar algum tempo l·.";
-	mes "… realmente uma ·rvore milagrosa e graciosa ...";
+	mes "Voc√™ deveria visitar a √°rvore e";
+	mes "passar algum tempo l√°.";
+	mes "√â realmente uma √°rvore milagrosa e graciosa ...";
 	close;
 }
 
-amatsu,274,178,7	script	Veterin·rio#ama	735,{
+amatsu,274,178,7	script	Veterin√°rio#ama	735,{
 	set jap_tree,4;
 	mes "[Sakura Seiichi]";
-	mes "Ah... eu n„o sou um esquisito";
-	mes "n„o entre em p‚nico. Eu sou apenas um ordin·rio";
-	mes "veterin·rio. Meu trabalho est· curando";
+	mes "Ah... eu n√£o sou um esquisito";
+	mes "n√£o entre em p√¢nico. Eu sou apenas um ordin√°rio";
+	mes "veterin√°rio. Meu trabalho est√° curando";
 	mes "animais doentes.";
 	mes "";
 	next;
 	mes "[Sakura Seiichi]";
-	mes "A propÛsito ... VocÍ sabe?";
-	mes "A histÛria da cerejeira";
-	mes "na colina ... eu acho que vocÍ n„o ouviu falar sobre isso ...";
+	mes "A prop√≥sito ... Voc√™ sabe?";
+	mes "A hist√≥ria da cerejeira";
+	mes "na colina ... eu acho que voc√™ n√£o ouviu falar sobre isso ...";
 	next;
 	mes "[Sakura Seiichi]";
-	mes "Essa ·rvore tem um segredo de";
+	mes "Essa √°rvore tem um segredo de";
 	mes "mantendo sua beleza e brancura.";
-	mes "O segredo È...";
-	mes "H· cad·veres enterrados sob ...";
-	mes "aquela ·rvore...";
+	mes "O segredo √©...";
+	mes "H√° cad√°veres enterrados sob ...";
+	mes "aquela √°rvore...";
 	next;
-	if (select("Que horrÌvel!: VocÍ deve estar brincando.") == 1) {
+	if (select("Que horr√≠vel!: Voc√™ deve estar brincando.") == 1) {
 		mes "[Sakura Seiichi]";
 		mes "Kuhuhu... Eles poderiam ser ...";
-		mes "A propÛsito, vocÍ quer";
+		mes "A prop√≥sito, voc√™ quer";
 		mes "apostar nisso ...?";
 		next;
 		emotion ET_THINK;
@@ -491,11 +492,11 @@ amatsu,274,178,7	script	Veterin·rio#ama	735,{
 		next;
 		mes "^3355FFEla voz estava ficando mais baixa";
 		mes "e menor como o vento soprou.";
-		mes "Finalmente, eu n„o consegui nem ouvir a voz dele. Eu nem consigo me lembrar do que ele estava tentando me dizer...^000000";
+		mes "Finalmente, eu n√£o consegui nem ouvir a voz dele. Eu nem consigo me lembrar do que ele estava tentando me dizer...^000000";
 		close;
 	}
 	mes "[Sakura Seiichi]";
-	mes "Eu n„o posso evitar se vocÍ pensa assim. Mas um dia, vocÍ tambÈm pode ser enterrado embaixo ...";
+	mes "Eu n√£o posso evitar se voc√™ pensa assim. Mas um dia, voc√™ tamb√©m pode ser enterrado embaixo ...";
 	next;
 	emotion ET_THINK;
 	mes "[Sakura Seiichi]";
@@ -505,86 +506,86 @@ amatsu,274,178,7	script	Veterin·rio#ama	735,{
 	next;
 	mes "^3355FFO riso dele estava diminuindo";
 	mes "e menor como o vento soprou.";
-	mes "Finalmente, eu n„o consegui nem ouvir nada. Eu nem consigo me lembrar do que ele estava tentando me dizer...^000000";
+	mes "Finalmente, eu n√£o consegui nem ouvir nada. Eu nem consigo me lembrar do que ele estava tentando me dizer...^000000";
 	close;
 }
 
-amatsu,262,197,1	script	¡rvore Lend·ria	111,{
+amatsu,262,197,1	script	√Årvore Lend√°ria	111,{
 	if (jap_tree == 1) {
-		mes "^3355FFEla mencionou que, esta ·rvore";
+		mes "^3355FFEla mencionou que, esta √°rvore";
 		mes "parece ser um lugar famoso";
 		mes "por formar casais.";
-		mes "Havia v·rios sÌmbolos esculpidos";
-		mes "de coraÁıes e iniciais de amantes";
+		mes "Havia v√°rios s√≠mbolos esculpidos";
+		mes "de cora√ß√µes e iniciais de amantes";
 		mes "na casca.^000000";
 		next;
 		mes "^3355FFBesides propostas, pessoas";
-		mes "reunir debaixo desta ·rvore quando";
+		mes "reunir debaixo desta √°rvore quando";
 		mes "eles discutem importante";
 		mes "importa. Eu poderia ouvir";
-		mes "todos os tipos de histÛrias";
-		mes "neste lugar magnÌfico.^000000";
+		mes "todos os tipos de hist√≥rias";
+		mes "neste lugar magn√≠fico.^000000";
 		close;
 	}
 	else if (jap_tree == 2) {
-		mes "^3355FFA peÁa lend·ria, 'DrÌade Branco'.....";
+		mes "^3355FFA pe√ßa lend√°ria, 'Dr√≠ade Branco'.....";
 		mes "Eu nunca ouvi sobre esse nome, mas";
 		mes "soa familiar.";
 		mes "Ninfa da cerejeira ... O que";
-		mes "È a sua posiÁ„o na peÁa?^000000";
+		mes "√© a sua posi√ß√£o na pe√ßa?^000000";
 		next;
 		if (Sex == SEX_MALE) {
 			mes "^3355FFI gostaria de encontrar";
-			mes "uma pessoa que È talentosa";
-			mes "em agir e ajud·-la atÈ";
-			mes "ela executa a peÁa. No entanto,";
-			mes "parece ser mais f·cil falar do que fazer.^000000";
+			mes "uma pessoa que √© talentosa";
+			mes "em agir e ajud√°-la at√©";
+			mes "ela executa a pe√ßa. No entanto,";
+			mes "parece ser mais f√°cil falar do que fazer.^000000";
 			close;
 		}
 		mes "^3355FFI pode ter talento em";
-		mes "atuaÁ„o que ainda n„o foi descoberta. Eu pensei, 'Se eu me vestir, eu deveria me apresentar como' White Dryad ... '^ 000000";
+		mes "atua√ß√£o que ainda n√£o foi descoberta. Eu pensei, 'Se eu me vestir, eu deveria me apresentar como' White Dryad ... '^ 000000";
 		close;
 	}
 	else if (jap_tree == 3) {
-		mes "^3355FF Ao contr·rio de outras cerejeiras,";
-		mes "esta ·rvore tem uma fragr‚ncia forte.";
-		mes "Eu simplesmente caÌ em um relaxado";
-		mes "humor. A fragr‚ncia aliviou";
+		mes "^3355FF Ao contr√°rio de outras cerejeiras,";
+		mes "esta √°rvore tem uma fragr√¢ncia forte.";
+		mes "Eu simplesmente ca√≠ em um relaxado";
+		mes "humor. A fragr√¢ncia aliviou";
 		mes "meus fardos e eu senti";
-		mes "muito confort·vel.^000000";
+		mes "muito confort√°vel.^000000";
 		next;
 		mes "^3355FFIt foi apenas por alguns momentos";
 		mes "mas eu poderia esquecer o";
 		mes "fardos da vida. Eu gostaria de";
 		mes "volte novamente e";
-		mes "senta debaixo desta ·rvore...^000000";
+		mes "senta debaixo desta √°rvore...^000000";
 		close;
 	}
 	else if (jap_tree == 4) {
-		mes "^3355FFEsta fragr‚ncia forte";
-		mes "est· me deixando tonta. N„o È como";
-		mes "outras cerejeiras, essa ·rvore È";
-		mes "pÈtalas brancas cintilantes";
+		mes "^3355FFEsta fragr√¢ncia forte";
+		mes "est√° me deixando tonta. N√£o √© como";
+		mes "outras cerejeiras, essa √°rvore √©";
+		mes "p√©talas brancas cintilantes";
 		mes "me senti estranho.^000000";
 		next;
-		mes "^3355FFIt sente como se minha alma È";
+		mes "^3355FFIt sente como se minha alma √©";
 		mes "sendo drenado se eu ficar aqui";
 		mes "mais. Depois de um vislumbre de";
 		mes "a cerejeira, eu pensei em";
 		mes "eu mesmo, 'preciso sair daqui rapidamente'^000000";
 		close;
 	}
-	mes "^3355FFH· uma cerejeira";
-	mes "na colina. N„o parece";
-	mes "como as outras ·rvores.";
-	mes "Esta ·rvore parece ter";
-	mes "uma longa histÛria...^000000";
+	mes "^3355FFH√° uma cerejeira";
+	mes "na colina. N√£o parece";
+	mes "como as outras √°rvores.";
+	mes "Esta √°rvore parece ter";
+	mes "uma longa hist√≥ria...^000000";
 	next;
 	mes "^3355FFA existem pessoas";
 	mes "quem mora aqui? Eu peguei";
 	mes "uma olhada ao redor e achei";
-	mes "alguÈm descendo a colina.";
-	mes "… melhor eu perguntar a ela sobre essa ·rvore.^000000";
+	mes "algu√©m descendo a colina.";
+	mes "√â melhor eu perguntar a ela sobre essa √°rvore.^000000";
 	close;
 }
 

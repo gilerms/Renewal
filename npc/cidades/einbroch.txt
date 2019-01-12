@@ -1,67 +1,47 @@
-//===== rAthena Script =======================================
-//= Einbroch Town
-//===== By: ==================================================
-//= Everybody mentioned in the comments
-//===== Current Version: =====================================
-//= 1.7
-//===== Compatible With: =====================================
-//= rAthena Project
-//===== Description: =========================================
-//= Einbroch Town Script
-//===== Additional Comments: =================================
-//= 0.2 Added some NPCs [MasterOfMuppets]
-//= 0.3 Added a few npcs by reddozen [MasterOfMuppets]
-//= 0.4 Added a crappy quest, have fun guys... [MasterOfMuppets]
-//= 0.4a Added exp bonus for the factory quest, borrowed from a Korean fansite.
-//= 0.4b Added missing close [Komurka]
-//= 0.5 Added Temporal Locations of Gunslinger Job Change map.
-//=     Info provided by RockmanEXE [erKURITA]
-//= 0.6 Implemented a crap quest [MasterOfMuppets]
-//= 0.7 Implemented an inn NPC [MasterOfMuppets]
-//= 0.8 Implemented the Shinokas quest, thanks to [MasterOfMuppets]
-//=      Dj-Yhn for scripting it.
-//= 0.9 Removed Duplicates [Silent]
-//= 1.0 Implemented the Lover's quest. [MasterOfMuppets]
-//= 1.1 Split quests into quests/cities_einbroch.txt [Evera]
-//= 1.2 Split more quests into above file [Evera]
-//= 1.3 Added (finally) the Garrison quest npc [erKURITA]
-//= 1.4 Implemented the polution script. [MasterOfMuppets]
-//= 1.5 Updated Hotel Employee to work with Airship Ticket Quest [Samuray22]
-//= 1.6 Optimized several NPCs [DZeroX]
-//= 1.7 Replaced outdated variable with getarg. [L0ne_W0lf]
-//= 1.8 Fixed Occurances of PcName. [L0ne_W0lf]
-//============================================================
+Ôªø//===== Script LivedBR =======================================
+//= Cidade de Einbroch
+//===== Por: =================================================
+//= Todo mundo mencionado nos coment√°rios
+//===== Vers√£o atual: ========================================
+//= 1.0
+//===== Compat√≠vel com: ======================================
+//= Projeto rAthena/LivedBR
+//===== Descri√ß√£o: ===========================================
+//= Script da cidade de Einbroch
+//===== Coment√°rios adicionais: ==============================
+//= 1.0 Traduzido para o Portugu√™s BR. [Vrods]
+// ============================================================
 
 einbroch,218,198,5	script	Mark#ein	855,{
 	.@npc_name$ = strnpcinfo(1);
 	mes "["+ .@npc_name$ +"]";
-	mes "Bom dia~";
+	mes "Bom dia.";
 	mes "Eu sou "+ .@npc_name$ +", seu";
-	mes "guia de exploraÁ„o";
+	mes "guia de explora√ß√£o";
 	mes "da Torre de Einbroch.";
 	next;
 	mes "["+ .@npc_name$ +"]";
 	mes "A Torre de Einbroch oferece";
 	mes "a melhor vista de nossa cidade";
-	mes "alÈm de ser um Ûtimo lugar";
+	mes "al√©m de ser um √≥timo lugar";
 	mes "para reunir-se com os amigos ou marcar";
 	mes "encontros. A entrada para a";
 	mes "Torra de Einbroch custa 10 zenys.";
 	next;
 	mes "["+ .@npc_name$ +"]";
 	mes "E agora estamos oferecendo";
-	mes "uma promoÁ„o especial chamada";
-	mes "de Combo da MaÁ„ por apenas";
+	mes "uma promo√ß√£o especial chamada";
+	mes "de Combo da Ma√ß√£ por apenas";
 	mes "20 zenys. Esse combo conta com o";
 	mes "ticket para entrar na Torre de Einbroch";
-	mes "e a maÁ„ para um lanchinho.";
+	mes "e a ma√ß√£ para um lanchinho.";
 	next;
-	switch(select("Apenas o Ticket:Combo da MaÁ„:Cancelar")) {
+	switch(select("Apenas o Ticket.:Combo da Ma√ß√£.:Cancelar.")) {
 	case 1:
 		if (Zeny < 10) {
 			mes "["+ .@npc_name$ +"]";
-		mes "Sinto muito, mas vocÍ";
-			mes "n„o tem dinheiro";
+		mes "Sinto muito, mas voc√™";
+			mes "n√£o tem dinheiro";
 			mes "suficiente. A entrada para";
 			mes "a Torre de Einbroch custa";
 			mes "apenas 10 zenys.";
@@ -70,8 +50,8 @@ einbroch,218,198,5	script	Mark#ein	855,{
 		else {
 			mes "["+ .@npc_name$ +"]";
 			mes "Obrigado por";
-			mes "usar nossos serviÁos.";
-			mes "Deixe-me gui·-lo para";
+			mes "usar nossos servi√ßos.";
+			mes "Deixe-me gui√°-lo para";
 			mes "a Torre agora mesmo.";
 			set Zeny, Zeny-10;
 			close2;
@@ -81,35 +61,35 @@ einbroch,218,198,5	script	Mark#ein	855,{
 	case 2:
 		if (Zeny < 20) {
 			mes "["+ .@npc_name$ +"]";
-			mes "Sinto muito, mas vocÍ";
-			mes "n„o tem zeny suficiente. O";
-			mes "Combo da maÁ„ custa 20 zenys.";
+			mes "Sinto muito, mas voc√™";
+			mes "n√£o tem zeny suficiente. O";
+			mes "Combo da ma√ß√£ custa 20 zenys.";
 			close;
 		}
 		else {
 			mes "["+ .@npc_name$ +"]";
-			mes "Antes de gui·-lo";
+			mes "Antes de gui√°-lo";
 			mes "a torre, deixe-me ver";
 			mes "o seu estado para garantir";
-			mes "sua seguranÁa antes de lhe dar";
-			mes "seu Combo da MaÁ„.";
+			mes "sua seguran√ßa antes de lhe dar";
+			mes "seu Combo da Ma√ß√£.";
 			next;
 			if (checkweight(512,1)) {
 				mes "["+ .@npc_name$ +"]";
 				mes "Obrigado por utilizar";
-				mes "nossos serviÁos.";
-				mes "Deixe-me gui·-lo para";
+				mes "nossos servi√ßos.";
+				mes "Deixe-me gui√°-lo para";
 				mes "a Torre agora mesmo.";
 				set Zeny, Zeny-20;
-				getitem 512,1; //MaÁ„
+				getitem 512,1; //Ma√ß√£
 				close2;
 				warp "einbroch",174,204;
 				end;
 			}
 			else {
 				mes "["+ .@npc_name$ +"]";
-				mes "Me perdoe, mas vocÍ est· carregando";
-				mes "muitos itens com vocÍ. Por favor deixe alguns no ArmazÈn da Kafra e volta para que eu";
+				mes "Me perdoe, mas voc√™ est√° carregando";
+				mes "muitos itens com voc√™. Por favor deixe alguns no Armaz√©n da Kafra e volta para que eu";
 				mes "lhe de seus itens.";
 				close;
 			}
@@ -126,26 +106,26 @@ einbroch,218,198,5	script	Mark#ein	855,{
 
 einbroch,175,196,5	script	Morei#ein	854,{
 	mes "[Morei]";
-	mes "SaudaÁıes";
+	mes "Sauda√ß√µes";
 	mes "Eu sou Morei";
 	mes "Guia do Assistente";
 	mes "da Torre Einbroch.";
 	next;
 	mes "[Morei]";
-	mes "Se vocÍ deseja retornar";
-	mes "para o andar tÈrreo";
+	mes "Se voc√™ deseja retornar";
+	mes "para o andar t√©rreo";
 	mes "por favor me avise.";
-	mes "VocÍ gostaria";
-	mes "de volta ao andar tÈrreo?";
+	mes "Voc√™ gostaria";
+	mes "de volta ao andar t√©rreo?";
 	next;
-	switch(select("Sim.:N„o.")) {
+	switch(select("Sim.:N√£o.")) {
 	case 1:
 		mes "[Morei]";
 		mes "eu vejo.";
-		mes "Deixe-me levar vocÍ";
-		mes "para o andar tÈrreo.";
+		mes "Deixe-me levar voc√™";
+		mes "para o andar t√©rreo.";
 		mes "Obrigado por usar";
-		mes "nossos serviÁos.";
+		mes "nossos servi√ßos.";
 		close2;
 		switch(rand(1,3)) {
 		case 1:
@@ -161,7 +141,7 @@ einbroch,175,196,5	script	Morei#ein	854,{
 	case 2:
 		mes "[Morei]";
 		mes "eu vejo.";
-		mes "Eu espero que vocÍ";
+		mes "Eu espero que voc√™";
 		mes "aproveite seu tempo";
 		mes "na Torre Einbroch.";
 		close;
@@ -171,25 +151,25 @@ einbroch,175,196,5	script	Morei#ein	854,{
 einbroch,173,229,5	duplicate(Mark#ein)	Oberu#ein	855
 einbroch,176,172,5	duplicate(Mark#ein)	Khemko#ein	855
 
-einbroch,232,272,3	script	Funcion·rio da EstaÁ„o#ein1::EinbrochTrain	852,{
-	mes "[Funcion·rio]";
+einbroch,232,272,3	script	Funcion√°rio da Esta√ß√£o#ein1::EinbrochTrain	852,{
+	mes "[Funcion√°rio]";
 	mes "Bem vindo a";
-	mes "estaÁ„o de trem.";
+	mes "esta√ß√£o de trem.";
 	mes "Trens para Einbech";
-	mes "est„o sempre passando";
-	mes "ent„o se vocÍ perder um,";
-	mes "n„o ser· um problema.";
+	mes "est√£o sempre passando";
+	mes "ent√£o se voc√™ perder um,";
+	mes "n√£o ser√° um problema.";
 	next;
-	mes "[Funcion·rio]";
+	mes "[Funcion√°rio]";
 	mes "A taxa para embarcar no";
 	mes "trem que vai de Einbroch";
-	mes "para Einbech È de 200 zeny.";
+	mes "para Einbech √© de 200 zeny.";
 	mes "Gostaria de comprar um ticket!?";
 	next;
-	switch(select("Sim.:N„o.:Sobre o meio ambiente...")) {
+	switch(select("Sim.:N√£o.:Sobre o meio ambiente...")) {
 	case 1:
 		if (Zeny > 199) {
-			mes "[Funcion·rio]";
+			mes "[Funcion√°rio]";
 			mes "Muito";
 			mes "obrigado.";
 			mes "Tenha uma boa viagem.";
@@ -200,37 +180,37 @@ einbroch,232,272,3	script	Funcion·rio da EstaÁ„o#ein1::EinbrochTrain	852,{
 			end;
 		}
 		else {
-			mes "[Funcion·rio]";
-			mes "Sinto muito, mas vocÍ";
-			mes "n„o tem dinheiro suficiente";
+			mes "[Funcion√°rio]";
+			mes "Sinto muito, mas voc√™";
+			mes "n√£o tem dinheiro suficiente";
 			mes "para pagar a taxa do trem.";
 			close;
 		}
 	case 2:
-		mes "[Funcion·rio]";
-		mes "Muito bem, ent„o.";
+		mes "[Funcion√°rio]";
+		mes "Muito bem, ent√£o.";
 		mes "Por favor, aproveite sua";
 		mes "estadia em Einbroch.";
 		close;
 	case 3:
-		mes "[Funcion·rio]";
-		mes "Einbroch È abomin·vel por";
-		mes "sua poluiÁ„o do ar, sem d˙vida";
-		mes "causada pelas instalaÁıes";
+		mes "[Funcion√°rio]";
+		mes "Einbroch √© abomin√°vel por";
+		mes "sua polui√ß√£o do ar, sem d√∫vida";
+		mes "causada pelas instala√ß√µes";
 		mes "industriais locais.";
-		mes "… realmente horrÌvel...";
+		mes "√â realmente horr√≠vel...";
 		next;
-		mes "[Funcion·rio]";
-		mes "Algumas vezes e a poluiÁ„o do ar";
-		mes "È t„o forte que fica difÌcil atÈ";
-		mes "de respirar. Ent„o se vocÍ ouvir";
-		mes "o alerta de FumaÁa, vocÍ";
+		mes "[Funcion√°rio]";
+		mes "Algumas vezes e a polui√ß√£o do ar";
+		mes "√© t√£o forte que fica dif√≠cil at√©";
+		mes "de respirar. Ent√£o se voc√™ ouvir";
+		mes "o alerta de Fuma√ßa, voc√™";
 		mes "deve encontrar abrigo imediatamente!"; 
 		close;
 	}
 }
 
-einbroch,252,301,3	duplicate(EinbrochTrain)	Funcion·rio da EstaÁ„o#ein2	852
+einbroch,252,301,3	duplicate(EinbrochTrain)	Funcion√°rio da Esta√ß√£o#ein2	852
 
 einbroch,259,326,3	script	Leslie#ein_1	846,{
 	mes "[Leslie]";
@@ -239,42 +219,42 @@ einbroch,259,326,3	script	Leslie#ein_1	846,{
 	next;
 	mes "[Leslie]";
 	mes "Uma senhora velha como eu";
-	mes "n„o pode respirar esse ar! Como";
-	mes "È que as pessoas ainda vivem aqui, com";
-	mes "essa fumaÁa? Claro, o ar de Einbech n„o";
-	mes "n„o È puro, mas o ar aqui em Einbroch È muito pior!^333333*Cough~!*^000000";
+	mes "n√£o pode respirar esse ar! Como";
+	mes "√© que as pessoas ainda vivem aqui, com";
+	mes "essa fuma√ßa? Claro, o ar de Einbech n√£o";
+	mes "n√£o √© puro, mas o ar aqui em Einbroch √© muito pior!^333333*Cough~!*^000000";
 	next;
 	mes "[Leslie]";
-	mes "Eu odeio vir para c·";
-	mes "as vezes! O ar È todo";
-	mes "poluÌdo e est·";
-	mes "cidade est· cheia de presos";
+	mes "Eu odeio vir para c√°";
+	mes "as vezes! O ar √© todo";
+	mes "polu√≠do e est√°";
+	mes "cidade est√° cheia de presos";
 	mes "idiota! Mas aqui vende-se coisas";
-	mes "que eu n„o encontro em casa...";
+	mes "que eu n√£o encontro em casa...";
 	close;
 }
 
 einbroch,236,191,3	script	Tan#ein	855,{
 	mes "[Tan]";
-	mes "Todas as f·bricas";
-	mes "aqui em Einbroch est„o";
-	mes "causando sÈrios problemas";
-	mes "de poluiÁ„o do ar.";
+	mes "Todas as f√°bricas";
+	mes "aqui em Einbroch est√£o";
+	mes "causando s√©rios problemas";
+	mes "de polui√ß√£o do ar.";
 	next;
 	mes "[Tan]";
 	mes "Eu sou engenheiro do Aeroporto";
 	mes "e todo dia, o dia todo, lido";
-	mes "com manchas de Ûleo e todo tipo";
+	mes "com manchas de √≥leo e todo tipo";
 	mes "de poluentes. Estou surpreso";
-	mes "que ainda n„o fiquei doente.";
+	mes "que ainda n√£o fiquei doente.";
 	next;
 	mes "[Tan]";
 	mes "Mesmo assim, eu tomo cuidado";
-	mes "como posso. Aonde quer que eu v·";
-	mes "nesta cidade, que tenha fumaÁa vermelha,";
-	mes "eu sempre uso minha M·scara Cir˙rgica.";
-	mes "Se vocÍ for ficar por aqui um tempo,";
-	mes "vocÍ deveria carregar uma tambÈm.";
+	mes "como posso. Aonde quer que eu v√°";
+	mes "nesta cidade, que tenha fuma√ßa vermelha,";
+	mes "eu sempre uso minha M√°scara Cir√∫rgica.";
+	mes "Se voc√™ for ficar por aqui um tempo,";
+	mes "voc√™ deveria carregar uma tamb√©m.";
 	close;
 }
 
@@ -282,55 +262,55 @@ einbroch,228,121,5	script	Pequeno Toby#ein-1	855,{
 	mes "[Pequeno Toby]";
 	mes "Me perdoe...";
 	mes "Mas estou perdido!";
-	mes "Eu n„o posso encontrar";
-	mes "mam„e e papai!";
+	mes "Eu n√£o posso encontrar";
+	mes "mam√£e e papai!";
 	next;
 	mes "[Pequeno Toby]";
 	mes "E-eu estou no Aeroporto?!";
 	mes "Meus pais deveriam";
 	mes "vir me buscar, mas eu ainda";
-	mes "n„o encontrei eles! NÛs acabamos";
-	mes "de nos mudar, ent„o n„o sei";
+	mes "n√£o encontrei eles! N√≥s acabamos";
+	mes "de nos mudar, ent√£o n√£o sei";
 	mes "aonde ficam as coisas!";
 	next;
 	mes "[Pequeno Toby]";
 	mes "E-espere!";
 	mes "Aonde esta indo?!";
-	mes "N„o me deixe aqui,";
+	mes "N√£o me deixe aqui,";
 	mes "estou sozinho...!";
 	close;
 }
 
 einbroch,40,116,1	script	Engenheiro do Aeroporto#ein-1	855,{
 	mes "[Engenheiro do Aeroporto]";
-	mes "E-Ei! N„o";
+	mes "E-Ei! N√£o";
 	mes "toque em minha preciosa";
 	mes "Burielle! Eu terminei os";
 	mes "reparos dela e agora ela esta";
 	mes "dormindo! A-afaste-se dela!";
 	next;
-	switch(select("Quem È Burielle?:Desculpe.")) {
+	switch(select("Quem √© Burielle?:Desculpe.")) {
 	case 1:
 		mes "[Engenheiro do Aeroporto]";
-		mes "Burielle È o modelo de";
+		mes "Burielle √© o modelo de";
 		mes "Aeronave mais bonito construido";
-		mes "nos ˙ltimos dez anos!";
-		mes "Ela pode estar no ch„o agora, mas";
-		mes "com as minhas m„os curadores, ela";
-		mes "conquistar· os cÈus denovo!";
+		mes "nos √∫ltimos dez anos!";
+		mes "Ela pode estar no ch√£o agora, mas";
+		mes "com as minhas m√£os curadores, ela";
+		mes "conquistar√° os c√©us denovo!";
 		next;
 		switch(select("Ah~:Uh huh...")) {
 		case 1:
 			mes "["+strcharinfo(0)+"]";
 			mes "Ah~";
-			mes "Entendo, ent„o vocÍ";
-			mes "esta trabalhando na restauraÁ„o";
-			mes "desta magnifica espÈcime de";
+			mes "Entendo, ent√£o voc√™";
+			mes "esta trabalhando na restaura√ß√£o";
+			mes "desta magnifica esp√©cime de";
 			mes "Aeronave. Boa sorte~";
 			next;
 			mes "[Engenheiro do Aeroporto]";
-			mes "Sim. Eu agradeÁo isso";
-			mes "apenas se vocÍ tomar cuidado.";
+			mes "Sim. Eu agrade√ßo isso";
+			mes "apenas se voc√™ tomar cuidado.";
 			mes "Eu coloquei muito amor";
 			mes "concerto de Burielle...";
 			close;
@@ -338,17 +318,17 @@ einbroch,40,116,1	script	Engenheiro do Aeroporto#ein-1	855,{
 			mes "["+strcharinfo(0)+"]";
 			mes "Uh huh...";
 			mes "Certo. Por um segundo";
-			mes "atr·s, eu pensei que vocÍ";
+			mes "atr√°s, eu pensei que voc√™";
 			mes "estava falando de uma pessoa,";
-			mes "mas agora percebi que n„o,";
-			mes "vocÍ sabe, como um louco.";
+			mes "mas agora percebi que n√£o,";
+			mes "voc√™ sabe, como um louco.";
 			next;
 			mes "["+strcharinfo(0)+"]";
-			mes "Oh, vocÍ disse,";
+			mes "Oh, voc√™ disse,";
 			mes "''modelo mais bonito?''";
 			mes "Todas as Aeronaves pra mim";
 			mes "parecem iguais, essa aqui";
-			mes "n„o È especial contudo. VocÍ";
+			mes "n√£o √© especial contudo. Voc√™";
 			mes "esta ficando maluco, pobre coitado.";
 			next;
 			emotion ET_FRET;
@@ -358,7 +338,7 @@ einbroch,40,116,1	script	Engenheiro do Aeroporto#ein-1	855,{
 		}
 	case 2:
 		mes "[Engenheiro do Aeroporto]";
-		mes "Bem, pelo menos vocÍ sabe";
+		mes "Bem, pelo menos voc√™ sabe";
 		mes "o que fez de errado. Agora";
 		mes "pare de perturbar ela e saia!";
 		close;
@@ -368,22 +348,22 @@ einbroch,40,116,1	script	Engenheiro do Aeroporto#ein-1	855,{
 einbroch,294,312,3	script	Centzu#ein	854,{
 	mes "[Centzu]";
 	mes "Eu ja vivi aqui a um bom";
-	mes "tempo atr·s e agora vejo";
+	mes "tempo atr√°s e agora vejo";
 	mes "que esta grande cidade continua";
 	mes "crescendo a cada dia que passa.";
 	next;
 	mes "[Centzu]";
 	mes "Como Einbroch cresceu tanto";
-	mes "e t„o r·pido? Eu ainda n„o";
+	mes "e t√£o r√°pido? Eu ainda n√£o";
 	mes "consigo acreditar que ela se";
 	mes "desenvolveu tanto. Bem, eu acredito";
-	mes "que n„o È da minha conta. Nada";
-	mes "que eu fizer far· diferenÁa... ";
+	mes "que n√£o √© da minha conta. Nada";
+	mes "que eu fizer far√° diferen√ßa... ";
 	next;
 	mes "[Centzu]";
 	mes "Mesmo com uma";
-	mes "industrializaÁ„o r·pida";
-	mes "n„o pode ser boa para a";
+	mes "industrializa√ß√£o r√°pida";
+	mes "n√£o pode ser boa para a";
 	mes "natureza e para as pessoas,";
 	mes "eu simplesmente me sento, e assisto";
 	mes "o que acontece e aproveito a vida...";
@@ -394,24 +374,24 @@ einbroch,232,255,5	script	Khowropher#ein	847,{
 	mes "[Khowropher]";
 	mes "^666666*Cough cough*^000000";
 	mes "Jiminy! O ar aqui";
-	mes "È t„o grosso e sujo!";
-	mes "E È pior para nÛs";
+	mes "√© t√£o grosso e sujo!";
+	mes "E √© pior para n√≥s";
 	mes "velhos com problemas";
-	mes "respiratÛrios! ^333333*Haaack!*^000000";
+	mes "respirat√≥rios! ^333333*Haaack!*^000000";
 	next;
 	mes "[Khowropher]";
-	mes "Eu n„o ligo se eles continuam";
+	mes "Eu n√£o ligo se eles continuam";
 	mes "contruindo mais e mais";
-	mes "f·bricas e casas nesta cidade.";
+	mes "f√°bricas e casas nesta cidade.";
 	mes "Assim, eu gostaria de passar";
 	mes "o resto da minha vida em algum";
 	mes "lugar quieto e com o ar limpo...";
 	next;
 	mes "[Khowropher]";
-	mes "Ent„o novamente, Einbroch È";
-	mes "minha cidade natal, e eu n„o posso";
-	mes "simplesmente sair. Creio que È meu";
-	mes "destino sofrer com este ar atÈ o dia que eu morrer. ^666666*Sigh...*^000000";
+	mes "Ent√£o novamente, Einbroch √©";
+	mes "minha cidade natal, e eu n√£o posso";
+	mes "simplesmente sair. Creio que √© meu";
+	mes "destino sofrer com este ar at√© o dia que eu morrer. ^666666*Sigh...*^000000";
 	close;
 }
 
@@ -419,16 +399,16 @@ einbroch,143,109,5	script	Khetine#ein	855,{
 	mes "[Khetine]";
 	mes "Ultimamente, temos";
 	mes "conversado sobre este";
-	mes "prÈdio vazio que";
+	mes "pr√©dio vazio que";
 	mes "foi convertido em algum";
-	mes "tipo de instalaÁ„o misteriosa.";
+	mes "tipo de instala√ß√£o misteriosa.";
 	next;
 	mes "[Khetine]";
 	mes "Tudo parece muito sombrio,";
-	mes "mas eu acho que n„o";
-	mes "È realmente o meu trabalho";
+	mes "mas eu acho que n√£o";
+	mes "√© realmente o meu trabalho";
 	mes "saber sobre isso. Quero dizer, se isso";
-	mes "n„o me afeta, porque";
+	mes "n√£o me afeta, porque";
 	mes "deveria me preocupar?";
 	close;
 }
@@ -436,32 +416,32 @@ einbroch,143,109,5	script	Khetine#ein	855,{
 einbroch,229,149,3	script	Sleik#ein	854,{
 	mes "[Sleik]";
 	mes "Estranhamente, temos";
-	mes "uma EstaÁ„o de Trem que todo mundo";
-	mes "tem chamado de uma vitÛria pra";
-	mes "ciÍncia. Eu digo, n„o deveriam estar";
+	mes "uma Esta√ß√£o de Trem que todo mundo";
+	mes "tem chamado de uma vit√≥ria pra";
+	mes "ci√™ncia. Eu digo, n√£o deveriam estar";
 	mes "mais impressionados com a Aeronave?";
 	next;
 	mes "[Sleik]";
-	mes "Agora, se vocÍ quer saber";
+	mes "Agora, se voc√™ quer saber";
 	mes "aonde o trem atualmente vai,";
-	mes "eu n„o saberei te dizer.";
+	mes "eu n√£o saberei te dizer.";
 	mes "Afinal, nunca andei nele. Mas";
 	mes "eu continuo achando que ter uma";
-	mes "EstaÁ„o de Trem prÛpria È muito bom.";
+	mes "Esta√ß√£o de Trem pr√≥pria √© muito bom.";
 	close;
 }
 
 airport,174,41,6	script	Jovem#air	99,{
 	mes "[Runnan]";
-	mes "...E esse È o porque de";
+	mes "...E esse √© o porque de";
 	mes "eu viajar ao redor do mundo.";
 	mes "Meus chefes tem um olho";
 	mes "bom para as melhores e exoticas";
-	mes "mercadorias, ent„o eu compro";
-	mes "elas e faÁo as entregas.";
+	mes "mercadorias, ent√£o eu compro";
+	mes "elas e fa√ßo as entregas.";
 	next;
 	mes "[Runnan]";
-	mes "N„o teve uma vez que";
+	mes "N√£o teve uma vez que";
 	mes "eles me fizeram coletar Jellopy,";
 	mes "embora seja comum coletar";
 	mes "essas coisas hoje em dia.";
@@ -479,10 +459,10 @@ airport,176,41,4	script	Velho#air	88,{
 	mes "e linda luz. Elegante, huh?";
 	next;
 	mes "[Zhen Lan]";
-	mes "Estes metais s„o muito";
+	mes "Estes metais s√£o muito";
 	mes "bons para se fabricar";
 	mes "vasos de flores. Meu amigo, que";
-	mes "È um bom fazedor de bonecos, me disse";
+	mes "√© um bom fazedor de bonecos, me disse";
 	mes "isso. Ele faz bonecos utilizando todo tipo de materiais.";
 	next;
 	mes "[Zhen Lan]";
@@ -490,28 +470,28 @@ airport,176,41,4	script	Velho#air	88,{
 	mes "couro bem curtido, e coisas";
 	mes "como pena de aves, e usa";
 	mes "Cyfar e Zargon para fazer os olhos.";
-	mes "Ele atÈ usa Jellopy nos pÈs para balancear a boneca.";
+	mes "Ele at√© usa Jellopy nos p√©s para balancear a boneca.";
 	next;
 	mes "[Zhen Lan]";
 	mes "Eu acho que isto mostra";
 	mes "que estas coisas que parecem inuteis";
-	mes "possa a ser util para alguÈm.";
-	mes "Ent„o n„o se preocupe em carregar muitas coisas. Cedo ou tarde, elas podem servir para alguÈm.";
+	mes "possa a ser util para algu√©m.";
+	mes "Ent√£o n√£o se preocupe em carregar muitas coisas. Cedo ou tarde, elas podem servir para algu√©m.";
 	close;
 }
 
 ein_in01,113,211,3	script	Teinz#ein	851,{
 	mes "[Teinz]";
-	mes "Se vocÍ simplesmente me der";
-	mes "dinheiro, serei seu escravo! N„o";
-	mes "tem nada que eu n„o faria. Tudo";
-	mes "È um jogo justo. Inferno, eu ate ficaria n˙ se vocÍ me pagasse o suficiente.";
+	mes "Se voc√™ simplesmente me der";
+	mes "dinheiro, serei seu escravo! N√£o";
+	mes "tem nada que eu n√£o faria. Tudo";
+	mes "√© um jogo justo. Inferno, eu ate ficaria n√∫ se voc√™ me pagasse o suficiente.";
 	next;
 	mes "[Teinz]";
-	mes "Se vocÍ me pagar o quanto";
+	mes "Se voc√™ me pagar o quanto";
 	mes "preciso, eu trabalharei duro";
-	mes "para vocÍ, em qualquer serviÁo.";
-	mes "Claro, mineraÁ„o È difÌcil, mas";
+	mes "para voc√™, em qualquer servi√ßo.";
+	mes "Claro, minera√ß√£o √© dif√≠cil, mas";
 	mes "enquanto os zenys continuarem";
 	mes "a vir, estarei feliz. Heh heh heh~";
 	close;
@@ -528,47 +508,47 @@ ein_in01,48,220,5	script	Lowe#ein	851,{
 	mes ".........";
 	next;
 	mes "[Lowe]";
-	mes "Ei. Porque vocÍ";
+	mes "Ei. Porque voc√™";
 	mes "esta olhando pra mim";
-	mes "assim? N„o temos tempo";
+	mes "assim? N√£o temos tempo";
 	mes "para conversar no trabalho.";
-	mes "Se Canphotii capturar vocÍ,";
-	mes "provavelmente ser· punido...";
+	mes "Se Canphotii capturar voc√™,";
+	mes "provavelmente ser√° punido...";
 	next;
 	mes "[Lowe]";
 	mes "Oh espere...";
-	mes "VocÍ n„o trabalha aqui.";
+	mes "Voc√™ n√£o trabalha aqui.";
 	mes "Me desculpe, esse tipo";
-	mes "de reaÁ„o È um velho";
-	mes "h·bito pra mim, aventureiro.";
+	mes "de rea√ß√£o √© um velho";
+	mes "h√°bito pra mim, aventureiro.";
 	close;
 }
 
 ein_in01,87,237,5	script	Dinje#ein	850,{
 	mes "[Dinje]";
-	mes "VocÍ sabe porque uma senhora";
+	mes "Voc√™ sabe porque uma senhora";
 	mes "como eu trabalha em uma";
-	mes "f·brica? Vou te dizer porque...";
+	mes "f√°brica? Vou te dizer porque...";
 	next;
 	mes "[Dinje]";
 	mes "Meu marido folgado, Gesin,";
-	mes "esta deitado ali no ch„o.";
-	mes "Ent„o eu tenho que trabalhar";
+	mes "esta deitado ali no ch√£o.";
+	mes "Ent√£o eu tenho que trabalhar";
 	mes "para poder nos sustentar!";
 	next;
 	mes "[Dinje]";
-	mes "N„o podemos descanÁar";
+	mes "N√£o podemos descan√ßar";
 	mes "nem mesmo um segundo se queremos";
 	mes "juntar dinheiro suficiente para";
-	mes "ficar ricos e saud·veis um dia.";
-	mes "VocÍ me entende?";
+	mes "ficar ricos e saud√°veis um dia.";
+	mes "Voc√™ me entende?";
 	next;
 	mes "[Dinje]";
-	mes "Bem, meu marido Ûbviamente";
-	mes "n„o! Como ele pode n„o saber";
+	mes "Bem, meu marido √≥bviamente";
+	mes "n√£o! Como ele pode n√£o saber";
 	mes "como o mundo real funciona?!";
 	mes "Ei, chute ele pra mim se";
-	mes "ele n„o acordar logo!";
+	mes "ele n√£o acordar logo!";
 	close;
 }
 
@@ -577,13 +557,13 @@ ein_in01,84,218,3	script	Tsuen#ein	851,{
 	mes "Havia um tempo";
 	mes "em que eu sonhava em";
 	mes "ser um aventureiro";
-	mes "assim como vocÍ. Mas isso";
-	mes "foi a muito tempo atr·s...";
+	mes "assim como voc√™. Mas isso";
+	mes "foi a muito tempo atr√°s...";
 	next;
 	mes "[Tsuen]";
-	mes "Agora, n„o sou nada alÈm";
-	mes "de um gerente da f·brica. Mesmo assim,";
-	mes "n„o sendo o melhor trabalho,";
+	mes "Agora, n√£o sou nada al√©m";
+	mes "de um gerente da f√°brica. Mesmo assim,";
+	mes "n√£o sendo o melhor trabalho,";
 	mes "eu estou muito satisfeito.";
 	mes "Eu tenho certeza que as pessoas";
 	mes "gostam dos produtos que supervisiono...";
@@ -591,8 +571,8 @@ ein_in01,84,218,3	script	Tsuen#ein	851,{
 	mes "[Tsuen]";
 	mes "Talvez minha vida estava destinada";
 	mes "para ser dessa maneira, mesmo que";
-	mes "n„o seja como eu tenha planejado. Mas";
-	mes "o tempo vir· quando entrar de fÈrias";
+	mes "n√£o seja como eu tenha planejado. Mas";
+	mes "o tempo vir√° quando entrar de f√©rias";
 	mes "e viajar pelo mundo todo";
 	mes "assim que eu tiver uma chance!";
 	next;
@@ -617,21 +597,21 @@ ein_in01,103,239,1	script	Gesin#ein	849,{
 	mes "Eu tenho um problema";
 	mes "com a minha atual forma de";
 	mes "viver, mas sempre a velha";
-	mes "bola e as correntes n„o concordam.";
-	mes "Porque ela È t„o obsecada";
+	mes "bola e as correntes n√£o concordam.";
+	mes "Porque ela √© t√£o obsecada";
 	mes "com riqueza e poder?";
 	next;
 	mes "[Gesin]";
 	mes "Bem, no meu caso, eu";
-	mes "gosto de ajuda-la, mas eu n„o";
+	mes "gosto de ajuda-la, mas eu n√£o";
 	mes "posso levantar! Eu estou exausto e";
 	mes "meu corpo esta sobrecarregado.";
-	mes "N„o tenho forÁa contudo.";
+	mes "N√£o tenho for√ßa contudo.";
 	next;
 	mes "[Gesin]";
-	mes "Isso È horrÌvel~";
-	mes "Eu deveria estar descanÁando";
-	mes "ao invÈs de me preocupando";
+	mes "Isso √© horr√≠vel~";
+	mes "Eu deveria estar descan√ßando";
+	mes "ao inv√©s de me preocupando";
 	mes "em fazer dinheiro...";
 	close;
 }
@@ -644,11 +624,11 @@ ein_in01,33,275,1	script	Pevtatin#ein	848,{
 	mes "desde que me mudei pra ca!";
 	next;
 	mes "[Pevtatin]";
-	mes "O serviÁo È pesado e";
+	mes "O servi√ßo √© pesado e";
 	mes "o chefe ja me odeia!";
-	mes "Eu n„o me mudei pra ca para";
+	mes "Eu n√£o me mudei pra ca para";
 	mes "isso! Mas, o pagamento";
-	mes "È decenete, ent„o acho que";
+	mes "√© decenete, ent√£o acho que";
 	mes "vou ficar por aqui mais um pouco.";
 	next;
 	mes "[Pevtatin]";
@@ -660,26 +640,26 @@ ein_in01,33,275,1	script	Pevtatin#ein	848,{
 
 ein_in01,36,204,3	script	Rombell#ein	851,{
 	mes "[Rombell]";
-	mes "… Ûtima que a f·brica";
-	mes "est· fazendo bons";
-	mes "negÛcios e traÁando um";
+	mes "√â √≥tima que a f√°brica";
+	mes "est√° fazendo bons";
+	mes "neg√≥cios e tra√ßando um";
 	mes "lote de lucros, mas eu ainda";
-	mes "tenho uma preocupaÁ„o maior.";
+	mes "tenho uma preocupa√ß√£o maior.";
 	next;
 	mes "[Rombell]";
-	mes "O tamanho da poluiÁ„o";
+	mes "O tamanho da polui√ß√£o";
 	mes "que este lugar vem causando";
-	mes "È horrÌvel! NÛs temos estas";
-	mes "m·quinas cuspindo gases";
-	mes "tÛxicos o dia todo! O ar";
-	mes "n„o vai se manter seguro por muito tempo...";
+	mes "√© horr√≠vel! N√≥s temos estas";
+	mes "m√°quinas cuspindo gases";
+	mes "t√≥xicos o dia todo! O ar";
+	mes "n√£o vai se manter seguro por muito tempo...";
 	next;
 	mes "[Rombell]";
 	mes "Eu digo, o ar que respiramos";
-	mes "agora mesmo est· muito";
+	mes "agora mesmo est√° muito";
 	mes "sujo e as coisas";
-	mes "sÛ v„o ficando pior.";
-	mes "Como nÛs poderiamos";
+	mes "s√≥ v√£o ficando pior.";
+	mes "Como n√≥s poderiamos";
 	mes "solucionar este problema?";
 	close;
 }
@@ -688,8 +668,8 @@ ein_in01,64,271,3	script	Vonstein#ein	855,{
 	mes "[Vonstein]";
 	mes "Olhando para este";
 	mes "metal liquido e quente";
-	mes "borbulhando me d„o";
-	mes "uma sensaÁ„o t„o boa. … como";
+	mes "borbulhando me d√£o";
+	mes "uma sensa√ß√£o t√£o boa. √â como";
 	mes "se isso pudesse derreter qualquer coisa!";
 	next;
 	mes "[Vonstein]";
@@ -697,27 +677,27 @@ ein_in01,64,271,3	script	Vonstein#ein	855,{
 	mes "rua inteira de pessoas";
 	mes "com isso daqui! Bwahah--";
 	mes "Oh, me desculpe se falava como";
-	mes "louco! Estava sÛ brincando~";
+	mes "louco! Estava s√≥ brincando~";
 	close;
 }
 
 ein_in01,49,202,3	script	Dorf#ein	851,{
 	mes "[Dorf]";
-	mes "M·quinas s„o t„o";
+	mes "M√°quinas s√£o t√£o";
 	mes "convenientes. Basta olhar";
-	mes "para a corporaÁ„o realizando";
+	mes "para a corpora√ß√£o realizando";
 	mes "facilmente as tarefas que seriam";
-	mes "difÌceis de fazer sozinhos.";
+	mes "dif√≠ceis de fazer sozinhos.";
 	next;
 	mes "[Dorf]";
-	mes "Agora sim È isso que";
+	mes "Agora sim √© isso que";
 	mes "eu chamo tecnologia!";
-	mes "Claro, È preciso esforÁo";
+	mes "Claro, √© preciso esfor√ßo";
 	mes "e dinheiro pra fazer uma";
 	mes "destas, mas do que me interessa?";
 	next;
 	mes "[Dorf]";
-	mes "Eu n„o tenho problemas,";
+	mes "Eu n√£o tenho problemas,";
 	mes "desde que essa coisa louca";
 	mes "mantenha o trabalho";
 	mes "do modo que eu quero!";
@@ -726,8 +706,8 @@ ein_in01,49,202,3	script	Dorf#ein	851,{
 
 ein_in01,68,209,5	script	Khashurantze#ein	852,{
 	mes "[Khashurantze]";
-	mes "Me desculpe, mas vocÍ";
-	mes "precisa de uma autorizaÁ„o";
+	mes "Me desculpe, mas voc√™";
+	mes "precisa de uma autoriza√ß√£o";
 	mes "especial para entrar. Eu";
 	mes "terei que pedir que saia agora.";
 	close2;
@@ -739,78 +719,78 @@ ein_in01,85,261,3	script	Zherin#ein	851,{
 	mes "[Zherin]";
 	mes "Eu estou encarregado desta";
 	mes "grande folhanlha que";
-	mes "contÈm toda essa";
-	mes "ebuliÁ„o de magma.";
+	mes "cont√©m toda essa";
+	mes "ebuli√ß√£o de magma.";
 	next;
 	mes "[Zherin]";
-	mes "Mesmo que n„o precise";
+	mes "Mesmo que n√£o precise";
 	mes "de muito trabalho, esse";
-	mes "trabalho È muito cansativo. Eu tenho";
-	mes "que prestar muita atenÁ„o o tempo";
-	mes "todo. … muito estressante.";
+	mes "trabalho √© muito cansativo. Eu tenho";
+	mes "que prestar muita aten√ß√£o o tempo";
+	mes "todo. √â muito estressante.";
 	next;
 	mes "[Zherin]";
 	mes "Ainda assim, estou orgulhoso do";
 	mes "meu trabalho, uma vez que tenho responsabilidade";
-	mes "de garantir a seguranÁa dos trabalhadores.";
-	mes "Contudo, n„o chegue muito perto";
-	mes "da fornalha. Caso contr·rio";
-	mes "poder· ser queimado por acidente!";
+	mes "de garantir a seguran√ßa dos trabalhadores.";
+	mes "Contudo, n√£o chegue muito perto";
+	mes "da fornalha. Caso contr√°rio";
+	mes "poder√° ser queimado por acidente!";
 	close;
 }
 
 ein_in01,43,252,3	script	Canphotii#ein	852,{
 	mes "[Canphotii]";
-	mes "R·pido, r·pido!";
+	mes "R√°pido, r√°pido!";
 	mes "Entre logo no ritmo!";
 	mes "Qualquer que trabalhar lento";
-	mes "demais ser· punido!";
+	mes "demais ser√° punido!";
 	next;
 	mes "[Canphotii]";
-	mes "N„o consegue entender";
+	mes "N√£o consegue entender";
 	mes "isso?! Agora volte para";
-	mes "sua estaÁ„o de trabalho!";
-	mes "Espere, vocÍ n„o trabalha";
-	mes "aqui n„o È? Se n„o,";
+	mes "sua esta√ß√£o de trabalho!";
+	mes "Espere, voc√™ n√£o trabalha";
+	mes "aqui n√£o √©? Se n√£o,";
 	mes "pare de zanzar por ae!";
 	next;
 	mes "[Canphotii]";
-	mes "VocÍ n„o poderia";
+	mes "Voc√™ n√£o poderia";
 	mes "ter entrado aqui!";
-	mes "Eu n„o acredito que deixaram";
-	mes "vocÍ entrar! Isso requer uma";
+	mes "Eu n√£o acredito que deixaram";
+	mes "voc√™ entrar! Isso requer uma";
 	mes "medida disciplinar extrema!";
 	close;
 }
 
-ein_in01,206,224,3	script	Funcion·rio do Hotel#ein	855,{
-	mes "[Funcion·rio do Hotel]";
+ein_in01,206,224,3	script	Funcion√°rio do Hotel#ein	855,{
+	mes "[Funcion√°rio do Hotel]";
 	mes "Bom dia, bem vindo ao";
-	mes "Hotel de Einbroch. A equipe est·";
+	mes "Hotel de Einbroch. A equipe est√°";
 	mes "sempre empenhada em acomodar";
-	mes "nossos hÛspedes com a mais";
-	mes "alta limpeza, serviÁos";
-	mes "e conveniÍncia~";
+	mes "nossos h√≥spedes com a mais";
+	mes "alta limpeza, servi√ßos";
+	mes "e conveni√™ncia~";
 	next;
 	if (kain_ticket == 5) {
-		mes "[Funcion·rio do Hotel]";
-		mes "VocÍ esta procurando";
+		mes "[Funcion√°rio do Hotel]";
+		mes "Voc√™ esta procurando";
 		mes "pelo Sr. Defru Ark?";
 		mes "Oh certo, ele disse que";
 		mes "estava esperando por algum";
 		mes "pacote do Aeroporto. Agora";
-		mes "deixe-me ver esta informaÁ„o...";
+		mes "deixe-me ver esta informa√ß√£o...";
 		next;
-		mes "[Funcion·rio do Hotel]";
-		mes "Ah, aqui est·.";
-		mes "Sr. Defru Ark est·";
+		mes "[Funcion√°rio do Hotel]";
+		mes "Ah, aqui est√°.";
+		mes "Sr. Defru Ark est√°";
 		mes "no Quarto 201.";
 		next;
 	}
 	else {
-		switch(select("Salvar:DescanÁar - 5,000 zeny:Cancelar")) {
+		switch(select("Salvar:Descan√ßar - 5,000 zeny:Cancelar")) {
 		case 1:
-			mes "[Funcion·rio do Hotel]";
+			mes "[Funcion√°rio do Hotel]";
 			mes "Seu Ponto de Retorno";
 			mes "foi salvo com sucesso";
 			mes "aqui no Hotel de Einbroch.";
@@ -821,7 +801,7 @@ ein_in01,206,224,3	script	Funcion·rio do Hotel#ein	855,{
 			end;
 		case 2:
 			if (Zeny > 4999) {
-				mes "[Funcion·rio do Hotel]";
+				mes "[Funcion√°rio do Hotel]";
 				mes "Obrigado.";
 				mes "Por favor";
 				mes "aproveite a estadia.";
@@ -832,29 +812,29 @@ ein_in01,206,224,3	script	Funcion·rio do Hotel#ein	855,{
 				end;
 			}
 			else {
-				mes "[Funcion·rio do Hotel]";
+				mes "[Funcion√°rio do Hotel]";
 				mes "Me desculpe, mas o";
-				mes "preÁo do quarto È de";
-				mes "5,000 zeny. Na prÛxima vez,";
+				mes "pre√ßo do quarto √© de";
+				mes "5,000 zeny. Na pr√≥xima vez,";
 				mes "tenha certeza que trouxe";
-				mes "o dinheiro necess·rio, okay?";
+				mes "o dinheiro necess√°rio, okay?";
 				close;
 			}
 		case 3:
-			mes "[Funcion·rio do Hotel]";
+			mes "[Funcion√°rio do Hotel]";
 			mes "Obrigado e";
 			mes "volte sempre.";
 			close;
 		}
 	}
-	mes "[Funcion·rio do Hotel]";
+	mes "[Funcion√°rio do Hotel]";
 	mes "Tenha um bom dia!";
 	close;
 }
 
 einbroch,244,255,5	script	Quadro de Avisos#ein1	858,{
 	mes " ";
-	mes " EstaÁ„o de Trem ";
+	mes " Esta√ß√£o de Trem ";
 	mes " ";
 	close;
 }
@@ -875,7 +855,7 @@ einbroch,68,206,5	script	Quadro de Avisos#ein3	858,{
 
 einbroch,90,84,5	script	Quadro de Avisos#ein4	858,{
 	mes " ";
-	mes " LaboratÛrio ";
+	mes " Laborat√≥rio ";
 	mes " ";
 	close;
 }
@@ -896,75 +876,75 @@ einbroch,220,208,5	script	Quadro de Avisos#ein6	858,{
 
 einbroch,132,76,5	script	Quadro de Avisos#ein7	858,{
 	mes " ";
-	mes " F·brica ";
+	mes " F√°brica ";
 	mes " ";
 	close;
 }
 
 einbroch,152,46,5	script	Quadro de Avisos#ein11	858,{
-	mes "Oeste - LaboratÛrio, Oficina do Aeroporto";
+	mes "Oeste - Laborat√≥rio, Oficina do Aeroporto";
 	mes "Sul - Porta de Entrada de Einbroch";
 	mes "Norte - Aeroporto";
-	mes "Nordeste - EstaÁ„o de Trem, Hotel, Loja de Armas";
+	mes "Nordeste - Esta√ß√£o de Trem, Hotel, Loja de Armas";
 	close;
 }
 
 einbroch,235,141,5	script	Quadro de Avisos#ein22	858,{
-	mes "Sudoeste - Oficina do Aeroporto, LaboratÛrio";
+	mes "Sudoeste - Oficina do Aeroporto, Laborat√≥rio";
 	mes "Noroeste - Aeroporto";
-	mes "Norte - Loja de Armas, Hotel, EstaÁ„o de Trem";
+	mes "Norte - Loja de Armas, Hotel, Esta√ß√£o de Trem";
 	close;
 }
 
 einbroch,162,256,5	script	Quadro de Avisos#ein33	858,{
-	mes "Leste - EstaÁ„o de Trem";
+	mes "Leste - Esta√ß√£o de Trem";
 	mes "Sudeste - Hotel";
-	mes "Sul - Loja de Armas, F·brica";
-	mes "Sudoeste - Aeroporto, Oficina do Aeroporto, LaboratÛrio";
+	mes "Sul - Loja de Armas, F√°brica";
+	mes "Sudoeste - Aeroporto, Oficina do Aeroporto, Laborat√≥rio";
 	close;
 }
 
 einbroch,183,174,5	script	Quadro de Avisos#ein44	858,{
 	mes "Leste - Loja de Armas, Hotel";
-	mes "Sul - F·brica";
-	mes "Sudoeste - Oficina do Aeroporto, LaboratÛrio";
+	mes "Sul - F√°brica";
+	mes "Sudoeste - Oficina do Aeroporto, Laborat√≥rio";
 	mes "Noroeste - Aeroporto";
 	close;
 }
 
 einbroch,104,202,5	script	Quadro de Avisos#ein55	858,{
-	mes "Nordeste - EstaÁ„o de Trem";
+	mes "Nordeste - Esta√ß√£o de Trem";
 	mes "Leste - Loja de Armas,Hotel";
-	mes "Sul - Oficina do Aeroporto, LaboratÛrio";
+	mes "Sul - Oficina do Aeroporto, Laborat√≥rio";
 	close;
 }
 
 ein_in01,31,217,3	script	Cendadt#ein	851,{
 	mes "[Cendadt]";
-	mes "Esta f·brica tem um";
+	mes "Esta f√°brica tem um";
 	mes "monte de coisas que precisam";
-	mes "de conserto! … incrÌvel";
+	mes "de conserto! √â incr√≠vel";
 	mes "que ela continue funcionando!";
 	next;
 	mes "[Cendadt]";
-	mes "Sorte para nÛs, eu ouvi dizer";
-	mes "alguns aventureiros altruÌstas";
+	mes "Sorte para n√≥s, eu ouvi dizer";
+	mes "alguns aventureiros altru√≠stas";
 	mes "tem doado materiais para ajudar";
-	mes "a manter esta f·brica de";
-	mes "cair aos pedaÁos... ou pior.";
-	mes "Mas È apenas um boato.";
+	mes "a manter esta f√°brica de";
+	mes "cair aos peda√ßos... ou pior.";
+	mes "Mas √© apenas um boato.";
 	next;
 	mes "[Cendadt]";
 	mes "^666666*Sigh*^000000";
 	mes "Mesmo que isso for verdade,";
-	mes "n„o h· nada que se possa";
-	mes "fazer. NinguÈm tem";
+	mes "n√£o h√° nada que se possa";
+	mes "fazer. Ningu√©m tem";
 	mes "coragem de desafiar o";
-	mes "sistema, vocÍ sabe?";
+	mes "sistema, voc√™ sabe?";
 	next;
 	mes "[Cendadt]";
 	mes "Eu...";
-	mes "… melhor eu";
+	mes "√â melhor eu";
 	mes "voltar ao trabalho";
 	mes "antes que eu entre";
 	mes "numa fria...";
